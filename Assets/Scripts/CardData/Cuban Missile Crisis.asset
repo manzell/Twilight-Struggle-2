@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: Cuban Missile Crisis
+  m_EditorClassIdentifier: 
+  name: Cuban Missile Crisis
+  removeOnEvent: 1
+  faction: {fileID: 0}
+  opsValue: 3
+  cardText: "Set the DEFCON level to 2. Any Coup Attempts by your opponent, for the
+    remainder of this turn, will result in Global Thermonuclear War. Your opponent
+    will lose the game. This card\u2019s Event may be canceled, at any time, if the
+    USSR removes 2 Influence from Cuba or the US removes 2 Influence from West Germany
+    or Turkey."
+  playEffects: []
+  headlineEffects: []
+  image: {fileID: 0}
+  card: {fileID: 0}

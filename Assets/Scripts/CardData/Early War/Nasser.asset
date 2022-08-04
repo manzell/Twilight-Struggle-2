@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: Nasser
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 0}
+    - {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
+    - {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: playEffects
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[CardEffect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|AdjustInfluence, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: influencePlacement
+      Entry: 7
+      Data: 4|System.Collections.Generic.Dictionary`2[[AdjustInfluence+CountryFaction,
+        Assembly-CSharp],[System.Int32, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 5|System.Collections.Generic.ObjectEqualityComparer`1[[AdjustInfluence+CountryFaction,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 6|AdjustInfluence+CountryFaction, Assembly-CSharp
+    - Name: country
+      Entry: 10
+      Data: 0
+    - Name: faction
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: influencePool
+      Entry: 3
+      Data: 0
+    - Name: maxPerCountry
+      Entry: 3
+      Data: 0
+    - Name: continents
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Continent, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: eligibleCountries
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Country, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|RemoveHalfInfluence, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: country
+      Entry: 10
+      Data: 0
+    - Name: faction
+      Entry: 10
+      Data: 2
+    - Name: roundDirection
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: headlineEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[CardEffect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  name: Nasser
+  removeOnEvent: 1
+  faction: {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
+  opsValue: 1
+  cardText: Add 2 USSR Influence to Egypt. The US removes half, rounded up, of its
+    Influence from Egypt.
+  image: {fileID: 0}
+  card: {fileID: 0}

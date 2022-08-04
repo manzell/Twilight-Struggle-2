@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: Ussuri River Skirmish
+  m_EditorClassIdentifier: 
+  name: Ussuri River Skirmish
+  removeOnEvent: 1
+  faction: {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
+  opsValue: 2
+  cardText: "If the USSR has the \u201C#6 \u2013 The China Card\u201D card, the USSR
+    must give the card to the US (face up and available for play). If the US already
+    has the \u201C#6 \u2013 The China Card\u201D card, add a total of 4 US Influence
+    to any countries in Asia (adding no more than 2 Influence per country)."
+  playEffects: []
+  headlineEffects: []
+  image: {fileID: 0}
+  card: {fileID: 0}

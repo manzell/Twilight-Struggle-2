@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: One Small Step
+  m_EditorClassIdentifier: 
+  name: One Small Step
+  removeOnEvent: 0
+  faction: {fileID: 0}
+  opsValue: 2
+  cardText: If you are behind on the Space Race Track, the player uses this Event
+    to move their marker 2 spaces forward on the Space Race Track. The player receives
+    VP only from the final space moved into
+  playEffects: []
+  headlineEffects: []
+  image: {fileID: 0}
+  card: {fileID: 0}

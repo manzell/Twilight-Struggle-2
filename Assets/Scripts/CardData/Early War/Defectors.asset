@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: Defectors
+  m_EditorClassIdentifier: 
+  name: Defectors
+  removeOnEvent: 0
+  faction: {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
+  opsValue: 2
+  cardText: The US may play this card during the Headline Phase in order to cancel
+    the USSR Headline Event (including a scoring card). The canceled card is placed
+    into the discard pile. If this card is played by the USSR during its action round,
+    the US gains 1 VP.
+  playEffects: []
+  headlineEffects: []
+  image: {fileID: 0}
+  card: {fileID: 0}

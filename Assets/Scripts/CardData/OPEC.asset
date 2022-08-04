@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: OPEC
+  m_EditorClassIdentifier: 
+  name: OPEC
+  removeOnEvent: 0
+  faction: {fileID: 0}
+  opsValue: 3
+  cardText: "The USSR receives 1 VP for Control of each of the following countries:
+    Egypt, Iran, Libya, Saudi Arabia, Iraq, Gulf States, Venezuela. This Event cannot
+    be used after the \u201C#86 \u2013 North Sea Oil\u201D Event has been played."
+  playEffects: []
+  headlineEffects: []
+  image: {fileID: 0}
+  card: {fileID: 0}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
+  m_Name: Che
+  m_EditorClassIdentifier: 
+  name: Che
+  removeOnEvent: 0
+  faction: {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
+  opsValue: 3
+  cardText: "The USSR may perform a Coup Attempt, using this card\u2019s Operations
+    value, against a non-Battleground country in Central America, South America or
+    Africa. The USSR may perform a second Coup Attempt, against a different non-Battleground
+    country in Central America, South America or Africa, if the first Coup Attempt
+    removed any US Influence from the target country."
+  playEffects: []
+  headlineEffects: []
+  image: {fileID: 0}
+  card: {fileID: 0}

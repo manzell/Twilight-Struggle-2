@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81db387d09164584e8b73ab35480706d, type: 3}
+  m_Name: South America
+  m_EditorClassIdentifier: 
+  defconRestriction: 2
+  countries:
+  - {fileID: 11400000, guid: b22e27e123567b24f812bab214d29c72, type: 2}
+  - {fileID: 11400000, guid: e07769c81e866714796dd6060dd3173a, type: 2}
+  - {fileID: 11400000, guid: 5c3fdd880cf2b1f4f86640b98e3a6d75, type: 2}
+  - {fileID: 11400000, guid: 6dddef8b7562d4041a374442709df294, type: 2}
+  - {fileID: 11400000, guid: 72022f9fe222a29428371d2483b65482, type: 2}
+  - {fileID: 11400000, guid: f665b67c635251a46bd882f1ebb31d40, type: 2}
+  - {fileID: 11400000, guid: bcbe3ac289e9f4748a5ddf91677a80d9, type: 2}
+  - {fileID: 11400000, guid: 4c8224901a013d945afff4dd7277e3bd, type: 2}
+  - {fileID: 11400000, guid: a06c3f0e618e28740abe6327ad2b57d2, type: 2}
+  color: {r: 0.31737736, g: 0.3962264, b: 0.3244534, a: 1}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81db387d09164584e8b73ab35480706d, type: 3}
+  m_Name: Central America
+  m_EditorClassIdentifier: 
+  defconRestriction: 2
+  countries:
+  - {fileID: 11400000, guid: 6940c8a41dcb5bc4faaedcea50fb7018, type: 2}
+  - {fileID: 11400000, guid: 0e34587f4bf30a34b8dad278da0b4ea4, type: 2}
+  - {fileID: 11400000, guid: ec2099be099d15148b0d893fd0d0ece3, type: 2}
+  - {fileID: 11400000, guid: 37fe0c0f15ec7424dbac753c0247947d, type: 2}
+  - {fileID: 11400000, guid: 4aea960c302ee52419190de546dd8940, type: 2}
+  - {fileID: 11400000, guid: 99a51dd808ce7174db40bc8f0a0118de, type: 2}
+  - {fileID: 11400000, guid: faf650f2c8d478040aaf0a5ca4bda6c5, type: 2}
+  - {fileID: 11400000, guid: f0ab294ab7d641c4bb1ab27a0ddfe211, type: 2}
+  - {fileID: 11400000, guid: bdf53dd027f12af479dbaffa764b00d0, type: 2}
+  - {fileID: 11400000, guid: 9d729929f7cd0f348b2aab10a035335b, type: 2}
+  - {fileID: 11400000, guid: 6cada8dfe9f32b849b5477cd5524fbeb, type: 2}
+  color: {r: 0.38431376, g: 0.8235294, b: 0.5746406, a: 1}
