@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public abstract class Effect 
 {
-    public abstract bool Test(GameAction t); 
+    public abstract bool Test(PlayerAction t); 
 
     public virtual void Apply() { }
 }

@@ -24,23 +24,22 @@ public class UI_HeadlineDropHandler : MonoBehaviour, IDropHandler
         header.enabled = true;
     }
 
-    public async void OnDrop(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
         if (eventData.selectedObject.TryGetComponent(out UI_Card uiCard))
         {
-            HeadlinePhase headlinePhase = Game.currentPhase.GetCurrent<HeadlinePhase>();
+            HeadlinePhase headlinePhase = Phase.GetCurrent<HeadlinePhase>();
             Player currentPlayer = FindObjectOfType<UI_Hand>().currentPlayer;
             Card card = uiCard.card;
 
-            if (currentPlayer.faction == faction && currentPlayer.hand.Contains(card) && headlinePhase.GetHeadline(currentPlayer) == null)
+            if (currentPlayer.faction == faction && currentPlayer.hand.Contains(card) && headlinePhase.GetHeadline(currentPlayer) == null && card.CanHeadline(currentPlayer))
             {
                 cardName.text = card.name;
                 cardName.enabled = true;
                 header.enabled = false;
 
-                Headline headline = new();
-                await headline.Event(currentPlayer, card); 
-                headlinePhase.AddHeadline(headline);
+                headlinePhase.SetHeadline(currentPlayer, card); 
+
                 headlineEvent.Invoke(card); 
             }
         }

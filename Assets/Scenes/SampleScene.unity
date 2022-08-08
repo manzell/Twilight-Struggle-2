@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 99e17bb7de204f94f9db5871b772f1c8, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -288,13 +292,38 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: onPhaseEvents
+    - Name: cardActions
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: onPhaseEvents
+      Entry: 7
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 2|AwardMilOps, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|CheckHeldCards, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -303,7 +332,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 4|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -314,7 +343,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
 --- !u!1001 &44305859
 PrefabInstance:
@@ -328,6 +368,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 829173b963db04f419213ad2aec09710, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -519,6 +563,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 7dc8b9112e76f75499311bfc36f7926a, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -635,6 +683,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: b19a0ae9579fabc4aa48095a09b02419, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -792,16 +844,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -813,7 +1047,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -824,118 +1058,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 1
---- !u!1 &105748833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 105748834}
-  - component: {fileID: 105748837}
-  - component: {fileID: 105748836}
-  - component: {fileID: 105748835}
-  - component: {fileID: 105748838}
-  m_Layer: 5
-  m_Name: Realign
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &105748834
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105748833}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1460415649}
-  m_Father: {fileID: 772622888}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 770, y: -150}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &105748835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105748833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &105748836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105748833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.3469384, g: 0.6886792, b: 0.36444095, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &105748837
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105748833}
-  m_CullTransparentMesh: 1
---- !u!114 &105748838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105748833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fcb61a12235ea40aca803a9a6aabaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  original: {fileID: 11400000, guid: ab26cc20dcf8e03478dff7d7fbf8dcd7, type: 2}
-  handObject: {fileID: 1671522047}
+  opponentEventTriggered: 0
 --- !u!1001 &108084325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -948,6 +1086,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 959ff811390bc804bb88fe51e6a243ea, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1105,16 +1247,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1126,7 +1450,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1137,10 +1461,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 2
+  opponentEventTriggered: 0
 --- !u!1001 &126678393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1153,6 +1489,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 59def3eb57ee5a240ba99ae9d1292293, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1325,16 +1665,29 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|DealUp, Assembly-CSharp
+      Data: 2|DealUp, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1346,7 +1699,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1357,10 +1710,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: spaceAttempts
+    - Name: activeEffects
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[Space+SpaceAttempt, Assembly-CSharp]],
-        mscorlib
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1370,7 +1722,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: milOps
+      Entry: 6
+      Data: 
   modifiers: []
   turnNumber: 1
   warPhase: {fileID: 11400000, guid: 8bf49ed87ba15a748ae9809cef82e65c, type: 2}
@@ -1386,6 +1740,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 01870522ef441304c9bf9b1d4247c4fc, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1498,6 +1856,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: ead6aa7f4a9913549bd4b1f4aac5cc70, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1614,6 +1976,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 77154627f5591b84db74605a7471abe6, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1726,6 +2092,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 7ea89f284592b5c46b91e9bbed8e06ad, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1826,6 +2196,141 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 205313276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &290143647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 290143648}
+  - component: {fileID: 290143650}
+  - component: {fileID: 290143649}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &290143648
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290143647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 594899456}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &290143649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290143647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Welcome to Twilight Struggle
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278245375
+  m_fontColor: {r: 1, g: 0.8431373, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 36
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &290143650
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290143647}
+  m_CullTransparentMesh: 1
 --- !u!1001 &297105462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1838,6 +2343,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0f20c12be09e67a48b47b0990fc8c24d, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1950,6 +2459,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 92814e855aaae2d4392d210697c5bf44, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2127,114 +2640,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314628648}
   m_CullTransparentMesh: 1
---- !u!1 &321410831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 321410832}
-  - component: {fileID: 321410835}
-  - component: {fileID: 321410834}
-  - component: {fileID: 321410833}
-  - component: {fileID: 321410836}
-  m_Layer: 5
-  m_Name: Event Card
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &321410832
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321410831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 724142407}
-  m_Father: {fileID: 772622888}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1150, y: -150}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &321410833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321410831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &321410834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321410831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7925315, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &321410835
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321410831}
-  m_CullTransparentMesh: 1
---- !u!114 &321410836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321410831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fcb61a12235ea40aca803a9a6aabaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  original: {fileID: 11400000, guid: d68921b0d5776c042bbfc3fa6851c4dd, type: 2}
-  handObject: {fileID: 1671522047}
 --- !u!1001 &321620827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2247,6 +2652,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 3446c79533b3a0e4393ee422ff39c536, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2405,6 +2814,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: f01b1b0ffc74da4468f4161835038245, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2521,6 +2934,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 6042de4fb740b4d4f979e10be941ca9b, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2809,16 +3226,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2830,7 +3429,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2841,10 +3440,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 4
+  opponentEventTriggered: 0
 --- !u!1 &355702091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3603,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 2fbf540dada461f468e8b174fa05c274, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3104,6 +3719,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: e56658de66ad6244e95dd358a1765476, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3318,114 +3937,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394515235}
   m_CullTransparentMesh: 1
---- !u!1 &408034465
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 408034466}
-  - component: {fileID: 408034469}
-  - component: {fileID: 408034468}
-  - component: {fileID: 408034467}
-  - component: {fileID: 408034470}
-  m_Layer: 5
-  m_Name: Coup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &408034466
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408034465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1873775371}
-  m_Father: {fileID: 772622888}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 580, y: -150}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &408034467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408034465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &408034468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408034465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &408034469
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408034465}
-  m_CullTransparentMesh: 1
---- !u!114 &408034470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408034465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fcb61a12235ea40aca803a9a6aabaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  original: {fileID: 11400000, guid: 9e8e0ef2ae063fb4d92d8e0ebdf41c0f, type: 2}
-  handObject: {fileID: 1671522047}
 --- !u!1001 &420508821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3438,6 +3949,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 927cd3ca76df6fd4ab3b9d2647eed375, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3554,6 +4069,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: bc1e97d7df89e6745aec9bbf656db271, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3670,6 +4189,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 6fca2abee2f39a64090165958fb655d2, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3905,114 +4428,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442482316}
   m_CullTransparentMesh: 1
---- !u!1 &463117310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 463117311}
-  - component: {fileID: 463117314}
-  - component: {fileID: 463117313}
-  - component: {fileID: 463117312}
-  - component: {fileID: 463117315}
-  m_Layer: 5
-  m_Name: Play Ops
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &463117311
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463117310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1519831572}
-  m_Father: {fileID: 772622888}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1340, y: -150}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &463117312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463117310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &463117313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463117310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &463117314
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463117310}
-  m_CullTransparentMesh: 1
---- !u!114 &463117315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463117310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fcb61a12235ea40aca803a9a6aabaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  original: {fileID: 11400000, guid: 3e646540ec6e3644f8757074756b37f4, type: 2}
-  handObject: {fileID: 1671522047}
 --- !u!1 &510648733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,6 +4578,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 20e04a7bdac70f340868da863d938978, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4316,16 +4735,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -4337,7 +4938,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4348,10 +4949,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 3
+  opponentEventTriggered: 0
 --- !u!1001 &580139277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4364,6 +4977,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 6b35ca47d7da147448d44712a5c09838, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4468,6 +5085,80 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 580139277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &594899455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594899456}
+  - component: {fileID: 594899458}
+  - component: {fileID: 594899457}
+  m_Layer: 5
+  m_Name: Message Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &594899456
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594899455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 290143648}
+  m_Father: {fileID: 1671522044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 60}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &594899457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594899455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &594899458
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594899455}
+  m_CullTransparentMesh: 1
 --- !u!1001 &597890503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4480,6 +5171,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: cb99500309feaec4c9562319a06f3d14, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4592,6 +5287,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 5b43eb28b5b612b458fc66560a3a7b6c, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4704,6 +5403,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 7c6b81bd9b30ba246b63b30af77baa19, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4820,6 +5523,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 22141e283cf91744c9d479f33c88b591, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4932,6 +5639,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 3bfce71e6c7a6ae4f8b38d9d97abe002, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5048,6 +5759,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: df270ffbf4a62004b8cc3d47d5dd2d96, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5164,6 +5879,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0c0f441dc16a47a4e924225b95afaaee, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5367,16 +6086,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -5388,7 +6289,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5399,10 +6300,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 6
+  opponentEventTriggered: 0
 --- !u!1001 &695256153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5415,6 +6328,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: ea872b7e6697a5b44b415478d1a643c0, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5531,6 +6448,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 390a3c1def4e3a1409d8ea6ae4989acd, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5693,6 +6614,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: a1a35c24c83f08841a77e749ae7010cc, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5797,141 +6722,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 716420353}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &724142406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 724142407}
-  - component: {fileID: 724142409}
-  - component: {fileID: 724142408}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &724142407
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724142406}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 321410832}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 260, y: 50}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &724142408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724142406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: EVENT
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294939904
-  m_fontColor: {r: 0, g: 0.5833335, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &724142409
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724142406}
-  m_CullTransparentMesh: 1
 --- !u!1 &728663052
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,6 +6798,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 2e13a834dccea28479a4a752f6103de4, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6128,7 +6922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &772622888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6140,12 +6934,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 408034466}
-  - {fileID: 105748834}
-  - {fileID: 805892191}
-  - {fileID: 321410832}
-  - {fileID: 463117311}
+  m_Children: []
   m_Father: {fileID: 1671522044}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6233,16 +7022,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6254,7 +7225,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6265,10 +7236,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 2
+  opponentEventTriggered: 0
 --- !u!1 &792805703
 GameObject:
   m_ObjectHideFlags: 0
@@ -6416,6 +7399,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: a63b4d928b1abc7428b63198a1a0ade3, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6516,114 +7503,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 804231664}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &805892190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 805892191}
-  - component: {fileID: 805892194}
-  - component: {fileID: 805892193}
-  - component: {fileID: 805892192}
-  - component: {fileID: 805892195}
-  m_Layer: 5
-  m_Name: Space
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &805892191
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805892190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2130891052}
-  m_Father: {fileID: 772622888}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -150}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &805892192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805892190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &805892193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805892190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &805892194
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805892190}
-  m_CullTransparentMesh: 1
---- !u!114 &805892195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805892190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fcb61a12235ea40aca803a9a6aabaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  original: {fileID: 0}
-  handObject: {fileID: 1671522047}
 --- !u!1001 &855288007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6636,6 +7515,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 551a42d2406a7484b92a67893db18994, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6840,16 +7723,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6861,7 +7926,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6872,10 +7937,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 1
+  opponentEventTriggered: 0
 --- !u!1001 &881672869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6888,6 +7965,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0247a367ada2613449c241cb3c3f6720, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7069,6 +8150,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: e2dd14fc9e5b35949b80fa6535a742cb, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7231,7 +8316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'USA
+  m_text: 'USSR
 
     HEADLINE'
   m_isRightToLeft: 0
@@ -7322,6 +8407,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 6be2255ac12374746b5add10eb444aac, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7434,6 +8523,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 36c30c74e86ef834a98da7357d853063, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7587,16 +8680,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -7608,7 +8883,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7619,10 +8894,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 4
+  opponentEventTriggered: 0
 --- !u!1001 &1009949738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7635,6 +8922,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0d3564153120c6d4e810ecadbe589942, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7751,6 +9042,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 2912065a4c268624c8943bd4d950d149, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7973,6 +9268,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 9f1d8e598a4eee247a7623db11c649c2, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8085,6 +9384,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 6ba6efdd0d39fb04ba02de7b21355fb2, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8241,16 +9544,29 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|AddDeck, Assembly-CSharp
+      Data: 2|AddDeck, Assembly-CSharp
     - Name: deck
       Entry: 10
       Data: 0
@@ -8265,7 +9581,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8276,7 +9592,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
 --- !u!1001 &1121939529
 PrefabInstance:
@@ -8290,6 +9617,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 37ef2b0fd04bf9f489c9cb7bfb638a17, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8406,6 +9737,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: bc3f1361d3d40104eada42a35440b686, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8522,6 +9857,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: f2099f82ddab9404483bdbefc03c46c9, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8638,6 +9977,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 98f51aab5a73fcb4698a114eff0ffd15, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8754,6 +10097,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 828f03ca187dc9c43b80b68e27d54215, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8866,6 +10213,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0e77b28468dd1e24087d2db3f82f318f, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8978,6 +10329,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: f532cb38bc8baf44e96933c1babc3a47, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9094,6 +10449,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: c34ec749d9ed36a47b4b3bc4f3665ff0, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9261,6 +10620,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: d4cc404f9f9329249b2a78d1f9cfe426, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9377,6 +10740,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: f31606c907a4d6f4d8a5ec3031c8bf43, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9489,6 +10856,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 59dbf6fbeb047634e900d53497d90ade, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9605,6 +10976,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: a421c53ab9dd38042b4fb2b9ad377674, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9717,6 +11092,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 74b532c660aeadd4b9fdc1153e022429, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9833,6 +11212,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: a532c94dfb11d484a91229d9e7e65e25, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9986,9 +11369,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: onPhaseEvents
+    - Name: cardActions
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9999,7 +11382,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: afterPhaseEvents
+    - Name: onPhaseEvents
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
@@ -10012,7 +11395,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: afterPhaseEvents
+      Entry: 7
+      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: activeEffects
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
 --- !u!1001 &1339916512
 PrefabInstance:
@@ -10026,6 +11433,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0bd6ec6be4420bd428573c98c172cec0, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10138,6 +11549,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: fb1b9c497e2f67f4f86113581f7590cc, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10250,6 +11665,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 3d791d5f18b9d3d49bdfef1a7d58d714, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10366,6 +11785,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 2651dbcb4ae0ab54db480d00cd1b190a, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10533,141 +11956,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1460415648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1460415649}
-  - component: {fileID: 1460415651}
-  - component: {fileID: 1460415650}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1460415649
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460415648}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 105748834}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 260, y: 50}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1460415650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460415648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: REALIGN
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1460415651
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460415648}
-  m_CullTransparentMesh: 1
 --- !u!1 &1474137977
 GameObject:
   m_ObjectHideFlags: 0
@@ -10684,7 +11972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1474137978
 Transform:
   m_ObjectHideFlags: 0
@@ -10717,24 +12005,45 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1671522045}
+    - {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
+    - {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptHeadline, Assembly-CSharp
+      Data: 2|PromptHeadline, Assembly-CSharp
     - Name: ui_headline
       Entry: 10
       Data: 0
+    - Name: USA
+      Entry: 10
+      Data: 1
+    - Name: USSR
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -10746,8 +12055,40 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: activeEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: headlineTasks
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Threading.Tasks.TaskCompletionSource`1[[Card,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 6|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 12
       Data: 0
@@ -10759,11 +12100,11 @@ MonoBehaviour:
       Data: 
     - Name: headlines
       Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[Card,
+      Data: 7|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[Card,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 4|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
+      Data: 8|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -10777,9 +12118,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
   modifiers: []
-  headlinePlays: []
 --- !u!1001 &1500713960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10792,6 +12131,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 2ab84559fa7e0fd47b121bf659429318, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10896,141 +12239,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1500713960}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1519831571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1519831572}
-  - component: {fileID: 1519831574}
-  - component: {fileID: 1519831573}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1519831572
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519831571}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 463117311}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 260, y: 50}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1519831573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519831571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: OPS
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1519831574
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519831571}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1529650102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11043,6 +12251,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 0f3546efbfec99145a80b6a59dd4631f, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11155,6 +12367,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: c1c448860019a2941a17baf65655a0c7, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11271,7 +12487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1549814493
 Transform:
   m_ObjectHideFlags: 0
@@ -11312,16 +12528,29 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 1|AddStartingInfluence, Assembly-CSharp
+      Data: 2|AddStartingInfluence, Assembly-CSharp
     - Name: continent
       Entry: 10
       Data: 0
@@ -11336,7 +12565,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|AddStartingInfluence, Assembly-CSharp
+      Data: 3|AddStartingInfluence, Assembly-CSharp
     - Name: continent
       Entry: 10
       Data: 2
@@ -11351,7 +12580,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|AddBonusInfluence, Assembly-CSharp
+      Data: 4|AddBonusInfluence, Assembly-CSharp
     - Name: faction
       Entry: 10
       Data: 3
@@ -11369,7 +12598,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 4|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 5|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11380,7 +12609,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
 --- !u!1001 &1564665567
 PrefabInstance:
@@ -11394,6 +12634,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: cb6be8994deb8e241a0f45a127c3e9d5, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11551,16 +12795,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -11572,7 +12998,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11583,10 +13009,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 6
+  opponentEventTriggered: 0
 --- !u!1 &1608667771
 GameObject:
   m_ObjectHideFlags: 0
@@ -11640,16 +13078,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -11661,7 +13281,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11672,10 +13292,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 5
+  opponentEventTriggered: 0
 --- !u!1 &1612797968
 GameObject:
   m_ObjectHideFlags: 0
@@ -11978,6 +13610,8 @@ GameObject:
   - component: {fileID: 1671522047}
   - component: {fileID: 1671522046}
   - component: {fileID: 1671522045}
+  - component: {fileID: 1671522048}
+  - component: {fileID: 1671522049}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -12061,6 +13695,7 @@ RectTransform:
   m_Children:
   - {fileID: 314628649}
   - {fileID: 47155622}
+  - {fileID: 594899456}
   - {fileID: 772622888}
   - {fileID: 888837130}
   m_Father: {fileID: 0}
@@ -12117,6 +13752,35 @@ MonoBehaviour:
   MilOps: {fileID: 1951440788}
   cardPrefab: {fileID: 132722333249723475, guid: 39b406710abea554da962f85184669ec, type: 3}
   cardArea: {fileID: 1746952648}
+--- !u!114 &1671522048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671522040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b301ff43d5e41fd44a3480e7ebd9b17e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 290143649}
+--- !u!114 &1671522049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671522040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c99a5601bb0f94d9be8a71eb8940f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  actionName: {fileID: 0}
+  actionSelectionPrefab: {fileID: 4866216237027037015, guid: d1ab217f529f33545bf48136d1b44ae8, type: 3}
+  actionArea: {fileID: 772622887}
 --- !u!1 &1674723148
 GameObject:
   m_ObjectHideFlags: 0
@@ -12265,6 +13929,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 799ba3130560d0a4482ae9ca06c87b3a, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12381,6 +14049,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: f576139ccc7c3fd4eb90a00be75fdcf7, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12497,6 +14169,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 511c14c7962c7a84ca00e1749a7248f5, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12672,6 +14348,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 1f742d73921fff5499fd50e47ca4c09b, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12788,6 +14468,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: e9a2a94aed955894f841a0c3421f877c, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12900,6 +14584,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 7c90b3c47c0ffa24dbeaab221d91f63b, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13053,16 +14741,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -13074,7 +14944,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13085,10 +14955,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 3
+  opponentEventTriggered: 0
 --- !u!1001 &1841067173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13101,6 +14983,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 24e71d77b5ee35b409906c4aa01935fc, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13205,141 +15091,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1841067173}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1873775370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1873775371}
-  - component: {fileID: 1873775373}
-  - component: {fileID: 1873775372}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1873775371
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873775370}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 408034466}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 260, y: 50}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1873775372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873775370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: COUP
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1873775373
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873775370}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1876023678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13352,6 +15103,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: d764e1b0b63e9a14ab21abd7728cd617, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13513,6 +15268,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 4f6b3e89679182b42a33c0551b023c41, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13625,6 +15384,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 45f8b42c908015246bb0adb484e6e191, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13741,6 +15504,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 15849a8c122edc24b98b6f152417521e, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13853,6 +15620,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: b99f3a6055deea646984ea221d919ec0, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14287,6 +16058,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 9942fb02186dbf846ab0d28bd998e57f, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14404,6 +16179,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 41dda2ca72e6d91458c52c9b3b1f4b54, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14561,16 +16340,198 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: cardActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: onPhaseEvents
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|PromptActionRound, Assembly-CSharp
+      Data: 2|PromptActionRound, Assembly-CSharp
+    - Name: availableActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 4|Coup, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Realign, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Space, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: spaceRace
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Place, Assembly-CSharp
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: probitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: player
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -14582,7 +16543,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14593,10 +16554,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  gameActions: []
+    - Name: activeEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 5
+  opponentEventTriggered: 0
 --- !u!1 &2030418706
 GameObject:
   m_ObjectHideFlags: 0
@@ -14685,6 +16658,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 8355e482602b4b34698e42ae70a840a3, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14797,6 +16774,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: cc6405f120f38674cb85b67cf0ab174b, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14913,6 +16894,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: c0dd0038db5310544a7a3e20e7e7c640, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15029,6 +17014,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 28d5d343b4f87454bbc6e4d6910dd1d0, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15129,141 +17118,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 2108933596}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2130891051
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2130891052}
-  - component: {fileID: 2130891054}
-  - component: {fileID: 2130891053}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2130891052
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130891051}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 805892191}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 260, y: 50}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &2130891053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130891051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: SPACE
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294923663
-  m_fontColor: {r: 0.55894965, g: 0.33199996, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &2130891054
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130891051}
-  m_CullTransparentMesh: 1
 --- !u!1001 &4067945221720666741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15276,6 +17130,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 42cdd87d29533b94dacca7931bd8d8ed, type: 2}
+    - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

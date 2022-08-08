@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using System; 
 using System.Linq;
-using Sirenix.OdinInspector; 
+using Sirenix.OdinInspector;
+using System.Threading.Tasks; 
 
 public class Phase : SerializedMonoBehaviour
 {
@@ -12,25 +13,16 @@ public class Phase : SerializedMonoBehaviour
     public event Action phaseStartEvent, phaseEndEvent;
     public static event Action<Phase> PhaseStartEvent, PhaseEndEvent;
     
-    public List<GameAction> gameActions = new();
+    public Stack<PlayerAction> cardActions = new(); // These aren't card actions, these are really "Phase actions" 
     public Queue<PhaseAction> onPhaseEvents = new(),
         afterPhaseEvents = new();
 
-    public List<Modifier> modifiers = new(); 
+    public void Push(PlayerAction cardAction) => cardActions.Push(cardAction); 
 
-    public virtual void Continue()
-    {
-        /*if (onPhaseEvents.Count > 0)
-            onPhaseEvents.Dequeue().Do(this);
-        else*/ if (afterPhaseEvents.Count > 0)
-            afterPhaseEvents.Dequeue().Do(this);
-        else if (Next() != null)
-            EndPhase(Next());
-        else
-            Game.EndGame();
-    }
+    public List<Modifier> modifiers = new();
+    public List<Effect> activeEffects = new();
 
-    public async virtual void StartPhase(Phase parent)
+    public async virtual Task DoPhase(Phase parent)
     {
         this.parent = parent;
         Game.currentPhase = this;
@@ -41,23 +33,27 @@ public class Phase : SerializedMonoBehaviour
         phaseStartEvent?.Invoke();
 
         while (onPhaseEvents.Count > 0)
-            await onPhaseEvents.Dequeue().Do(this); 
+        {
+            PhaseAction action = onPhaseEvents.Dequeue(); 
+            await action.Do(this);
+        }
 
-        Continue();
-    }
+        while (afterPhaseEvents.Count > 0)
+            await afterPhaseEvents.Dequeue().Do(this);
 
-    public virtual void EndPhase(Phase nextPhase)
-    {
         PhaseEndEvent?.Invoke(this);
-        phaseEndEvent?.Invoke(); 
+        phaseEndEvent?.Invoke();
 
-        nextPhase.StartPhase(this); 
+        if (Next() != null)
+            await Next().DoPhase(this);
+        else
+            Game.EndGame();
     }
 
     Phase Next()
     {
-        List<Phase> children = GetComponentsInChildren<Phase>().ToList();        
-        return children.Count >= 2 ? children[1] : transform.parent.GetComponent<Phase>()?.Next(this);
+        List<Phase> children = GetComponentsInChildren<Phase>().Where(p => p != this).ToList();        
+        return children.Count > 0 ? children.First() : transform.parent.GetComponent<Phase>()?.Next(this);
     }
 
     Phase Next(Phase child)
@@ -70,5 +66,6 @@ public class Phase : SerializedMonoBehaviour
             return transform.parent?.GetComponent<Phase>().Next(this); 
     }
 
-    public T GetCurrent<T>() => GetComponentInParent<T>(); 
+    public static T GetCurrent<T>() => Game.currentPhase.GetComponentInParent<T>();
+    public T Get<T>() => GetComponentInParent<T>(); 
 }

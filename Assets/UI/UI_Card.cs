@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using TMPro; 
+using TMPro;
+using System;
 
-public class UI_Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class UI_Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IHighlightable, IPointerClickHandler
 {
     public Card card;
     [SerializeField] TextMeshProUGUI cardTitle, cardText, cardOps;
     [SerializeField] Image backgroundImage, cardImage, factionIcon;
+    [SerializeField] GameObject highlight; 
+
+    public event Action<Card> onClickHandler;
+    public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(card);
 
     public void Setup(Card card)
     {
@@ -59,10 +64,7 @@ public class UI_Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         }
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        transform.position += (Vector3)eventData.delta; 
-    }
+    public void OnDrag(PointerEventData eventData) => transform.position += (Vector3)eventData.delta; 
 
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -73,4 +75,13 @@ public class UI_Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             transform.SetParent(parent, false); 
         }
     }
+
+    public void SetHighlight(Color color)
+    {
+        highlight.SetActive(true);
+        highlight.GetComponent<Image>().color = color; 
+    }
+
+    public void ClearHighlight() => highlight.SetActive(false); 
+
 }

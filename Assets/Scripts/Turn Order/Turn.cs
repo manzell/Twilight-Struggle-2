@@ -9,6 +9,5 @@ public class Turn : Phase
     public WarPhase warPhase;
 
     public HeadlinePhase headlinePhase => GetComponentInChildren<HeadlinePhase>();
-
-    public List<Space.SpaceAttempt> spaceAttempts = new(); 
+    public Dictionary<Player, int> milOps; 
 }

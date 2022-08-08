@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 public class Game : MonoBehaviour
 {
     public static List<Effect> activeEffects = new();
+    public static List<Modifier> modifiers = new(); 
     public static List<Player> Players { get; private set; }
-    public static List<Country> countries; 
+    public static List<Country> Countries { get; private set; } 
 
     public static int DEFCON = 5;
     public static event Action<int> DEFCONAdjust;
@@ -24,17 +25,20 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         Players = GetComponentsInChildren<Player>().ToList();
-        countries = FindObjectsOfType<Country>().ToList(); 
+        Countries = FindObjectsOfType<Country>().ToList(); 
     }
 
     private void Start()
     {
-        currentPhase = rootPhase;
-        currentPhase.StartPhase(null);
+        StartGame();
     }
 
-    [ContextMenu("Advance")]
-    public void Advance() => currentPhase.Continue(); 
+    public async void StartGame()
+    {
+        currentPhase = rootPhase;
+        await Task.Delay(1000); // Just wait 1 second for whatever reason
+        await currentPhase.DoPhase(null);
+    }
 
     public static void EndGame()
     {
@@ -44,6 +48,7 @@ public class Game : MonoBehaviour
 
     public static void AdjustVP(Player player, int amt)
     {
+        twilightStruggle.UI.UI_Message.SetMessage($"{(amt > 0 ? player.name : player.enemyPlayer.name)} Scores {Mathf.Abs(amt)} VPs");
         adjustVPevent.Invoke(player, amt); 
         // Check Victory Condition
     }

@@ -14,6 +14,11 @@ public class Player : MonoBehaviour
 
     public Player enemyPlayer => Game.Players.First(player => player != this);
 
+    private void Awake()
+    {
+        faction.player = this; 
+    }
+
     public void AdjustVP(int amount)
     {
         victoryPoints += amount;

@@ -6,55 +6,59 @@ using UnityEngine.EventSystems;
 using TMPro;
 using System;
 using System.Linq;
-using Sirenix.OdinInspector; 
+using System.Threading.Tasks; 
+using Sirenix.OdinInspector;
 
-public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler
+public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighlightable
 {
     [SerializeField] TextMeshProUGUI countryName, countryStability;
     [SerializeField] TextMeshProUGUI usInfluence, ussrInfluence;
     [SerializeField] Image battlegroundIndicator, usInfluenceBG, ussrInfluenceBG;
     [SerializeField] Image background, border, highlight;
-    [SerializeField] Color influenceBGcolor, textColor; 
+    [SerializeField] Color influenceBGcolor, textColor;
 
+    public Country country { get; private set; }
     public event Action<Country> onClickHandler;
-    Player USA, USSR;
 
-    public void OnPointerClick(PointerEventData eventData) => onClickHandler.Invoke(GetComponent<Country>());
+    Player USA, USSR;
+    Color lastColor;
+
+    public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(country);
 
     void Start()
     {
         USA = FindObjectsOfType<Player>().First(player => player.name == "USA");
         USSR = FindObjectsOfType<Player>().First(player => player.name == "USSR");
 
-        if (GetComponent<Country>() != null)
-            Setup(GetComponent<Country>());
+        if (TryGetComponent(out Country country))
+            Setup(country);
     }
 
     public void Setup(Country country)
     {
-        country.ui = this; 
+        this.country = country; 
         gameObject.name = country.name; 
         countryName.text = country.name;
         countryStability.text = country.Stability.ToString();
         battlegroundIndicator.color = country.Battleground ? Color.red : Color.black;
         background.color = country.Continents.First().color;
 
-        country.onInfluencePlacementEvent += () => UpdateUI(country);
-        UpdateUI(country); 
+        country.onInfluencePlacementEvent += UpdateUI;
+        UpdateUI();
     }
 
-    public void UpdateUI(Country country)
+    public void UpdateUI()
     {
         usInfluence.text = country.Influence(USA) == 0 ? string.Empty : country.Influence(USA).ToString(); 
         ussrInfluence.text = country.Influence(USSR) == 0 ? string.Empty : country.Influence(USSR).ToString();
 
-        usInfluence.color = country.control == USA.faction ? Color.white : USA.faction.controlColor;
-        usInfluenceBG.color = country.control == USA.faction ? country.control.controlColor : influenceBGcolor;
-        ussrInfluence.color = country.control == USSR.faction ? Color.white : USSR.faction.controlColor;
-        ussrInfluenceBG.color = country.control == USSR.faction ? country.control.controlColor : influenceBGcolor;
+        usInfluence.color = country.Control == USA.faction ? Color.white : USA.faction.controlColor;
+        usInfluenceBG.color = country.Control == USA.faction ? country.Control.controlColor : influenceBGcolor;
+        ussrInfluence.color = country.Control == USSR.faction ? Color.white : USSR.faction.controlColor;
+        ussrInfluenceBG.color = country.Control == USSR.faction ? country.Control.controlColor : influenceBGcolor;
     }
 
-    Color lastColor; 
+
     public void SetHighlight(Color color) 
     {
         lastColor = highlight.color; 
@@ -75,4 +79,17 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler
         highlight.color = Color.white; 
         highlight.gameObject.SetActive(false); 
     }
+}
+
+public interface ISelectable
+{
+    public event Action<ISelectable> onClick;
+    public void OnSelectable();
+    public void RemoveSelectable(); 
+}
+
+public interface IHighlightable
+{
+    public void SetHighlight(Color color);
+    public void ClearHighlight();
 }

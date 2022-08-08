@@ -11,9 +11,9 @@ public class CardData : SerializedScriptableObject
     public Faction faction; 
     public int opsValue;
     [Multiline] public string cardText;
-    public List<CardEffect> playEffects = new(), headlineEffects = new();
+    public List<PlayerAction> playActions = new(), 
+        headlineActions = new();
 
     public Image image;
-
     public UI_Card card;
 }

@@ -9,7 +9,6 @@ public class UI_Headline : MonoBehaviour
     public void Show()
     {
         headlineArea.SetActive(true);
-
         foreach (UI_HeadlineDropHandler handler in headlineArea.GetComponentsInChildren<UI_HeadlineDropHandler>(true))
             handler.Reset();
     }

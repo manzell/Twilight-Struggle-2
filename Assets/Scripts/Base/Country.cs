@@ -2,32 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq; 
+using System.Linq;
+using UnityEngine.EventSystems;
+using Sirenix.OdinInspector; 
 
-public class Country : MonoBehaviour
+public class Country : SerializedMonoBehaviour, ISelectable
 {
     [SerializeField] CountryData data;
-    [SerializeField] Dictionary<Faction, int> influence = new();
+    [SerializeField] UI_Country ui;
 
+    public Dictionary<Faction, int> influence;
     public List<Effect> ongoingEffects = new();
-    public List<Faction> factions => influence.Keys.ToList();
-
-    public UI_Country ui; 
-
-    public static event Action<Country> OnInfluencePlacementEvent;
-    public event Action onInfluencePlacementEvent;
+    public List<Modifier> modifiers = new();
 
     public CountryData Data => data;
+    public List<Continent> Continents => data.continents;
+    public Faction AdjacentSuperpower => data.adjacentSuperower;
+    public List<CountryData> Neighbors => data.neighbors;
+    public Faction Control => Mathf.Abs(Influence(Game.Players.First()) - Influence(Game.Players.Last())) >= Stability ? influence.Keys.OrderByDescending(f => influence[f]).First() : null;
     public int Stability => data.stability;
     public bool Battleground => data.battleground;
-    public List<Continent> Continents => data.continents;
-    public Faction AdjacentSuperower => data.adjacentSuperower;
-    public List<CountryData> Neighbors => data.neighbors;
-
-    public bool Can(GameAction action) => ongoingEffects.All(effect => effect.Test(action));
-
     public int Influence(Player player) => influence.TryGetValue(player.faction, out int inf) ? inf : 0;
     public int Influence(Faction faction) => influence.TryGetValue(faction, out int inf) ? inf : 0;
+
+    public bool Can(PlayerAction action) => ongoingEffects.All(effect => effect.Test(action));
+    
+    public event Action onInfluencePlacementEvent;
+    public event Action<ISelectable> onClick
+    {
+        add { ui.onClickHandler += value; }
+        remove { ui.onClickHandler -= value; }
+    }
 
     void Awake()
     {
@@ -38,37 +43,28 @@ public class Country : MonoBehaviour
         }
     }
 
-    public Faction control
-    {
-        get
-        {
-            List<Faction> keys = influence.Keys.ToList();
-
-            if (keys.Count == 1 && influence[keys[0]] >= Stability)
-                return keys[0]; 
-            if(keys.Count == 2)
-            {
-                if (influence[keys[0]] - influence[keys[1]] >= Stability)
-                    return keys[0];
-                if (influence[keys[1]] - influence[keys[0]] >= Stability)
-                    return keys[1];
-            }
-
-            return null;
-        }
-    }
-
     public void AdjustInfluence(Faction faction, int amount)
     {
-        influence[faction] = Mathf.Max(0, influence[faction] + amount);
-        OnInfluencePlacementEvent?.Invoke(this);
-        onInfluencePlacementEvent?.Invoke();
+        amount = Mathf.Max(0, influence[faction] + amount) - influence[faction];
+
+        if (amount != 0)
+        {
+            Debug.Log($"{(amount > 0 ? "Adding" : "Removing")} {Mathf.Abs(amount)} {faction.name} Influence in {this.name}");
+            influence[faction] += amount; 
+            onInfluencePlacementEvent?.Invoke();
+        }
     }
 
     public void SetInfluence(Faction faction, int amount)
     {
-        influence[faction] = amount;
-        OnInfluencePlacementEvent?.Invoke(this);
-        onInfluencePlacementEvent?.Invoke();
+        if(influence[faction] != amount)
+        {
+            Debug.Log($"Setting {faction.name} Influence in {this.name} to {amount}");
+            influence[faction] = amount;
+            onInfluencePlacementEvent?.Invoke();
+        }
     }
+
+    public void OnSelectable() => ui.SetHighlight(Color.red);
+    public void RemoveSelectable() => ui.ClearHighlight();
 }

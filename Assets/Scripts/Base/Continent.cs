@@ -9,15 +9,15 @@ public class Continent : ScriptableObject
 
     public int defconRestriction;
     public Color color;
-    public List<Country> countries => Game.countries.Where(country => country.Continents.Contains(this)).ToList();
+    public List<Country> countries => Game.Countries.Where(country => country.Continents.Contains(this)).ToList();
 
     [SerializeField]
     public ControlStatus GetControlStatus(Player player)
     {
-        int factionControlledCountries = countries.Count(country => country.control == player.faction);
-        int enemyControlledCountries = countries.Count(country => country.control != null && country.control == player.faction); 
-        int factionBattlegrounds = countries.Count(country => country.Battleground && country.control == player.faction);
-        int enemyBattlegrounds = countries.Count(country => country.Battleground && country.control != null && country.control != player.faction);
+        int factionControlledCountries = countries.Count(country => country.Control == player.faction);
+        int enemyControlledCountries = countries.Count(country => country.Control != null && country.Control == player.faction); 
+        int factionBattlegrounds = countries.Count(country => country.Battleground && country.Control == player.faction);
+        int enemyBattlegrounds = countries.Count(country => country.Battleground && country.Control != null && country.Control != player.faction);
 
         if (factionBattlegrounds == countries.Count(country => country.Battleground) && factionControlledCountries > enemyControlledCountries)
             return ControlStatus.Control;

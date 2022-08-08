@@ -8,6 +8,6 @@ public class Faction : ScriptableObject
 {
     public Color controlColor, accentColor;
     public Faction enemyFaction; 
-    public Sprite factionIcon, flag; 
-
+    public Sprite factionIcon, flag;
+    public Player player; 
 }

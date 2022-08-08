@@ -641,14 +641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3601310e13ef9ad408e63d0e062ba028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
   cardTitle: {fileID: 132722332768516479}
   cardText: {fileID: 132722332672906049}
   cardOps: {fileID: 132722332854473198}
   backgroundImage: {fileID: 4243794901143480327}
   cardImage: {fileID: 132722332724288707}
   factionIcon: {fileID: 132722333207212783}
-  Ops: 0
 --- !u!225 &7527763345102453673
 CanvasGroup:
   m_ObjectHideFlags: 0
