@@ -44,7 +44,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 

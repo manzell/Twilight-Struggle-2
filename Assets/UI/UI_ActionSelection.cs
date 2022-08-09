@@ -21,12 +21,14 @@ public class UI_ActionSelection : MonoBehaviour
 
     public void Summon(Player player, PlayerAction action)
     {
-        actionArea.SetActive(true); 
-        UI_ActionSelector selector = Instantiate(actionSelectionPrefab, actionArea.transform).GetComponent<UI_ActionSelector>();
+        if(action.Can(player))
+        {
+            actionArea.SetActive(true);
+            UI_ActionSelector selector = Instantiate(actionSelectionPrefab, actionArea.transform).GetComponent<UI_ActionSelector>();
 
-        selector.Setup(this, action);
-        if (player != null)
-            selector.requiredPlayer = player;         
+            selector.Setup(this, player, action);
+
+        }      
     }
 
     public void Dismiss(PlayerAction p)

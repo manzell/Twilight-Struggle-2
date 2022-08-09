@@ -16,10 +16,15 @@ public class PlayCard : PlayerAction
         twilightStruggle.UI.UI_Message.SetMessage($"Play {Player.name} Action Round");
         
         SelectionManager<PlayerAction> selectionManager = new(availableActions);
-        PlayerAction playerAction;
+        PlayerAction playerAction = await selectionManager.Selection;
 
-        while((playerAction = await selectionManager.Selection).Card != requiredCard && requiredCard != null)
-            continue;
+        while (requiredCard != null && playerAction.Card != requiredCard)
+        {
+            Debug.Log($"Card: {Card}");
+            Debug.Log($"requiredCard: {requiredCard}");
+            Debug.Log($"playerAction.Card: {playerAction.Card}"); 
+            playerAction = await selectionManager.Selection;
+        }
 
         selectionManager.Close();
         
@@ -35,11 +40,15 @@ public class PlayCard : PlayerAction
             {
                 opponentEventTriggered = true;
                 PlayCard nextChoice = (PlayCard)this.Clone();
+
                 nextChoice.RemoveAction(playerAction.GetType());
                 nextChoice.requiredCard = playerAction.Card; 
+
                 Debug.Log($"Evented. {Player.name} gets to use {playerAction.Card.name} for Ops");
+
                 if (nextChoice.requiredCard != null)
                     Debug.Log($"Must use {playerAction.Card.name}?");
+
                 await nextChoice.Event(this); 
             }
             else if(playerAction is not Space)

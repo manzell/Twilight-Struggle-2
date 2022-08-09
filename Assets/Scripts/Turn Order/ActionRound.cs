@@ -8,10 +8,13 @@ public class ActionRound : Phase
     public Player phasingPlayer;
     public int actionRoundNumber;
     public bool opponentEventTriggered;
-    
+    public StartActionRound startActionRound { get; private set; }
+    public void SetActionRoundStart(StartActionRound startActionRound) => this.startActionRound = startActionRound;
+
     public async override Task DoPhase(Phase parent)
     {
         FindObjectOfType<UI_Hand>().SetPlayer(phasingPlayer);
         await base.DoPhase(parent); 
     }
+
 }

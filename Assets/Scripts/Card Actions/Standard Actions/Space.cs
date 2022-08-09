@@ -22,7 +22,9 @@ public class Space : PlayerAction
 
     public override bool Can(Player player, Card card)
     {
-        return modifiedOpsValue >= spaceRace.NextStage(player).requiredOps &&
+        Debug.Log($"Space Race Can / {player} {card}"); 
+        if (card == null) return false; 
+        else return modifiedOpsValue >= spaceRace.NextStage(player).requiredOps &&
             spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.player == player && attempt.turn == Phase.GetCurrent<Turn>()) < spaceRace.spaceRaceNumAttempts[player];
     }
 

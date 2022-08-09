@@ -46,7 +46,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -148,17 +148,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
+    - Name: prohibitedEffects
+      Entry: 6
       Data: 
     - Name: countryData
       Entry: 10
@@ -180,7 +171,7 @@ MonoBehaviour:
       Data: 
     - Name: headlineActions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 10|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12

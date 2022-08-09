@@ -22,14 +22,8 @@ public abstract class PlayerAction : ISelectable
 
     protected abstract Task Action();
 
-    public virtual bool Can(Player player, Card card)
-    {
-        Debug.Log($"Can: REQ {requiredEffects.Count} ALL? {requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect))}" +
-            $"PROH {prohibitedEffects.Count} ANY ? {prohibitedEffects.All(prohibitedEffects => !Game.activeEffects.Contains(prohibitedEffects))}");
-
-        return requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect)) &&
-            prohibitedEffects.All(prohibitedEffects => !Game.activeEffects.Contains(prohibitedEffects));
-    }
+    public virtual bool Can(Player player, Card card = null) => requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect)) &&
+            !prohibitedEffects.Any(prohibitedEffects => Game.activeEffects.Contains(prohibitedEffects));
 
     public virtual Task Event() => Event(player, card);
     public virtual Task Event(PlayerAction previousAction)
@@ -44,7 +38,8 @@ public abstract class PlayerAction : ISelectable
         this.player = player;
         this.card = card;
 
-        // Do we check and modify the "active player" and the card ops value here? 
+        // Right here we check for ALL OPS Modifiers (Brezhnev, Containment, RedScare Purge)
+        // We do this once and forget it. 
 
         return Action();
     }

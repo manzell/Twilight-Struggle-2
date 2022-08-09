@@ -9,30 +9,7 @@ public class CambridgeEffect : PlayerAction
     [SerializeField] Faction USA, USSR;
     [SerializeField] WarPhase prohibitedPhase; 
 
-    public override bool Can(Player player, Card card)
-    {
-        if (Phase.GetCurrent<Turn>().warPhase == prohibitedPhase) return false; 
-        return base.Can(player, card);
-    }
-
-    public string Implode<T>(IEnumerable<T> someList, string etc = "and", string divisor = ",")
-    {
-        string ret = string.Empty;
-        int listLength = someList.Count(); 
-
-        for(int i = 0; i < listLength; i++)
-        {
-            ret += someList.ElementAt(i); 
-            
-            if (i + 2 == listLength)
-                ret += $" {etc} ";
-
-            if (i + 2 < listLength)
-                ret += $"{divisor} "; 
-        }
-
-        return ret; 
-    }
+    public override bool Can(Player player, Card card) => Phase.GetCurrent<Turn>().warPhase != prohibitedPhase && base.Can(player, card);
 
     protected override async Task Action()
     {
@@ -44,7 +21,7 @@ public class CambridgeEffect : PlayerAction
 
         if (eligibleContinents.Count > 0)
         {
-            twilightStruggle.UI.UI_Message.SetMessage($"Cambridge Five. Add 1 USSR Influence in {Implode(eligibleContinents)}"); 
+            twilightStruggle.UI.UI_Message.SetMessage($"Cambridge Five. Add 1 USSR Influence in {eligibleContinents.Implode("or")}"); 
 
             await new SelectionManager<Country>(Game.Countries.Where(country => country.Continents.Any(continent => eligibleContinents.Contains(continent))), 
                 country => country.AdjustInfluence(USSR, 1)).Selection; 

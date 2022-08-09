@@ -19,7 +19,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0247a367ada2613449c241cb3c3f6720, type: 2}
     - {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
     - {fileID: 11400000, guid: c36454da51e1b684e819bad6d527504a, type: 2}
-    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -47,7 +46,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -149,7 +148,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -180,8 +179,8 @@ MonoBehaviour:
       Entry: 10
       Data: 2
     - Name: USSR
-      Entry: 10
-      Data: 3
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 

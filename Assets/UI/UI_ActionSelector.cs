@@ -11,13 +11,14 @@ public class UI_ActionSelector : SerializedMonoBehaviour, IDropHandler
     [SerializeField] PlayerAction dropAction; 
     [SerializeField] UI_ActionSelection actionSelection;
     [SerializeField] TextMeshProUGUI actionName;
+    Player requiredPlayer; 
 
-    public Player requiredPlayer; 
     public PlayerAction Action => dropAction; 
 
-    public void Setup(UI_ActionSelection actionSelection, PlayerAction p)
+    public void Setup(UI_ActionSelection actionSelection, Player player, PlayerAction p)
     {
         this.actionSelection = actionSelection;
+        this.requiredPlayer = player; 
         actionName.text = p.GetType().ToString(); 
         dropAction = p;
     } 

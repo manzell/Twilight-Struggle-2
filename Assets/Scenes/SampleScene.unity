@@ -870,7 +870,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -883,7 +883,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -917,7 +917,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -947,7 +947,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -977,7 +977,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1010,7 +1010,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1021,6 +1021,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -1040,7 +1043,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1061,6 +1064,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -1075,7 +1088,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1088,7 +1101,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1301,7 +1314,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -1314,7 +1327,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1348,7 +1361,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1378,7 +1391,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1408,7 +1421,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1441,7 +1454,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1452,6 +1465,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -1471,7 +1487,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1492,6 +1508,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -1506,7 +1532,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1519,7 +1545,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3308,7 +3334,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -3321,7 +3347,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3355,7 +3381,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3385,7 +3411,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3415,7 +3441,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3448,7 +3474,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3459,6 +3485,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -3478,7 +3507,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3499,6 +3528,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -3513,7 +3552,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3526,7 +3565,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4845,7 +4884,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -4858,7 +4897,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -4892,7 +4931,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -4922,7 +4961,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -4952,7 +4991,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -4985,7 +5024,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -4996,6 +5035,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -5015,7 +5057,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5036,6 +5078,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -5050,7 +5102,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5063,7 +5115,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6224,7 +6276,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -6237,7 +6289,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6271,7 +6323,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6301,7 +6353,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6331,7 +6383,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6364,7 +6416,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6375,6 +6427,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -6394,7 +6449,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6415,6 +6470,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -6429,7 +6494,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6442,7 +6507,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7188,7 +7253,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -7201,7 +7266,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7235,7 +7300,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7265,7 +7330,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7295,7 +7360,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7328,7 +7393,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7339,6 +7404,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -7358,7 +7426,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7379,6 +7447,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -7393,7 +7471,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7406,7 +7484,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7917,7 +7995,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -7930,7 +8008,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7964,7 +8042,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7994,7 +8072,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8024,7 +8102,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8057,7 +8135,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8068,6 +8146,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -8087,7 +8168,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8108,6 +8189,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -8122,7 +8213,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8135,7 +8226,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8902,7 +8993,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -8915,7 +9006,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8949,7 +9040,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8979,7 +9070,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9009,7 +9100,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9042,7 +9133,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9053,6 +9144,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -9072,7 +9166,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9093,6 +9187,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -9107,7 +9211,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9120,7 +9224,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13161,7 +13265,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -13174,7 +13278,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13208,7 +13312,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13238,7 +13342,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13268,7 +13372,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13301,7 +13405,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13312,6 +13416,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -13331,7 +13438,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13352,6 +13459,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -13366,7 +13483,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13379,7 +13496,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13472,7 +13589,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -13485,7 +13602,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13519,7 +13636,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13549,7 +13666,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13579,7 +13696,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13612,7 +13729,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13623,6 +13740,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -13642,7 +13762,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13663,6 +13783,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -13677,7 +13807,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13690,7 +13820,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15149,7 +15279,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -15162,7 +15292,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -15196,7 +15326,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -15226,7 +15356,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -15256,7 +15386,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -15289,7 +15419,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -15300,6 +15430,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -15319,7 +15452,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -15340,6 +15473,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -15354,7 +15497,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15367,7 +15510,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -16776,7 +16919,7 @@ MonoBehaviour:
       Data: 2|StartActionRound, Assembly-CSharp
     - Name: chooseAction
       Entry: 7
-      Data: 3|ChooseCardAction, Assembly-CSharp
+      Data: 3|PlayCard, Assembly-CSharp
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -16789,7 +16932,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16823,7 +16966,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16853,7 +16996,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16883,7 +17026,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16916,7 +17059,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16927,6 +17070,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -16946,7 +17092,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: probitedEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16967,6 +17113,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: actionChoice
+      Entry: 7
+      Data: 22|System.Threading.Tasks.TaskCompletionSource`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -16981,7 +17137,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -16994,7 +17150,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0

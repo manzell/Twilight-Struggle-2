@@ -12,14 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2575b6d5e06cbc4d828d013c0c4bb1b, type: 3}
   m_Name: One Small Step
   m_EditorClassIdentifier: 
-  name: One Small Step
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: playActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: headlineActions
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  name: One Small Step*
   removeOnEvent: 0
   faction: {fileID: 0}
   opsValue: 2
   cardText: If you are behind on the Space Race Track, the player uses this Event
     to move their marker 2 spaces forward on the Space Race Track. The player receives
     VP only from the final space moved into
-  playEffects: []
-  headlineEffects: []
   image: {fileID: 0}
   card: {fileID: 0}
