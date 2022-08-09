@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class CancelHeadline : PlayerAction
 {
-    protected override Task Action(Player player, Card card) => Task.CompletedTask; 
+    protected override Task Action() => Task.CompletedTask; 
 }

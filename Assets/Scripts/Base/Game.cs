@@ -63,8 +63,9 @@ public class Game : MonoBehaviour
 
         if(oldDefcon != newDefcon)
         {
+            Debug.Log($"{(newDefcon > oldDefcon ? "Upgrading" : "Degrading")} DEFCON by {Mathf.Abs(newDefcon - oldDefcon)}");
             DEFCON = newDefcon;
-            DEFCONAdjust.Invoke(newDefcon - oldDefcon); 
+            DEFCONAdjust?.Invoke(newDefcon - oldDefcon); 
         }
     }
 

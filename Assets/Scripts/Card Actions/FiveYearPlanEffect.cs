@@ -8,15 +8,15 @@ public class FiveYearPlanEffect : PlayerAction
 {
     [SerializeField] Faction USSR;
 
-    protected override async Task Action(Player player, Card card)
+    protected override async Task Action()
     {
         if(USSR.player.hand.Count > 0)
         {
             Card discard = USSR.player.hand.OrderBy(c => Random.value).First();
-            Debug.Log($"USSR Discards {discard.name} to {card.name}");
+            Debug.Log($"USSR Discards {discard.name} to {Card.name}");
 
             if (discard.Faction == USSR.enemyFaction)
-                await card.Event(USSR.player);
+                await Card.Event(Card.Faction.player ?? USSR.player);
         }
     }
 }

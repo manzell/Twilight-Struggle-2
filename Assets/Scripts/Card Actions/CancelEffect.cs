@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-//[CreateAssetMenu(menuName = "CardEffect/Cancel Effect")]
 public class CancelEffect : PlayerAction
 {
-    //[SerializeField] OngoingEffect effect; 
-    protected override Task Action(Player player, Card card)
+    [SerializeField] Effect effect; 
+    protected override Task Action()
     {
-        Debug.Log($"Event({card.name}, {player.name}) received");
+        Debug.Log($"CancelEffect({Card.name}, {Player.name}) received");
         //  Game.RemoveEffect(effect); 
 
         return Task.CompletedTask; 

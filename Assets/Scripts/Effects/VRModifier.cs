@@ -10,14 +10,15 @@ public class VRModifier : Modifier
 
     public override bool Applies(PlayerAction cardAction)
     {
+        Debug.Log("Checking if Vietnam Revolts applies!"); 
         if (cardAction.Player != USSR)
             return false;
         else if (cardAction is Coup coup)
-            return coup.attempts.All(attempt => attempt.country.Continents.Contains(SE_Asia)); 
+            return coup.Attempts.All(attempt => attempt.country.Continents.Contains(SE_Asia)); 
         else if (cardAction is Place place)
-            return place.PlacedCountries.All(c => c.Continents.Contains(SE_Asia));
+            return place.Placements.All(country => country.Continents.Contains(SE_Asia));
         else if (cardAction is Realign realign)
-            return realign.RealignedCountries.All(c => c.Continents.Contains(SE_Asia)); 
+            return realign.Attempts.All(attempt => attempt.country.Continents.Contains(SE_Asia)); 
         return false; 
     }
 }

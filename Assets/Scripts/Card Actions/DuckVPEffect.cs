@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 public class DuckVPEffect : PlayerAction
 {
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        Game.AdjustVP(player.faction == (card.Faction ?? player.faction) ? player : player.enemyPlayer, 5 - Game.DEFCON);
+        Game.AdjustVP(Player.faction == (Card.Faction ?? Player.faction) ? Player : Player.enemyPlayer, 5 - Game.DEFCON);
         
         return Task.CompletedTask; 
     }

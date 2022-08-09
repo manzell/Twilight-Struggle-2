@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 //[CreateAssetMenu(menuName = "CardEffect/ArmsRaceVP")]
 public class AwardArmsRaceVP : PlayerAction
 {
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        Debug.Log($"Event({card.name}, {player.name}) received");
-        if (player.milOps > player.enemyPlayer.milOps && player.milOps >= Game.DEFCON)
-            player.AdjustVP(3);
-        else if (player.milOps > player.enemyPlayer.milOps)
-            player.AdjustVP(1);
+        Debug.Log($"Event({Card.name}, {Player.name}) received");
+        if (Player.milOps > Player.enemyPlayer.milOps && Player.milOps >= Game.DEFCON)
+            Player.AdjustVP(3);
+        else if (Player.milOps > Player.enemyPlayer.milOps)
+            Player.AdjustVP(1);
 
         return Task.CompletedTask; 
     }

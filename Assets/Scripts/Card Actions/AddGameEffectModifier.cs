@@ -8,7 +8,7 @@ public class AddGameEffectModifier : PlayerAction
     [SerializeField] Modifier mod;
     [SerializeField] Effect effect;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
         if (mod != null)
             Game.modifiers.Add(mod);

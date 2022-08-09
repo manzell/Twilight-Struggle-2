@@ -7,12 +7,12 @@ public class AdvanceSpaceRace : PlayerAction
 {
     [SerializeField] int numSteps; 
 
-    protected override Task Action(Player player, Card card)    
+    protected override Task Action()    
     {
         SpaceRace spaceRace = GameObject.FindObjectOfType<SpaceRace>();
         
         for(int i = 0; i < numSteps; i++)
-            spaceRace.NextStage(player)?.Accomplish(player);
+            spaceRace.NextStage(Player)?.Accomplish(Player);
         
         return Task.CompletedTask; 
     }

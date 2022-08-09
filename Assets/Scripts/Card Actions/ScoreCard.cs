@@ -10,15 +10,15 @@ public class ScoreCard : PlayerAction
     [SerializeField] Dictionary<Continent.ControlStatus, int> scoringTable = new();
     [SerializeField] Dictionary<CountryData, int> countryBonuses = new();
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        int vp1 = VP(player);
-        int vp2 = VP(player.enemyPlayer);
+        int vp1 = VP(Player);
+        int vp2 = VP(Player.enemyPlayer);
 
-        Debug.Log($"{player.name} [{continent.GetControlStatus(player)}] scores {continent.name} for {vp1 - vp2} {(Mathf.Abs(vp1 - vp2) == 1 ? "VP" : "VPs")} " +
-            $"[{player.enemyPlayer.name} {continent.GetControlStatus(player.enemyPlayer)}]");
+        Debug.Log($"{Player.name} [{continent.GetControlStatus(Player)}] scores {continent.name} for {vp1 - vp2} {(Mathf.Abs(vp1 - vp2) == 1 ? "VP" : "VPs")} " +
+            $"[{Player.enemyPlayer.name} {continent.GetControlStatus(Player.enemyPlayer)}]");
 
-        player.AdjustVP(vp1 - vp2);
+        Player.AdjustVP(vp1 - vp2);
 
         return Task.CompletedTask; 
     }

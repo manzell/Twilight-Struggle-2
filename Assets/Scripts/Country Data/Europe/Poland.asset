@@ -72,6 +72,8 @@ MonoBehaviour:
   continents:
   - {fileID: 11400000, guid: c9630cfabeb22b041adb8425e4b294fe, type: 2}
   - {fileID: 11400000, guid: feeeef66e5fda8a449fbd6ec1c82cb3d, type: 2}
-  adjacentSuperower: {fileID: 0}
-  neighbors: []
+  adjacentSuperower: {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
+  neighbors:
+  - {fileID: 11400000, guid: 2e13a834dccea28479a4a752f6103de4, type: 2}
+  - {fileID: 11400000, guid: 3bfce71e6c7a6ae4f8b38d9d97abe002, type: 2}
   country: {fileID: 0}

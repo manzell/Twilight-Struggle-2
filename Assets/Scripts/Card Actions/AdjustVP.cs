@@ -9,10 +9,9 @@ public class AdjustVP : PlayerAction
     [SerializeField] Faction faction;
     [SerializeField] int vpAmount;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        Debug.Log($"Event({card.name}, {player.name}) received");
-        (card.Faction == player.enemyPlayer.faction ? player.enemyPlayer : player).AdjustVP(vpAmount);
+        (Player ?? Card.Faction.player).AdjustVP(vpAmount);
 
         return Task.CompletedTask; 
     }

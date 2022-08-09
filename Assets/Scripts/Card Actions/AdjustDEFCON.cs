@@ -7,13 +7,9 @@ public class AdjustDEFCON : PlayerAction
 {
     [SerializeField] int DEFCONAdjustment;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        Debug.Log($"Event({card.name}, {player.name}) received");
-        Player povPlayer = player.faction == (card.Faction ?? player.faction) ? player : player.enemyPlayer; 
-
         Game.AdjustDEFCON(DEFCONAdjustment);
-
         return Task.CompletedTask; 
     }
 }

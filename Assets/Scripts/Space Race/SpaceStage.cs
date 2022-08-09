@@ -3,18 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using System; 
 
+[CreateAssetMenu]
 public class SpaceStage : ScriptableObject
 {
     public int[] vpAwards;
     public int requiredOps;
     public int requiredRoll;
 
-    public List<Player> accomplished { get; private set; } = new();
+    public List<Player> accomplished { get; private set; }
+
+    private void OnEnable()
+    {
+        accomplished = new(); 
+    }
 
     public void Accomplish(Player player)
     {
+        Debug.Log($"{player.name} Accomplishes the spaceRace stage!"); 
         if (vpAwards.Length > accomplished.Count)
-            player.AdjustVP(vpAwards[accomplished.Count]); 
+        {
+            Debug.Log($"There is {vpAwards[accomplished.Count]} VP available!");
+            player.AdjustVP(vpAwards[accomplished.Count]);
+        }
 
         if(accomplished.Count == 0)
         {

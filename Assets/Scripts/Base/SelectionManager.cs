@@ -35,8 +35,8 @@ public class SelectionManager<T>
     public void AddSelectable(ISelectable thing)
     {
         selectable.Add((T)thing);
+        thing.OnSelectable();
         thing.onClick += Select;
-        thing.OnSelectable(); 
     }
 
     public void RemoveSelectable(ISelectable thing)

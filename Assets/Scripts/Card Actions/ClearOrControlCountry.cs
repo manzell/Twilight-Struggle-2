@@ -4,7 +4,6 @@ using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
 
-//[CreateAssetMenu(menuName ="CardEffect/Clear or Control Country")]
 public class ClearOrControlCountry : PlayerAction
 {
     enum CountryAction { Clear, Control, Both }
@@ -12,9 +11,9 @@ public class ClearOrControlCountry : PlayerAction
     [SerializeField] CountryData countryData;
     [SerializeField] CountryAction action;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        Faction faction = card.Faction ?? player.faction;
+        Faction faction = Card.Faction ?? Player.faction;
         Country country = countryData.country; 
 
         if(action == CountryAction.Control || action == CountryAction.Both)

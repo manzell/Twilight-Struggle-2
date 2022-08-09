@@ -11,7 +11,7 @@ public class ApplyEffectToCountries : PlayerAction
     [SerializeField] Continent continent;
     [SerializeField] List<CountryData> countries;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
         foreach (CountryData countryData in continent.countries.Select(c => c.Data).Union(countries).Distinct())
             countryData.country.ongoingEffects.Add(effect);

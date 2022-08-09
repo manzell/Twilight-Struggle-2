@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlColor: {r: 0.6603774, g: 0.18226413, b: 0.18226413, a: 1}
   accentColor: {r: 0, g: 0, b: 0, a: 0}
-  enemyFaction: {fileID: 0}
+  enemyFaction: {fileID: 11400000}
   factionIcon: {fileID: 21300000, guid: 7c239e7aa8e57c9439703e9105681fe6, type: 3}
   flag: {fileID: 0}
+  player: {fileID: 0}

@@ -6,42 +6,46 @@ using System.Threading.Tasks;
 
 public class Space : PlayerAction
 {
-    [SerializeField] SpaceRace spaceRace; 
+    [SerializeField] SpaceRace spaceRace;
+
+    protected override Task Action()
+    {
+        SpaceStage stage = spaceRace.NextStage(Player);
+        SpaceAttempt attempt = new(stage, Player);
+
+        spaceRace.spaceRaceAttemptsMade.Add(attempt);
+        if (attempt.successful)
+            stage.Accomplish(Player);
+
+        return Task.CompletedTask;
+    }
+
     public override bool Can(Player player, Card card)
     {
-        spaceRace = GameObject.FindObjectOfType<SpaceRace>();
-        SpaceStage stage = spaceRace.NextStage(player);
-
-        return card.ops + modifier >= stage.requiredOps &&
-            spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.Value.player == player) < spaceRace.spaceRaceNumAttempts[player];             
+        return modifiedOpsValue >= spaceRace.NextStage(player).requiredOps &&
+            spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.player == player && attempt.turn == Phase.GetCurrent<Turn>()) < spaceRace.spaceRaceNumAttempts[player];
     }
 
-    protected override Task Action(Player player, Card card)
-    {
-        SpaceStage stage = spaceRace.NextStage(player);
-        SpaceAttempt attempt = new(stage, player, card);
-
-        spaceRace.spaceRaceAttemptsMade.Add(player, attempt);
-        if (attempt.successful)
-            stage.Accomplish(player);
-
-        return Task.CompletedTask; 
-    }
+    public void SetSpaceRace(SpaceRace spaceRace) => this.spaceRace = spaceRace;
+    public SpaceRace GetSpaceRace() => spaceRace;
 
     public class SpaceAttempt
     {
         public SpaceStage stage;
         public Roll roll;
         public Player player;
-        public Card card;
+        public Turn turn; 
         public bool successful => roll.Value <= stage.requiredRoll;
 
-        public SpaceAttempt(SpaceStage stage, Player player, Card card)
+        public SpaceAttempt(SpaceStage stage, Player player)
         {
             this.stage = stage;
             this.player = player;
-            this.card = card;
+            
             roll = new Roll(0);
+            turn = Phase.GetCurrent<Turn>(); 
+
+            Debug.Log($"{player.name} attempts {stage.name}. {player.name} rolls a {roll.Value} and {(this.successful ? "succeeds" : "fails")}.");
         }
     }
 }

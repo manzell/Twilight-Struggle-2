@@ -9,7 +9,7 @@ public class BlockadeEffect : PlayerAction
     [SerializeField] Faction USA;
     [SerializeField] CountryData WestGermany;
 
-    protected override async Task Action(Player player, Card card)
+    protected override async Task Action()
     {
         twilightStruggle.UI.UI_Message.SetMessage("Blockade. US must discard a card with 3 or more Ops, otherwise lose all influence in West Germany"); 
         List<Card> eligibleCards = USA.player.hand.Where(card => card.ops >= 3).ToList();

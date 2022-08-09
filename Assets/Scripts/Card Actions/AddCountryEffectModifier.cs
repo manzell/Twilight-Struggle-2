@@ -10,7 +10,7 @@ public class AddCountryEffectModifier : PlayerAction
     [SerializeField] Effect effect;
     [SerializeField] List<CountryData> eligibleCountries = new(); 
 
-    protected async override Task Action(Player player, Card card)
+    protected async override Task Action()
     {
         if(eligibleCountries.Count > 0)
         {

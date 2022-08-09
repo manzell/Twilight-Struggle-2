@@ -65,6 +65,6 @@ public class Country : SerializedMonoBehaviour, ISelectable
         }
     }
 
-    public void OnSelectable() => ui.SetHighlight(Color.red);
-    public void RemoveSelectable() => ui.ClearHighlight();
+    public void OnSelectable() { ui.SetHighlight(Color.red); ui.Show(); }
+    public void RemoveSelectable() { ui.ClearHighlight(); ui.Hide(); }
 }

@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Sirenix.OdinInspector;
-using TMPro; 
+using TMPro;
 
 public class UI_ActionSelector : SerializedMonoBehaviour, IDropHandler
 {
     [SerializeField] PlayerAction dropAction; 
-    [SerializeField] UI_Hand handObject;
     [SerializeField] UI_ActionSelection actionSelection;
     [SerializeField] TextMeshProUGUI actionName;
 
+    public Player requiredPlayer; 
+    public PlayerAction Action => dropAction; 
+
     public void Setup(UI_ActionSelection actionSelection, PlayerAction p)
     {
-        Debug.Log($"Action Selection: {p}");
-
         this.actionSelection = actionSelection;
         actionName.text = p.GetType().ToString(); 
         dropAction = p;
@@ -24,11 +24,24 @@ public class UI_ActionSelector : SerializedMonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (eventData.selectedObject.TryGetComponent(out UI_Card c))
+        if (eventData.selectedObject.TryGetComponent(out UI_Card uiCard))
         {
-            var action = Activator.CreateInstance(dropAction.GetType()) as PlayerAction;
-            action.SetCard(c.card); 
-            actionSelection.Select(action); 
+            if(requiredPlayer == null || requiredPlayer.hand.Contains(uiCard.card))
+            {
+                PlayerAction action = dropAction.Clone(); 
+
+                // Warning: Shitty hack here. Instead we want to move 
+                //var action = Activator.CreateInstance(dropAction.GetType()) as PlayerAction;
+
+                //if (action is Space space)
+                //    space.SetSpaceRace((dropAction as Space).GetSpaceRace()); 
+
+                // Controversial: Remove the card from the player's hand here. 
+                requiredPlayer?.hand.Remove(uiCard.card); 
+
+                action.SetCard(uiCard.card);
+                actionSelection.Select(action);
+            }
         }
     }
 }

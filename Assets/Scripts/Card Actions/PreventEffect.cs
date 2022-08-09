@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-//[CreateAssetMenu(menuName = "CardEffect/Prevent Effect")]
 public class PreventEffect : PlayerAction
 {
-    //[SerializeField] OngoingEffect effect; 
+    [SerializeField] Effect effect; 
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        //throw new System.NotImplementedException();
         return Task.CompletedTask; 
     }
 }

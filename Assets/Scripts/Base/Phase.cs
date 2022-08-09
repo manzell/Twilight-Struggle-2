@@ -33,10 +33,7 @@ public class Phase : SerializedMonoBehaviour
         phaseStartEvent?.Invoke();
 
         while (onPhaseEvents.Count > 0)
-        {
-            PhaseAction action = onPhaseEvents.Dequeue(); 
-            await action.Do(this);
-        }
+            await onPhaseEvents.Dequeue().Do(this);
 
         while (afterPhaseEvents.Count > 0)
             await afterPhaseEvents.Dequeue().Do(this);

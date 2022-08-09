@@ -11,7 +11,7 @@ public class SpecialRelationship : PlayerAction
     [SerializeField] Effect NATO;
     [SerializeField] Continent WesternEurope; 
 
-    protected override async Task Action(Player player, Card card)
+    protected override async Task Action()
     {
         if (UK.country.Control == US)
         {

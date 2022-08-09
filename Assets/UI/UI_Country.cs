@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks; 
 using Sirenix.OdinInspector;
 
-public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighlightable
+public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighlightable, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] TextMeshProUGUI countryName, countryStability;
     [SerializeField] TextMeshProUGUI usInfluence, ussrInfluence;
@@ -22,8 +22,6 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
 
     Player USA, USSR;
     Color lastColor;
-
-    public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(country);
 
     void Start()
     {
@@ -58,12 +56,13 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
         ussrInfluenceBG.color = country.Control == USSR.faction ? country.Control.controlColor : influenceBGcolor;
     }
 
+    public void Show() => highlight.gameObject.SetActive(true);
+    public void Hide() => highlight.gameObject.SetActive(false); 
 
     public void SetHighlight(Color color) 
     {
         lastColor = highlight.color; 
         highlight.color = color; 
-        highlight.gameObject.SetActive(true); 
     }
 
     public void ResetHighlight() 
@@ -71,14 +70,16 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
         Color c = highlight.color; 
         highlight.color = lastColor;
         lastColor = c;
-        highlight.gameObject.SetActive(false);
     }
 
     public void ClearHighlight() 
     { 
-        highlight.color = Color.white; 
-        highlight.gameObject.SetActive(false); 
+        highlight.color = Color.clear; 
     }
+
+    public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(country);
+    public void OnPointerEnter(PointerEventData eventData) => SetHighlight(Color.yellow);
+    public void OnPointerExit(PointerEventData eventData) => ResetHighlight();
 }
 
 public interface ISelectable

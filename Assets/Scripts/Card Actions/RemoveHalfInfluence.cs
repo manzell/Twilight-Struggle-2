@@ -11,19 +11,19 @@ public class RemoveHalfInfluence : PlayerAction
     [SerializeField] Faction faction; 
     [SerializeField] RoundDirection roundDirection = RoundDirection.Down;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
         Country country = countryData.country; 
 
         if (faction == null)
-            faction = card.Faction ?? player.faction;
+            faction = Card.Faction ?? Player.faction;
 
         int amtToRemove = roundDirection == RoundDirection.Up ? -Mathf.CeilToInt(country.Influence(faction) / 2f) : -Mathf.FloorToInt(country.Influence(faction) / 2f);
 
         if (amtToRemove != 0)
         {
             twilightStruggle.UI.UI_Message.SetMessage($"Removing half (Rounded {roundDirection}) {faction.name} Influence in {countryData.name}");
-            country.AdjustInfluence(player.enemyPlayer.faction, -amtToRemove);
+            country.AdjustInfluence(Player.enemyPlayer.faction, -amtToRemove);
         }
 
         return Task.CompletedTask; 

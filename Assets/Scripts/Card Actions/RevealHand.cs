@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class RevealHand : PlayerAction
 {
-    protected override async Task Action(Player player, Card card)
+    protected override async Task Action()
     {
-        Faction factionFaction = card.Faction ?? player.faction;
-        List<Card> revealedHand = factionFaction.enemyFaction.player.hand; 
+        List<Card> revealedHand = (Card.Faction ?? Player.faction).enemyFaction.player.hand; 
 
-        SelectionManager<Card> selection = new(revealedHand, 0);
-        await selection.Selection; 
+        SelectionManager<Card> selection = new(revealedHand);
+        await selection.Selection;
+        selection.Close(); 
     }
 }

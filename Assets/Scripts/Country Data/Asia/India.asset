@@ -74,4 +74,5 @@ MonoBehaviour:
   adjacentSuperower: {fileID: 0}
   neighbors:
   - {fileID: 11400000, guid: 74b532c660aeadd4b9fdc1153e022429, type: 2}
-  ui: {fileID: 0}
+  - {fileID: 11400000, guid: 7c6b81bd9b30ba246b63b30af77baa19, type: 2}
+  country: {fileID: 0}

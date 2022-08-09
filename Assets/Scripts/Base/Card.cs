@@ -33,8 +33,13 @@ public class Card : ISelectable
 
     async Task DoContextEvents(Player player, List<PlayerAction> contextEvents)
     {
-        foreach (PlayerAction contextEvent in contextEvents)
-            await contextEvent.Event(player, this);
+        for (int i = 0; i < contextEvents.Count; i++)
+        {
+            if (i > 0)
+                await contextEvents[i].Event(contextEvents[i - 1]);
+            else
+                await contextEvents[i].Event(player, this); 
+        }
     }
 
     public bool CanHeadline(Player player) => data.headlineActions.Count == 0 || data.headlineActions.All(effect => effect.Can(player, this));

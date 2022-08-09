@@ -12,7 +12,7 @@ namespace twilightStruggle.UI
 
         private void Start() => reference = this;
 
-        public static void SetMessage(string message) => reference._SetMessage(message);
+        public static void SetMessage(string message) { reference._SetMessage(message); Debug.Log($"UI Message: {message}"); }
         public static void ClearMessage() => reference._SetMessage(string.Empty); 
         public void _SetMessage(string message) => this.message.text = message;
     }

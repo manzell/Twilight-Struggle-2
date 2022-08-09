@@ -73,5 +73,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86f90437b19f67d41ad529a2520fa549, type: 2}
   - {fileID: 11400000, guid: c36454da51e1b684e819bad6d527504a, type: 2}
   adjacentSuperower: {fileID: 0}
-  neighbors: []
-  ui: {fileID: 0}
+  neighbors:
+  - {fileID: 11400000, guid: cc6405f120f38674cb85b67cf0ab174b, type: 2}
+  - {fileID: 11400000, guid: 59dbf6fbeb047634e900d53497d90ade, type: 2}
+  country: {fileID: 0}

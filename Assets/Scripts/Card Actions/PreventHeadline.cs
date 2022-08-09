@@ -8,9 +8,8 @@ public class PreventHeadline : PlayerAction
 {
     public override bool Can(Player player, Card card) => false;
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
-        //throw new System.NotImplementedException();
         return Task.CompletedTask; 
     }
 }

@@ -9,7 +9,7 @@ public class AddTurnEffectModifier : PlayerAction
     [SerializeField] Effect effect;
     Turn turn; 
 
-    protected override Task Action(Player player, Card card)
+    protected override Task Action()
     {
         turn = Phase.GetCurrent<Turn>();
 

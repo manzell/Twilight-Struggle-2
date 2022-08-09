@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6c965f60c29444d9bafeae021c2f66, type: 3}
-  m_Name: StandardSpaceRace
+  m_Script: {fileID: 11500000, guid: d18293f8a2e8a724880a8a260b9f9ded, type: 3}
+  m_Name: Space Shuttle
   m_EditorClassIdentifier: 
-  spaceStages: []
+  vpAwards: 0400000002000000
+  requiredOps: 3
+  requiredRoll: 3

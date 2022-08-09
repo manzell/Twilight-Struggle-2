@@ -10,45 +10,44 @@ public class Realign : PlayerAction
 {
     public static event Action<RealignAttempt> prepareRealign, realignEvent;
 
-    public IEnumerable<Country> RealignedCountries => attempts.Select(attempt => attempt.country).Distinct();
-    public List<Country> TargetCountries => attempts.Select(attempt => attempt.country).ToList();
-
-    List<RealignAttempt> attempts;
-    int realignOps;
+    public List<RealignAttempt> Attempts => attempts;  
+    List<RealignAttempt> attempts = new();
 
     public bool Can(Player player, Country country) => country.Influence(player.enemyPlayer) > 0;
 
-    protected override async Task Action(Player player, Card card)
+    protected override async Task Action()
     {
-        realignOps = card.ops;
+        SelectionManager<Country> selectionManager = new (Game.Countries.Where(country => country.Influence(Player.enemyPlayer) > 0 && Game.DEFCON >= country.Continents.Max(c => c.defconRestriction)));
 
-        SelectionManager<Country> selectionManager = new (Game.Countries.Where(country => country.Influence(player.enemyPlayer) > 0 && Game.DEFCON >= country.Continents.Max(c => c.defconRestriction)),
-            Realign);
-
-        while (selectionManager.open && realignOps + modifier > 0)
-            await selectionManager.Selection;
-
-        selectionManager.Close(); 
-
-        void Realign(Country country)
+        while (selectionManager.open && selectionManager.Selected.Count() < modifiedOpsValue)
         {
-            int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0); 
-            
-            RealignAttempt attempt = new(player, country);
-
-            prepareRealign(attempt); 
-            attempts.Add(attempt); 
-            
-            int totalRoll = attempt.friendlyRoll.Value - attempt.enemyRoll.Value;
-
-            if (totalRoll > 0)
-                country.AdjustInfluence(player.enemyPlayer.faction, -totalRoll);
-            if (totalRoll < 0)
-                country.AdjustInfluence(player.faction, totalRoll);
-
-            realignEvent(attempt);
-            realignOps--;
+            twilightStruggle.UI.UI_Message.SetMessage($"Select Realign Target ({modifiedOpsValue} remaining)");
+            Attempt(await selectionManager.Selection);
         }
+
+        selectionManager.Close();
+    }
+
+    void Attempt(Country country)
+    {
+        int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
+
+        RealignAttempt attempt = new(Player, country);
+
+        prepareRealign?.Invoke(attempt);
+        attempts.Add(attempt);
+
+        int totalRoll = attempt.friendlyRoll.Value - attempt.enemyRoll.Value;
+
+        Debug.Log($"{Player.name} Realignment Attempt vs {country.name}. {Player.name} Roll: {attempt.friendlyRoll.Value} vs. " +
+            $"{Player.enemyPlayer.name} Roll: {attempt.enemyRoll.Value}");
+
+        if (totalRoll > 0)
+            country.AdjustInfluence(Player.enemyPlayer.faction, -totalRoll);
+        if (totalRoll < 0)
+            country.AdjustInfluence(Player.faction, totalRoll);
+
+        realignEvent?.Invoke(attempt);
     }
 
     public class RealignAttempt

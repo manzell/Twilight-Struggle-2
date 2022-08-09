@@ -34,7 +34,7 @@ public class CambridgeEffect : PlayerAction
         return ret; 
     }
 
-    protected override async Task Action(Player player, Card card)
+    protected override async Task Action()
     {
         List<Continent> eligibleContinents = new();
 
