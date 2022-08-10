@@ -13,11 +13,13 @@ public class Realign : PlayerAction
     public List<RealignAttempt> Attempts => attempts;  
     List<RealignAttempt> attempts = new();
 
-    public bool Can(Player player, Country country) => country.Influence(player.enemyPlayer) > 0;
+    IEnumerable<Country> EligibleCountries(Player player) => Game.Countries.Where(c => c.Can(this) && c.Continents.Max(c => c.defconRestriction) <= Game.DEFCON && c.Influence(Player.enemyPlayer) > 0);
+
+    public override bool Can(Player player, Card card) => card.Data is not ScoringCard && EligibleCountries(player).Count() > 0;
 
     protected override async Task Action()
     {
-        SelectionManager<Country> selectionManager = new (Game.Countries.Where(country => country.Influence(Player.enemyPlayer) > 0 && Game.DEFCON >= country.Continents.Max(c => c.defconRestriction)));
+        SelectionManager<Country> selectionManager = new (EligibleCountries(Player));
 
         while (selectionManager.open && selectionManager.Selected.Count() < modifiedOpsValue)
         {
@@ -28,7 +30,7 @@ public class Realign : PlayerAction
         selectionManager.Close();
     }
 
-    void Attempt(Country country)
+    async void Attempt(Country country)
     {
         int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
 
@@ -42,6 +44,8 @@ public class Realign : PlayerAction
         Debug.Log($"{Player.name} Realignment Attempt vs {country.name}. {Player.name} Roll: {attempt.friendlyRoll.Value} vs. " +
             $"{Player.enemyPlayer.name} Roll: {attempt.enemyRoll.Value}");
 
+        await attempt.realignCompletion.Task; 
+
         if (totalRoll > 0)
             country.AdjustInfluence(Player.enemyPlayer.faction, -totalRoll);
         if (totalRoll < 0)
@@ -52,17 +56,25 @@ public class Realign : PlayerAction
 
     public class RealignAttempt
     {
+        public TaskCompletionSource<RealignAttempt> realignCompletion;
         public Player player;
         public Country country;
-        public Roll friendlyRoll, enemyRoll;
+        public Roll friendlyRoll = new Roll(0);
+        public Roll enemyRoll = new Roll(0); 
+        public int friendlyMod, enemyMod;
+
+        public int TotalRoll => (friendlyRoll.Value + friendlyMod) - (enemyRoll.Value + enemyMod);
+        public bool successful => TotalRoll > 0; 
 
         public RealignAttempt(Player player, Country country)
         {
             this.player = player;
             this.country = country;
-            
-            friendlyRoll = new Roll(country.Neighbors.Count(cd => cd.country.Control == player.faction) + (country.Control == player.faction ? 1 : 0));
-            enemyRoll = new Roll(country.Neighbors.Count(cd => cd.country.Control == player.faction.enemyFaction) + (country.Control == player.enemyPlayer.faction ? 1 : 0));            
+
+            friendlyMod = country.Neighbors.Count(cd => cd.country.Control == player.faction) + (country.Control == player.faction ? 1 : 0);
+            enemyMod = country.Neighbors.Count(cd => cd.country.Control == player.faction.enemyFaction) + (country.Control == player.enemyPlayer.faction ? 1 : 0);
+
+            realignCompletion = new(); 
         }
     }
 }

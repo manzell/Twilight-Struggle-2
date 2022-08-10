@@ -65,13 +65,24 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
             canvas.blocksRaycasts = false; 
             canvas.alpha = 0.5f; 
         }
-        
-        selectionManager = new(availableActions);
 
-        StartActionRound actionRoundStart = Phase.GetCurrent<ActionRound>().startActionRound; // We need to be able to grab the reference to the Start Action Round from somewhere - the current action round I guess? 
-        actionRoundStart.actionChoice.SetResult(await selectionManager.Selection);
+        // Need a way to determine if a Selection Manager is open
+        // Maybe route this through the Game/Phase ActionTask Completion Source? 
+        // Task is AWAITED by StartActionRound, maybe that can turn on the task awaiting; 
+        if(Phase.GetCurrent<ActionRound>() != null)
+        {
+            foreach (PlayerAction action in availableActions)
+            {
+                action.SetCard(card);
+                action.SetPlayer(FindObjectOfType<UI_Hand>().currentPlayer);
+            }
 
-        selectionManager.Close(); 
+            selectionManager = new(availableActions);
+            PlayerAction p = await selectionManager.Selection;
+            selectionManager.Close();
+            await p.Event();
+            Game.actionChoice.SetResult(p);
+        }
     }
 
     public void OnDrag(PointerEventData eventData) => transform.position += (Vector3)eventData.delta; 

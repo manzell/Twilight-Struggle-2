@@ -20,16 +20,16 @@ public class SelectionManager<T>
     {
         this.selectionLimit = selectionLimit;
 
-        foreach (ISelectable thing in selection)
-            AddSelectable(thing); 
+        foreach (T thing in selection)
+            AddSelectable((ISelectable)thing); 
     }
 
     public SelectionManager(IEnumerable<T> selection, System.Action<T> callback)
     {
         this.callback = callback;
 
-        foreach (ISelectable thing in selection)
-            AddSelectable(thing);
+        foreach (T thing in selection)
+            AddSelectable((ISelectable)thing);
     }
 
     public void AddSelectable(ISelectable thing)

@@ -10,7 +10,8 @@ public class Game : MonoBehaviour
     public static List<Effect> activeEffects = new();
     public static List<Modifier> modifiers = new(); 
     public static List<Player> Players { get; private set; }
-    public static List<Country> Countries { get; private set; } 
+    public static List<Country> Countries { get; private set; }
+    public static TaskCompletionSource<PlayerAction> actionChoice { get; private set; }
 
     public static int DEFCON = 5;
     public static event Action<int> DEFCONAdjust;
@@ -18,6 +19,8 @@ public class Game : MonoBehaviour
     public static event Action<Player, Card> cardDrawEvent;
     public static event Action<Player, Card> cardPlayEvent;
     public static event Action<Player, int> adjustMilOpsEvent, adjustVPevent;
+    public static void AdjustVPEvent(Player player, int i) => adjustVPevent(player, i);
+    public static void AdjustMilOpEvent(Player player, int i) => adjustMilOpsEvent(player, i);
 
     public static Phase currentPhase;
     public Phase rootPhase;
@@ -25,7 +28,8 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         Players = GetComponentsInChildren<Player>().ToList();
-        Countries = FindObjectsOfType<Country>().ToList(); 
+        Countries = FindObjectsOfType<Country>().ToList();
+        ResetActionSource(); 
     }
 
     private void Start()
@@ -46,14 +50,7 @@ public class Game : MonoBehaviour
         Application.Quit(); 
     }
 
-    public static void AdjustVP(Player player, int amt)
-    {
-        twilightStruggle.UI.UI_Message.SetMessage($"{(amt > 0 ? player.name : player.enemyPlayer.name)} Scores {Mathf.Abs(amt)} VPs");
-        adjustVPevent.Invoke(player, amt); 
-        // Check Victory Condition
-    }
-
-    public static void AdjustMilOps(Player player, int amount) => adjustMilOpsEvent.Invoke(player, amount); 
+    public static void ResetActionSource() => actionChoice = new();
 
     #region DEFCON
     public static void AdjustDEFCON(int d)

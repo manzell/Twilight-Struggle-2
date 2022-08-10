@@ -21,10 +21,7 @@ public class SpaceStage : ScriptableObject
     {
         Debug.Log($"{player.name} Accomplishes the spaceRace stage!"); 
         if (vpAwards.Length > accomplished.Count)
-        {
-            Debug.Log($"There is {vpAwards[accomplished.Count]} VP available!");
             player.AdjustVP(vpAwards[accomplished.Count]);
-        }
 
         if(accomplished.Count == 0)
         {

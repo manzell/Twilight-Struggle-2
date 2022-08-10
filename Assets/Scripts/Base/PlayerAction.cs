@@ -55,6 +55,6 @@ public abstract class PlayerAction : ISelectable
         remove { ui.activationHandler -= value; }
     }
 
-    public void OnSelectable() => (ui = GameObject.FindObjectOfType<UI_ActionSelection>()).Summon(player, this);
+    public void OnSelectable() => (ui = GameObject.FindObjectOfType<UI_ActionSelection>()).Summon(this);
     public void RemoveSelectable() => ui.Dismiss(this); 
 }

@@ -21,14 +21,15 @@ public class Player : MonoBehaviour
 
     public void AdjustVP(int amount)
     {
+        twilightStruggle.UI.UI_Message.SetMessage($"{(amount > 0 ? name : enemyPlayer.name)} Scores {Mathf.Abs(amount)} VPs");
         victoryPoints += amount;
-        Game.AdjustVP(this, amount); 
+        Game.AdjustVPEvent(this, amount);
     }
 
     public void AdjustMilOps(int amount)
     {
-        milOps = Mathf.Clamp(milOps + amount, 0, 5);
-        Game.AdjustMilOps(this, amount); 
+        amount = Mathf.Clamp(milOps + amount, 0, 5) - milOps;
+        Game.AdjustMilOpEvent(this, amount);
     }
 
     public void Discard(Card card)

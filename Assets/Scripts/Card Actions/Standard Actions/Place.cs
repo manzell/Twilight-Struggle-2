@@ -8,20 +8,19 @@ public class Place : PlayerAction
 {
     public static event System.Action<Place> prepPlacement, placementEvent, endPlacement;
     public IEnumerable<Country> Placements => placements.Select(ip => ip.country); 
-
     List<InfluencePlacement> placements = new();
+    IEnumerable<Country> EligibleCountries(Player player) =>
+        Game.Countries.Where(country => country.Influence(player) > 0 || country.Neighbors.Any(neighbor => neighbor.country.Influence(player) > 0) || country.AdjacentSuperpower == player.faction);
 
     protected async override Task Action() 
     {
         int placedOps = 0; 
         placements = new();
 
-        List<Country> eligibleCountries = new(); 
         prepPlacement?.Invoke(this);
 
         SelectionManager<Country> selectionManager = 
-            new(Game.Countries.Where(country => country.Influence(Player) > 0 || country.Neighbors.Any(neighbor => neighbor.country.Influence(Player) > 0) || country.AdjacentSuperpower == Player.faction), 
-            DoPlace);
+            new(EligibleCountries(Player), DoPlace);
 
         while (selectionManager.open && modifiedOpsValue > placedOps)
         {
@@ -52,6 +51,8 @@ public class Place : PlayerAction
             }
         }
     }
+
+    public override bool Can(Player player, Card card) => card.Data is not ScoringCard && EligibleCountries(player).Count() > 0;
 
     public class InfluencePlacement
     {

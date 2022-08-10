@@ -19,15 +19,14 @@ public class UI_ActionSelection : MonoBehaviour
 
     public void Select(PlayerAction p) => activationHandler.Invoke(p); 
 
-    public void Summon(Player player, PlayerAction action)
+    public void Summon(PlayerAction action)
     {
-        if(action.Can(player))
+        if(action.Can(action.Player, action.Card))
         {
             actionArea.SetActive(true);
             UI_ActionSelector selector = Instantiate(actionSelectionPrefab, actionArea.transform).GetComponent<UI_ActionSelector>();
 
-            selector.Setup(this, player, action);
-
+            selector.Setup(this, action);
         }      
     }
 

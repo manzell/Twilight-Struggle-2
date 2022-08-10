@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq; 
+using System.Linq;
+using Sirenix.OdinInspector; 
 
-public class SpaceRace : MonoBehaviour
+public class SpaceRace : SerializedMonoBehaviour
 {
     public List<SpaceStage> spaceStages = new();
-    public Dictionary<Player, int> spaceRaceNumAttempts = new();
+    public Dictionary<Player, int> spaceRaceTurnAttemptLimit = new();
     public List<Space.SpaceAttempt> spaceRaceAttemptsMade = new();
 
     public SpaceStage NextStage(Player player) => 

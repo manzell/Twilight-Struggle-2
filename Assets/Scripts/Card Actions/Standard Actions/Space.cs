@@ -22,10 +22,9 @@ public class Space : PlayerAction
 
     public override bool Can(Player player, Card card)
     {
-        Debug.Log($"Space Race Can / {player} {card}"); 
-        if (card == null) return false; 
+        if (card == null || card.Data is ScoringCard) return false;
         else return modifiedOpsValue >= spaceRace.NextStage(player).requiredOps &&
-            spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.player == player && attempt.turn == Phase.GetCurrent<Turn>()) < spaceRace.spaceRaceNumAttempts[player];
+            spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.player == player && attempt.turn == Phase.GetCurrent<Turn>()) < spaceRace.spaceRaceTurnAttemptLimit[player];
     }
 
     public void SetSpaceRace(SpaceRace spaceRace) => this.spaceRace = spaceRace;

@@ -7,8 +7,7 @@ public class DuckVPEffect : PlayerAction
 {
     protected override Task Action()
     {
-        Game.AdjustVP(Player.faction == (Card.Faction ?? Player.faction) ? Player : Player.enemyPlayer, 5 - Game.DEFCON);
-        
+        (Player.faction == (Card.Faction ?? Player.faction) ? Player : Player.enemyPlayer).AdjustVP(5 - Game.DEFCON);         
         return Task.CompletedTask; 
     }
 }

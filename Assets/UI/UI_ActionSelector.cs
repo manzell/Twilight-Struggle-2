@@ -15,10 +15,10 @@ public class UI_ActionSelector : SerializedMonoBehaviour, IDropHandler
 
     public PlayerAction Action => dropAction; 
 
-    public void Setup(UI_ActionSelection actionSelection, Player player, PlayerAction p)
+    public void Setup(UI_ActionSelection actionSelection, PlayerAction p)
     {
         this.actionSelection = actionSelection;
-        this.requiredPlayer = player; 
+        this.requiredPlayer = p.Player; 
         actionName.text = p.GetType().ToString(); 
         dropAction = p;
     } 
@@ -29,13 +29,7 @@ public class UI_ActionSelector : SerializedMonoBehaviour, IDropHandler
         {
             if(requiredPlayer == null || requiredPlayer.hand.Contains(uiCard.card))
             {
-                PlayerAction action = dropAction.Clone(); 
-
-                // Warning: Shitty hack here. Instead we want to move 
-                //var action = Activator.CreateInstance(dropAction.GetType()) as PlayerAction;
-
-                //if (action is Space space)
-                //    space.SetSpaceRace((dropAction as Space).GetSpaceRace()); 
+                PlayerAction action = dropAction.Clone();  
 
                 // Controversial: Remove the card from the player's hand here. 
                 requiredPlayer?.hand.Remove(uiCard.card); 

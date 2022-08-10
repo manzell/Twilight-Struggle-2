@@ -12,9 +12,7 @@ public class PlayCard : PlayerAction
     bool opponentEventTriggered; 
 
     protected override async Task Action()
-    {
-        twilightStruggle.UI.UI_Message.SetMessage($"Play {Player.name} Action Round");
-        
+    {        
         SelectionManager<PlayerAction> selectionManager = new(availableActions);
         PlayerAction playerAction = await selectionManager.Selection;
 
