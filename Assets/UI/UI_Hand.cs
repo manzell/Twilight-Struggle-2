@@ -59,10 +59,10 @@ public class UI_Hand : MonoBehaviour
     public void SetPlayer(Player player)
     {
         currentPlayer = player;
-        factionName.text = player.faction.name;
+        factionName.text = player.Faction.name;
 
-        factionIcon.sprite = player.faction.factionIcon; 
-        playerBoard.color = player.faction.controlColor; 
+        factionIcon.sprite = player.Faction.factionIcon; 
+        playerBoard.color = player.Faction.controlColor; 
 
         SetPlayerVP(player, 0);
         SetPlayerMilOps(player, 0); 
@@ -71,6 +71,6 @@ public class UI_Hand : MonoBehaviour
         DrawPlayerHand(player);
     }
 
-    void SetPlayerVP(Player player, int x) { if (player == currentPlayer) VP.text = (player.victoryPoints - player.enemyPlayer.victoryPoints).ToString(); }
+    void SetPlayerVP(Player player, int x) { if (player == currentPlayer) VP.text = (player.victoryPoints - player.Enemy.victoryPoints).ToString(); }
     void SetPlayerMilOps(Player player, int x) { if (player == currentPlayer) MilOps.text = player.milOps.ToString(); }
 }

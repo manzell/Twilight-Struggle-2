@@ -8,7 +8,8 @@ using TMPro;
 public class UI_Realign : MonoBehaviour
 {
     [SerializeField] GameObject realignPanel;
-    [SerializeField] TextMeshProUGUI header, friendlyRoll, friendlyMod, enemyRoll, enemyModifier, finalInfluenceChange; 
+    [SerializeField] TextMeshProUGUI header, friendlyRoll, friendlyMod, enemyRoll, enemyModifier, finalInfluenceChange;
+    [SerializeField] TextMeshProUGUI friendlyHeader, enemyHeader; 
     [SerializeField] Button confirmButton;
 
     TaskCompletionSource<Realign.RealignAttempt> task;
@@ -20,19 +21,23 @@ public class UI_Realign : MonoBehaviour
 
     public void Setup(Realign.RealignAttempt attempt)
     {
-        header.text = $"{attempt.player.name} Realign in {attempt.country}";
+        header.text = $"{attempt.player.name} Realign in {attempt.country.name}";
 
+        friendlyHeader.text = $"{attempt.player.name} Roll"; 
         friendlyRoll.text = attempt.friendlyRoll.Value.ToString();
-        friendlyMod.text = attempt.friendlyMod.ToString(); 
+        friendlyRoll.color = attempt.player.faction.controlColor;
+        friendlyMod.text = attempt.friendlyMod.ToString();
+
+        enemyHeader.text = $"{attempt.player.Enemy.name} Roll"; 
         enemyRoll.text = attempt.enemyRoll.Value.ToString();
+        enemyRoll.color = attempt.player.Enemy.faction.controlColor; 
         enemyModifier.text = attempt.enemyMod.ToString();
 
-        finalInfluenceChange.text = attempt.TotalRoll.ToString();
-
-        if (attempt.TotalRoll > 0)
+        finalInfluenceChange.text = "-" + attempt.influenceToRemove.ToString(); 
+        if (attempt.influenceToRemove > 0)
+            finalInfluenceChange.color = attempt.player.Enemy.faction.controlColor;
+        if (attempt.influenceToRemove < 0)
             finalInfluenceChange.color = attempt.player.faction.controlColor;
-        if (attempt.TotalRoll < 0)
-            finalInfluenceChange.color = attempt.player.enemyPlayer.faction.controlColor;
 
         task = attempt.realignCompletion;
         realignPanel.SetActive(true);

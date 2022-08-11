@@ -18,8 +18,11 @@ public class UI_Coup : MonoBehaviour
         Coup.prepareCoupEvent += Setup;
     }
 
+    Coup.CoupAttempt attempt; 
+
     public void Setup(Coup.CoupAttempt attempt)
     {
+        this.attempt = attempt; 
         header.text = $"{attempt.player.name} Coup in {attempt.country}";
         opsValue.text = $"{attempt.ops}";
         roll.text = $"{attempt.roll.Value}";
@@ -28,7 +31,7 @@ public class UI_Coup : MonoBehaviour
         friendlyInfluenceAdded.text = attempt.influenceToAdd > 0 ? attempt.influenceToAdd.ToString() : "-";
 
         friendlyInfluenceAdded.color = attempt.player.faction.controlColor;
-        enemyInfluenceRemoved.color = attempt.player.enemyPlayer.faction.controlColor; 
+        enemyInfluenceRemoved.color = attempt.player.Enemy.faction.controlColor; 
 
         task = attempt.coupCompletion; 
         coupPanel.SetActive(true);
@@ -36,7 +39,7 @@ public class UI_Coup : MonoBehaviour
 
     public void Close()
     {
-        task.SetResult(null); 
+        task?.SetResult(attempt); 
         coupPanel.SetActive(false); 
     }
 }

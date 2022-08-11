@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System; 
+using System.Linq; 
 
 [CreateAssetMenu]
 public class SpaceStage : ScriptableObject
 {
-    public int[] vpAwards;
-    public int requiredOps;
-    public int requiredRoll;
+    [SerializeField] int requiredRoll, requiredOps;
+    [SerializeField] int[] vpAwards;
+    public IEnumerable<int> VPAwards => vpAwards; 
+    public int RequiredOps => requiredOps;
+    public int RequiredRoll => requiredRoll;
 
     public List<Player> accomplished { get; private set; }
 
@@ -19,7 +21,6 @@ public class SpaceStage : ScriptableObject
 
     public void Accomplish(Player player)
     {
-        Debug.Log($"{player.name} Accomplishes the spaceRace stage!"); 
         if (vpAwards.Length > accomplished.Count)
             player.AdjustVP(vpAwards[accomplished.Count]);
 

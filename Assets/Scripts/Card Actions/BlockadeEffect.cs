@@ -18,15 +18,15 @@ public class BlockadeEffect : PlayerAction
             WestGermany.country.SetInfluence(USA, 0);
         else
         {
-            SelectionManager<Card> selection = new (USA.player.hand.Where(card => card.ops >= 3), 1);
+            SelectionManager<Card> selectionManager = new (USA.player.hand.Where(card => card.ops >= 3), 1);
 
-            while (selection.open && selection.Selected.Count() == 0)
-                await selection.Selection;
+            while (selectionManager.open && selectionManager.Selected.Count() == 0)
+                await selectionManager.Selection;
 
-            selection.Close(); 
+            selectionManager.Close(); 
 
-            if (selection.Selected.Count() > 0)
-                USA.player.Discard(selection.Selected.First());
+            if (selectionManager.Selected.Count() > 0)
+                USA.player.Discard(selectionManager.Selected.First());
             else
                 WestGermany.country.SetInfluence(USA, 0); 
         }

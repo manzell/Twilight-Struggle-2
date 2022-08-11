@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 using TMPro;
 using System;
 using System.Linq;
-using System.Threading.Tasks; 
 using Sirenix.OdinInspector;
 
 public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighlightable, IPointerEnterHandler, IPointerExitHandler
@@ -50,10 +49,10 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
         usInfluence.text = country.Influence(USA) == 0 ? string.Empty : country.Influence(USA).ToString(); 
         ussrInfluence.text = country.Influence(USSR) == 0 ? string.Empty : country.Influence(USSR).ToString();
 
-        usInfluence.color = country.Control == USA.faction ? Color.white : USA.faction.controlColor;
-        usInfluenceBG.color = country.Control == USA.faction ? country.Control.controlColor : influenceBGcolor;
-        ussrInfluence.color = country.Control == USSR.faction ? Color.white : USSR.faction.controlColor;
-        ussrInfluenceBG.color = country.Control == USSR.faction ? country.Control.controlColor : influenceBGcolor;
+        usInfluence.color = country.Control == USA.Faction ? Color.white : USA.Faction.controlColor;
+        usInfluenceBG.color = country.Control == USA.Faction ? country.Control.controlColor : influenceBGcolor;
+        ussrInfluence.color = country.Control == USSR.Faction ? Color.white : USSR.Faction.controlColor;
+        ussrInfluenceBG.color = country.Control == USSR.Faction ? country.Control.controlColor : influenceBGcolor;
     }
 
     public void Show() => highlight.gameObject.SetActive(true);

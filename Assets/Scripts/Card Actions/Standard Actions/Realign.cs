@@ -11,19 +11,20 @@ public class Realign : PlayerAction
     public static event Action<RealignAttempt> prepareRealign, realignEvent;
 
     public List<RealignAttempt> Attempts => attempts;  
-    List<RealignAttempt> attempts = new();
+    List<RealignAttempt> attempts;
 
-    IEnumerable<Country> EligibleCountries(Player player) => Game.Countries.Where(c => c.Can(this) && c.Continents.Max(c => c.defconRestriction) <= Game.DEFCON && c.Influence(Player.enemyPlayer) > 0);
+    IEnumerable<Country> EligibleCountries(Player player) => Game.Countries.Where(c => c.Can(this) && c.Continents.Max(c => c.defconRestriction) <= Game.DEFCON && c.Influence(player.Enemy) > 0);
 
     public override bool Can(Player player, Card card) => card.Data is not ScoringCard && EligibleCountries(player).Count() > 0;
 
     protected override async Task Action()
     {
+        attempts = new(); 
         SelectionManager<Country> selectionManager = new (EligibleCountries(Player));
 
         while (selectionManager.open && selectionManager.Selected.Count() < modifiedOpsValue)
         {
-            twilightStruggle.UI.UI_Message.SetMessage($"Select Realign Target ({modifiedOpsValue} remaining)");
+            twilightStruggle.UI.UI_Message.SetMessage($"Select Realign Target ({modifiedOpsValue-attempts.Count()} remaining)");
             Attempt(await selectionManager.Selection);
         }
 
@@ -32,26 +33,21 @@ public class Realign : PlayerAction
 
     async void Attempt(Country country)
     {
-        int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
-
         RealignAttempt attempt = new(Player, country);
-
-        prepareRealign?.Invoke(attempt);
-        attempts.Add(attempt);
-
+        int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
         int totalRoll = attempt.friendlyRoll.Value - attempt.enemyRoll.Value;
 
+        attempts.Add(attempt);        
+
         Debug.Log($"{Player.name} Realignment Attempt vs {country.name}. {Player.name} Roll: {attempt.friendlyRoll.Value} vs. " +
-            $"{Player.enemyPlayer.name} Roll: {attempt.enemyRoll.Value}");
+            $"{Player.Enemy.name} Roll: {attempt.enemyRoll.Value}");
 
         await attempt.realignCompletion.Task; 
 
         if (totalRoll > 0)
-            country.AdjustInfluence(Player.enemyPlayer.faction, -totalRoll);
+            country.AdjustInfluence(Player.Enemy.Faction, -totalRoll);
         if (totalRoll < 0)
-            country.AdjustInfluence(Player.faction, totalRoll);
-
-        realignEvent?.Invoke(attempt);
+            country.AdjustInfluence(Player.Faction, totalRoll);
     }
 
     public class RealignAttempt
@@ -63,17 +59,28 @@ public class Realign : PlayerAction
         public Roll enemyRoll = new Roll(0); 
         public int friendlyMod, enemyMod;
 
-        public int TotalRoll => (friendlyRoll.Value + friendlyMod) - (enemyRoll.Value + enemyMod);
-        public bool successful => TotalRoll > 0; 
+        public int influenceToRemove => Mathf.Min(Mathf.Abs(roll), country.Influence(losingFaction));
+        public Faction winningFaction => roll >= 0 ? player.Faction : player.Enemy.Faction;
+        public Faction losingFaction => roll < 0 ? player.Faction : player.Enemy.Faction;
+
+        int roll => (friendlyRoll.Value + friendlyMod) - (enemyRoll.Value + enemyMod);
 
         public RealignAttempt(Player player, Country country)
         {
+            prepareRealign?.Invoke(this);
             this.player = player;
             this.country = country;
 
-            friendlyMod = country.Neighbors.Count(cd => cd.country.Control == player.faction) + (country.Control == player.faction ? 1 : 0);
-            enemyMod = country.Neighbors.Count(cd => cd.country.Control == player.faction.enemyFaction) + (country.Control == player.enemyPlayer.faction ? 1 : 0);
+            foreach(CountryData c in country.Neighbors)
+            {
+                if(c.country.Control == player.Faction)
+                    Debug.Log($"{c.name} is {player.name} Controlled; +1 to their Roll"); 
+            }
 
+            friendlyMod = country.Neighbors.Count(cd => cd.country.Control == player.Faction) + (country.Control == player.Faction ? 1 : 0);
+            enemyMod = country.Neighbors.Count(cd => cd.country.Control == player.Faction.enemyFaction) + (country.Control == player.Enemy.Faction ? 1 : 0);
+
+            realignEvent?.Invoke(this);
             realignCompletion = new(); 
         }
     }

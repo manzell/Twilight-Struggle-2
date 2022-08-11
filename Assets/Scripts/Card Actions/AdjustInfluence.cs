@@ -30,7 +30,7 @@ public class AdjustInfluence : PlayerAction
 
         // First, execute any influenceChange that's hard-entered
         foreach (CountryFaction influenceKey in influencePlacement.Keys)
-            influenceKey.countryData.country.AdjustInfluence(Player.faction, influencePlacement[influenceKey]);
+            influenceKey.countryData.country.AdjustInfluence(Player.Faction, influencePlacement[influenceKey]);
 
         if (influencePool != 0)
         {
@@ -43,11 +43,11 @@ public class AdjustInfluence : PlayerAction
             if (eligibleCountries.Count == 0)
                 foreach (Continent continent in continents)
                     eligibleCountries.AddRange(continent.countries.Where(c => influencePool > 0 ||
-                        (influencePool < 0 && c.Influence(Card.Faction.enemyFaction ?? Player.faction.enemyFaction) > 0)).Select(c => c.Data));
+                        (influencePool < 0 && c.Influence(Card.Faction.enemyFaction ?? Player.Faction.enemyFaction) > 0)).Select(c => c.Data));
 
             //If we still don't have any countries, let's add countries where we have influence as well as their neighbors
             if(eligibleCountries.Count == 0)
-                foreach(Country country in Game.Countries.Where(c1 => c1.Influence(Player.faction) > 0 || c1.Neighbors.Any(c2 => c2.country.Influence(Player.faction) > 0)))
+                foreach(Country country in Game.Countries.Where(c1 => c1.Influence(Player.Faction) > 0 || c1.Neighbors.Any(c2 => c2.country.Influence(Player.Faction) > 0)))
                     eligibleCountries.Add(country.Data);
 
             SelectionManager<Country> selectionManager = new(eligibleCountries.Select(c => c.country), s =>
@@ -55,7 +55,7 @@ public class AdjustInfluence : PlayerAction
                Country country = s as Country;
                if (influencePool != 0 && clickCounter.Count(c => c == country) < maxPerCountry)
                {
-                   country.AdjustInfluence(adjustAmount > 0 ? Player.faction : Player.enemyPlayer.faction, adjustAmount);
+                   country.AdjustInfluence(adjustAmount > 0 ? Player.Faction : Player.Enemy.Faction, adjustAmount);
                    influencePool -= adjustAmount;
                    clickCounter.Add(country);
                }
@@ -63,12 +63,12 @@ public class AdjustInfluence : PlayerAction
 
             while (selectionManager.open && influencePool != 0)
             {
-                twilightStruggle.UI.UI_Message.SetMessage($"{(influencePool > 0 ? "Add" : "Remove")} {(influencePool > 0 ? Player : Player.enemyPlayer).name} Influence ({Mathf.Abs(influencePool)} remaining)"); 
+                twilightStruggle.UI.UI_Message.SetMessage($"{(influencePool > 0 ? "Add" : "Remove")} {(influencePool > 0 ? Player : Player.Enemy).name} Influence ({Mathf.Abs(influencePool)} remaining)"); 
 
                 await selectionManager.Selection;
 
                 foreach (Country c in selectionManager.Selectable.Where(c1 => clickCounter.Count(c2 => c2 == c1) >= maxPerCountry ||
-                    influencePool < 0 && c1.Influence(Card.Faction.enemyFaction ?? Player.faction.enemyFaction) == 0).ToList())
+                    influencePool < 0 && c1.Influence(Card.Faction.enemyFaction ?? Player.Faction.enemyFaction) == 0).ToList())
                         selectionManager.RemoveSelectable(c);                 
             }
 

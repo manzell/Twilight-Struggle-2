@@ -12,27 +12,23 @@ public class PlayCard : PlayerAction
     bool opponentEventTriggered; 
 
     protected override async Task Action()
-    {        
+    {
         SelectionManager<PlayerAction> selectionManager = new(availableActions);
-        PlayerAction playerAction = await selectionManager.Selection;
+
+        PlayerAction playerAction = await Game.ActionChoice; // Should this be the Game? YESS
 
         while (requiredCard != null && playerAction.Card != requiredCard)
-        {
-            Debug.Log($"Card: {Card}");
-            Debug.Log($"requiredCard: {requiredCard}");
-            Debug.Log($"playerAction.Card: {playerAction.Card}"); 
-            playerAction = await selectionManager.Selection;
-        }
+            playerAction = await Game.ActionChoice;
 
         selectionManager.Close();
-        
+
         Debug.Log($"{Player.name} choooses {playerAction} with {playerAction.Card.name}");
         
         await playerAction.Event(Player);
 
         Debug.Log($"Ending {playerAction.Card.name} Play");
 
-        if (playerAction.Card.Faction == Player.enemyPlayer.faction && opponentEventTriggered == false)
+        if (playerAction.Card.Faction == Player.Enemy.Faction && opponentEventTriggered == false)
         {
             if(playerAction is TriggerEvent)
             {

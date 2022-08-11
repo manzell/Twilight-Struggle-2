@@ -11,7 +11,7 @@ public class BonusOpModifier : Modifier
     {
         if (amount > 0 && gameAction.Card.ops >= max) return false;
         if (amount < 0 && gameAction.Card.ops <= min) return false; 
-        if (gameAction.Player.faction != faction) return false;
+        if (gameAction.Player.Faction != faction) return false;
 
         return true; 
     }

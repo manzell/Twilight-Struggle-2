@@ -10,12 +10,12 @@ public class MatchOpponentInfluence : PlayerAction
 
     protected override async Task Action()
     {
-        Faction faction = Card.Faction ?? Player.faction;
+        Faction faction = Card.Faction ?? Player.Faction;
         eligibleCountries = eligibleCountries.Where(c => c.country.Influence(faction) < c.country.Influence(faction.enemyFaction)).ToList();
 
         if (eligibleCountries.Count > 0)
         {
-            twilightStruggle.UI.UI_Message.SetMessage($"Select a country to match {Player.enemyPlayer.name} influence");
+            twilightStruggle.UI.UI_Message.SetMessage($"Select a country to match {Player.Enemy.name} influence");
 
             SelectionManager<Country> selectionManager = new (eligibleCountries.Select(c => c.country), country => {
                 country.SetInfluence(faction, country.Influence(faction.enemyFaction));

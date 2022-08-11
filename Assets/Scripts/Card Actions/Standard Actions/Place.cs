@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class Place : PlayerAction
 {
-    public static event System.Action<Place> prepPlacement, placementEvent, endPlacement;
+    public static event System.Action<InfluencePlacement> prepPlacement, placementEvent;
     public IEnumerable<Country> Placements => placements.Select(ip => ip.country); 
     List<InfluencePlacement> placements = new();
     IEnumerable<Country> EligibleCountries(Player player) =>
@@ -17,28 +17,24 @@ public class Place : PlayerAction
         int placedOps = 0; 
         placements = new();
 
-        prepPlacement?.Invoke(this);
-
-        SelectionManager<Country> selectionManager = 
-            new(EligibleCountries(Player), DoPlace);
+        SelectionManager<Country> selectionManager = new(EligibleCountries(Player), DoPlace);
 
         while (selectionManager.open && modifiedOpsValue > placedOps)
         {
             twilightStruggle.UI.UI_Message.SetMessage($"Place {Player.name} Influence ({modifiedOpsValue - placedOps} {(modifiedOpsValue - placedOps == 1 ? "Op" : "Ops")} remaining)");
-                
-            if (modifiedOpsValue - placedOps < 2)
-                foreach (Country country in selectionManager.Selected.Where(country => country.Control == Player.enemyPlayer))
-                    selectionManager.RemoveSelectable(country);
 
             await selectionManager.Selection;
+
+            if (modifiedOpsValue - placedOps < 2)
+                foreach (Country country in selectionManager.Selected.Where(country => country.Control == Player.Enemy))
+                    selectionManager.RemoveSelectable(country);
         }
 
-        selectionManager.Close(); 
-        endPlacement?.Invoke(this); 
+        selectionManager.Close();
 
         void DoPlace(Country country)
         {
-            int placementCost = country.Control == Player.enemyPlayer.faction ? 2 : 1;
+            int placementCost = country.Control == Player.Enemy.faction ? 2 : 1;
             int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
 
             if (modifiedOpsValue >= placedOps + placementCost)
@@ -47,7 +43,6 @@ public class Place : PlayerAction
                 country.AdjustInfluence(Player.faction, 1);
 
                 placedOps += placementCost;
-                placementEvent?.Invoke(this);
             }
         }
     }
@@ -62,9 +57,11 @@ public class Place : PlayerAction
 
         public InfluencePlacement(Player player, Country country, int cost)
         {
+            prepPlacement?.Invoke(this);
             this.player = player;
             this.country = country;
             influenceCost = cost;
+            placementEvent?.Invoke(this);
         }
     }
 }

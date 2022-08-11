@@ -14,7 +14,6 @@ public class PromptHeadline : PhaseAction
         if (phase is HeadlinePhase headlinePhase)
         {
             twilightStruggle.UI.UI_Message.SetMessage($"Headline Phase");
-            ui_headline.Show();
 
             foreach (Player player in Game.Players)
                 headlinePhase.headlineTasks.Add(player, new TaskCompletionSource<Card>());
@@ -23,9 +22,7 @@ public class PromptHeadline : PhaseAction
 
             ui_headline.Hide();
 
-            // We check for a CancelHeadline headlineEffect
-
-            if(headlinePhase.headlines[USA.player].Data.headlineActions.All(ha => !(ha is CancelHeadline && ha.Card.Faction == USA)))
+            if(headlinePhase.headlines[USA.player].Data.headlineActions.All(ha => !(ha is CancelHeadline)))
             {
                 foreach (Player player in headlinePhase.headlines.Keys.OrderByDescending(player => headlinePhase.headlines[player].ops).ThenBy(p => p.faction.name))
                 {

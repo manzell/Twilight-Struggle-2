@@ -14,10 +14,12 @@ public class Continent : ScriptableObject
     [SerializeField]
     public ControlStatus GetControlStatus(Player player)
     {
-        int factionControlledCountries = countries.Count(country => country.Control == player.faction);
-        int enemyControlledCountries = countries.Count(country => country.Control != null && country.Control == player.faction); 
-        int factionBattlegrounds = countries.Count(country => country.Battleground && country.Control == player.faction);
-        int enemyBattlegrounds = countries.Count(country => country.Battleground && country.Control != null && country.Control != player.faction);
+        int factionControlledCountries = countries.Count(country => country.Control == player.Faction);
+        int enemyControlledCountries = countries.Count(country => country.Control != null && country.Control == player.Faction); 
+        int factionBattlegrounds = countries.Count(country => country.Battleground && country.Control == player.Faction);
+        int enemyBattlegrounds = countries.Count(country => country.Battleground && country.Control != null && country.Control != player.Faction);
+
+        Debug.Log($"{name} Control Status: {player.name}; Friendly {factionBattlegrounds}/{factionControlledCountries} Enemy {enemyBattlegrounds}/{enemyControlledCountries}");
 
         if (factionBattlegrounds == countries.Count(country => country.Battleground) && factionControlledCountries > enemyControlledCountries)
             return ControlStatus.Control;

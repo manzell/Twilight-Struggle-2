@@ -30,12 +30,12 @@ public class UI_ActionSelector : SerializedMonoBehaviour, IDropHandler
             if(requiredPlayer == null || requiredPlayer.hand.Contains(uiCard.card))
             {
                 PlayerAction action = dropAction.Clone();  
+                action.SetCard(uiCard.card);
+
+                actionSelection.Select(action);
 
                 // Controversial: Remove the card from the player's hand here. 
-                requiredPlayer?.hand.Remove(uiCard.card); 
-
-                action.SetCard(uiCard.card);
-                actionSelection.Select(action);
+                requiredPlayer?.hand.Remove(uiCard.card);
             }
         }
     }

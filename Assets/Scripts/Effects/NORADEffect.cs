@@ -29,12 +29,12 @@ public class NORADEffect : Effect
 
     async void StartPlacement()
     {
-        SelectionManager<Country> selection = new(Game.Countries.Where(country => country.Influence(USA) > 0), 
+        SelectionManager<Country> selectionManager = new(Game.Countries.Where(country => country.Influence(USA) > 0), 
             country => country.AdjustInfluence(USA, 1));
 
-        while (selection.Selected.Count() == 0)
-            await selection.Selection;
+        while (selectionManager.Selected.Count() == 0)
+            await selectionManager.Selection;
 
-        selection.Close();
+        selectionManager.Close();
     }
 }

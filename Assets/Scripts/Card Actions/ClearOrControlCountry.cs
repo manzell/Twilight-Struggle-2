@@ -13,7 +13,7 @@ public class ClearOrControlCountry : PlayerAction
 
     protected override Task Action()
     {
-        Faction faction = Card.Faction ?? Player.faction;
+        Faction faction = Card.Faction ?? Player.Faction;
         Country country = countryData.country; 
 
         if(action == CountryAction.Control || action == CountryAction.Both)

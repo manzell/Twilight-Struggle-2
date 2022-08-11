@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
 using System.Linq;
 using System.Threading.Tasks;
 
 public class Space : PlayerAction
 {
+    public static event Action<SpaceAttempt> prepareSpaceAttempt, spaceAttempt;
     [SerializeField] SpaceRace spaceRace;
 
-    protected override Task Action()
+    protected async override Task Action()
     {
         SpaceStage stage = spaceRace.NextStage(Player);
         SpaceAttempt attempt = new(stage, Player);
@@ -17,13 +19,13 @@ public class Space : PlayerAction
         if (attempt.successful)
             stage.Accomplish(Player);
 
-        return Task.CompletedTask;
+        await attempt.spaceCompletion.Task;
     }
 
     public override bool Can(Player player, Card card)
     {
         if (card == null || card.Data is ScoringCard) return false;
-        else return modifiedOpsValue >= spaceRace.NextStage(player).requiredOps &&
+        else return modifiedOpsValue >= spaceRace.NextStage(player).RequiredOps &&
             spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.player == player && attempt.turn == Phase.GetCurrent<Turn>()) < spaceRace.spaceRaceTurnAttemptLimit[player];
     }
 
@@ -32,14 +34,16 @@ public class Space : PlayerAction
 
     public class SpaceAttempt
     {
+        public TaskCompletionSource<SpaceAttempt> spaceCompletion = new();
         public SpaceStage stage;
         public Roll roll;
         public Player player;
         public Turn turn; 
-        public bool successful => roll.Value <= stage.requiredRoll;
+        public bool successful => roll.Value <= stage.RequiredRoll;
 
         public SpaceAttempt(SpaceStage stage, Player player)
         {
+            prepareSpaceAttempt?.Invoke(this); 
             this.stage = stage;
             this.player = player;
             
@@ -47,6 +51,7 @@ public class Space : PlayerAction
             turn = Phase.GetCurrent<Turn>(); 
 
             Debug.Log($"{player.name} attempts {stage.name}. {player.name} rolls a {roll.Value} and {(this.successful ? "succeeds" : "fails")}.");
+            spaceAttempt?.Invoke(this); 
         }
     }
 }

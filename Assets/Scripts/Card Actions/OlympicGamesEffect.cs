@@ -9,8 +9,8 @@ public class OlympicGamesEffect : PlayerAction
     [SerializeField] int sponsorBonus = 2;
     protected override Task Action()
     {
-        twilightStruggle.UI.UI_Message.SetMessage($"{Player.name} hosts the Olympics. {Player.enemyPlayer.name}, Participate or Boycott?");
-        Participate(Player.enemyPlayer);
+        twilightStruggle.UI.UI_Message.SetMessage($"{Player.name} hosts the Olympics. {Player.Enemy.name}, Participate or Boycott?");
+        Participate(Player.Enemy);
         // Prompt Opponent to Participate or Boycott
         // For now we'll implement Boycott but they'll be no way to trigger it. 
 
@@ -28,10 +28,10 @@ public class OlympicGamesEffect : PlayerAction
             opponentRoll = Random.Range(0, 6) + 1;             
         }
 
-        Player winningPlayer = roll > opponentRoll ? opponent.enemyPlayer : opponent;
+        Player winningPlayer = roll > opponentRoll ? opponent.Enemy : opponent;
         int winningRoll = Mathf.Max(roll, opponentRoll);
 
-        twilightStruggle.UI.UI_Message.SetMessage($"{winningPlayer.name} wins {winningRoll} Gold Medals to {winningPlayer.enemyPlayer.name}'s {Mathf.Min(roll, opponentRoll)}. " +
+        twilightStruggle.UI.UI_Message.SetMessage($"{winningPlayer.name} wins {winningRoll} Gold Medals to {winningPlayer.Enemy.name}'s {Mathf.Min(roll, opponentRoll)}. " +
             $"{winningPlayer.name} is awarded {VPAward} VPs"); 
         winningPlayer.AdjustVP(VPAward); 
     }

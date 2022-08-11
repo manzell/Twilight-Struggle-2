@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using System;
+using System.Linq; 
 using Sirenix.OdinInspector; 
 
 public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IHighlightable, IPointerClickHandler
@@ -63,13 +64,11 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
             parent = transform.parent;
             transform.SetParent(parent.parent); 
             canvas.blocksRaycasts = false; 
-            canvas.alpha = 0.5f; 
+            canvas.alpha = 0.5f;
+            transform.position += Vector3.forward; 
         }
 
-        // Need a way to determine if a Selection Manager is open
-        // Maybe route this through the Game/Phase ActionTask Completion Source? 
-        // Task is AWAITED by StartActionRound, maybe that can turn on the task awaiting; 
-        if(Phase.GetCurrent<ActionRound>() != null)
+        if(Game.ActionChoice != null)
         {
             foreach (PlayerAction action in availableActions)
             {
@@ -78,10 +77,13 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
             }
 
             selectionManager = new(availableActions);
-            PlayerAction p = await selectionManager.Selection;
+            PlayerAction nextAction = await selectionManager.Selection;
             selectionManager.Close();
-            await p.Event();
-            Game.actionChoice.SetResult(p);
+
+            nextAction.SetPlayer(Game.Players.First(player => player.hand.Contains(card))); // whichever/whomeverhad the card is the player.
+            await nextAction.Event();
+
+            Game.SetActionResult(nextAction);
         }
     }
 
@@ -89,13 +91,14 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        selectionManager?.Close(); 
+        selectionManager?.Close();
 
         if (TryGetComponent(out CanvasGroup canvas))
         {
             canvas.blocksRaycasts = true;
             canvas.alpha = 1f;
-            transform.SetParent(parent, false); 
+            transform.SetParent(parent, false);
+            transform.position += Vector3.back; 
         }
     }
 

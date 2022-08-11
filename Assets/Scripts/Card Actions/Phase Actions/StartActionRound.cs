@@ -10,7 +10,8 @@ public class StartActionRound : PhaseAction
         (phase as ActionRound).SetActionRoundStart(this);
 
         twilightStruggle.UI.UI_Message.SetMessage($"Play {(phase as ActionRound).phasingPlayer.name} Action Round");
-        await Game.actionChoice.Task;
-        Game.ResetActionSource(); 
+        Game.NewActionChoice(); 
+        await Game.ActionChoice; // <- this is called only once an Action Gets Triggered from a Card Drag Drop. 
+        Game.ResetActionChoice(null); 
     }
 }

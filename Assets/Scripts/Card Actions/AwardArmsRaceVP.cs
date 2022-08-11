@@ -9,9 +9,9 @@ public class AwardArmsRaceVP : PlayerAction
     protected override Task Action()
     {
         Debug.Log($"Event({Card.name}, {Player.name}) received");
-        if (Player.milOps > Player.enemyPlayer.milOps && Player.milOps >= Game.DEFCON)
+        if (Player.milOps > Player.Enemy.milOps && Player.milOps >= Game.DEFCON)
             Player.AdjustVP(3);
-        else if (Player.milOps > Player.enemyPlayer.milOps)
+        else if (Player.milOps > Player.Enemy.milOps)
             Player.AdjustVP(1);
 
         return Task.CompletedTask; 

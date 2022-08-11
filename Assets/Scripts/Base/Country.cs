@@ -11,7 +11,7 @@ public class Country : SerializedMonoBehaviour, ISelectable
     [SerializeField] CountryData data;
     [SerializeField] UI_Country ui;
 
-    public Dictionary<Faction, int> influence;
+    Dictionary<Faction, int> influence;
     public List<Effect> ongoingEffects = new();
     public List<Modifier> modifiers = new();
 
@@ -22,7 +22,7 @@ public class Country : SerializedMonoBehaviour, ISelectable
     public Faction Control => Mathf.Abs(Influence(Game.Players.First()) - Influence(Game.Players.Last())) >= Stability ? influence.Keys.OrderByDescending(f => influence[f]).First() : null;
     public int Stability => data.stability;
     public bool Battleground => data.battleground;
-    public int Influence(Player player) => influence.TryGetValue(player.faction, out int inf) ? inf : 0;
+    public int Influence(Player player) => influence.TryGetValue(player.Faction, out int inf) ? inf : 0;
     public int Influence(Faction faction) => influence.TryGetValue(faction, out int inf) ? inf : 0;
 
     public bool Can(PlayerAction action) => ongoingEffects.All(effect => effect.Test(action));
