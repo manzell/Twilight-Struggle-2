@@ -13,6 +13,7 @@ public class UI_War : MonoBehaviour
     [SerializeField] Button confirmButton;
 
     TaskCompletionSource<War.WarAttempt> task;
+    War.WarAttempt attempt; 
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class UI_War : MonoBehaviour
 
     public void Setup(War.WarAttempt attempt)
     {
+        this.attempt = attempt;
         header.text = attempt.war.Card.name; 
         roll.text = attempt.roll.Value.ToString();
         required.text = attempt.rollRequired.ToString(); 
@@ -34,15 +36,14 @@ public class UI_War : MonoBehaviour
             awards.Add($"+{attempt.war.MilOps} {(attempt.war.MilOps == 1 ? "MilOp" : "MilOps")}");
 
         vpAward.text = $"{attempt.player.name} {awards.Implode(",")}";
-        vpAward.color = attempt.player.faction.controlColor;
+        vpAward.color = attempt.player.Faction.controlColor;
 
-        task = attempt.warCompletion;
         warPanel.SetActive(true);
     }
     
     public void Close()
     {
-        task.SetResult(null);
+        attempt.Close(); 
         warPanel.SetActive(false);
     }
 }

@@ -33,8 +33,9 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
 
     public void Setup(Country country)
     {
-        this.country = country; 
-        gameObject.name = country.name; 
+        this.country = country;
+        country.SetUI(this);
+        gameObject.name = country.name;
         countryName.text = country.name;
         countryStability.text = country.Stability.ToString();
         battlegroundIndicator.color = country.Battleground ? Color.red : Color.black;
@@ -46,7 +47,7 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
 
     public void UpdateUI()
     {
-        usInfluence.text = country.Influence(USA) == 0 ? string.Empty : country.Influence(USA).ToString(); 
+        usInfluence.text = country.Influence(USA) == 0 ? string.Empty : country.Influence(USA).ToString();
         ussrInfluence.text = country.Influence(USSR) == 0 ? string.Empty : country.Influence(USSR).ToString();
 
         usInfluence.color = country.Control == USA.Faction ? Color.white : USA.Faction.controlColor;
@@ -56,36 +57,36 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
     }
 
     public void Show() => highlight.gameObject.SetActive(true);
-    public void Hide() => highlight.gameObject.SetActive(false); 
+    public void Hide() => highlight.gameObject.SetActive(false);
 
-    public void SetHighlight(Color color) 
+    public void SetHighlight(Color color)
     {
-        lastColor = highlight.color; 
-        highlight.color = color; 
+        lastColor = highlight.color;
+        highlight.color = color;
     }
 
-    public void ResetHighlight() 
+    public void ResetHighlight()
     {
-        Color c = highlight.color; 
+        Color c = highlight.color;
         highlight.color = lastColor;
         lastColor = c;
     }
 
-    public void ClearHighlight() 
-    { 
-        highlight.color = Color.clear; 
+    public void ClearHighlight()
+    {
+        lastColor = Color.clear;
+        highlight.color = Color.clear;
     }
 
-    public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(country);
-    public void OnPointerEnter(PointerEventData eventData) => SetHighlight(Color.yellow);
+    public void OnPointerClick(PointerEventData eventData)  => onClickHandler?.Invoke(country);
+    public void OnPointerEnter(PointerEventData eventData) { if (highlight.color.a > 0) SetHighlight(Color.yellow); }
     public void OnPointerExit(PointerEventData eventData) => ResetHighlight();
 }
 
 public interface ISelectable
 {
-    public event Action<ISelectable> onClick;
-    public void OnSelectable();
-    public void RemoveSelectable(); 
+    public event Action<ISelectable> selectionEvent;
+    public abstract void Select(); 
 }
 
 public interface IHighlightable

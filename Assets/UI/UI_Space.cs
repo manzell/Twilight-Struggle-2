@@ -25,7 +25,7 @@ public class UI_Space : MonoBehaviour
         roll.text = attempt.roll.Value.ToString();
         outcome.text = attempt.successful ? "SUCCESS" : "FAILURE";
         if (attempt.successful)
-            outcome.color = attempt.player.faction.controlColor;
+            outcome.color = attempt.player.Faction.controlColor;
 
         task = attempt.spaceCompletion;
         spacePanel.SetActive(true);

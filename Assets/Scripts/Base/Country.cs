@@ -16,6 +16,7 @@ public class Country : SerializedMonoBehaviour, ISelectable
     public List<Modifier> modifiers = new();
 
     public CountryData Data => data;
+    public UI_Country UI => ui; 
     public List<Continent> Continents => data.continents;
     public Faction AdjacentSuperpower => data.adjacentSuperower;
     public List<CountryData> Neighbors => data.neighbors;
@@ -26,9 +27,10 @@ public class Country : SerializedMonoBehaviour, ISelectable
     public int Influence(Faction faction) => influence.TryGetValue(faction, out int inf) ? inf : 0;
 
     public bool Can(PlayerAction action) => ongoingEffects.All(effect => effect.Test(action));
-    
+
+    public void Select() { }
     public event Action onInfluencePlacementEvent;
-    public event Action<ISelectable> onClick
+    public event Action<ISelectable> selectionEvent
     {
         add { ui.onClickHandler += value; }
         remove { ui.onClickHandler -= value; }
@@ -64,6 +66,8 @@ public class Country : SerializedMonoBehaviour, ISelectable
             onInfluencePlacementEvent?.Invoke();
         }
     }
+
+    public void SetUI(UI_Country ui) => this.ui = ui; 
 
     public void OnSelectable() { ui.SetHighlight(Color.red); ui.Show(); }
     public void RemoveSelectable() { ui.ClearHighlight(); ui.Hide(); }

@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+using System.Threading.Tasks;
+
+public class UNEffect : PlayerAction
+{
+    [SerializeField] Place placeEffect;
+
+    public override async Task Action()
+    {
+        SelectionManager<Card> selectionManager = new(Player.hand.Where(card => card.Faction == Player.Faction.enemyFaction));
+
+        PlayCard playCard = new PlayCard();
+        Card card = await selectionManager.Selection; 
+        playCard.SetCard(card);
+        playCard.RemoveAction(typeof(TriggerEvent));
+        selectionManager.Close();
+
+        await playCard.Event(this); 
+    }
+}

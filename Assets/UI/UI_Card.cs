@@ -10,15 +10,16 @@ using Sirenix.OdinInspector;
 
 public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IHighlightable, IPointerClickHandler
 {
+    public static event Action<Player, Card> cardDragEvent;
+    public static event Action cardEndDragEvent; 
+
     public Card card;
     [SerializeField] TextMeshProUGUI cardTitle, cardText, cardOps;
     [SerializeField] Image backgroundImage, cardImage, factionIcon;
     [SerializeField] GameObject highlight;
-    [SerializeField] List<PlayerAction> availableActions;
-    public SelectionManager<PlayerAction> selectionManager { get; private set; }
 
-    public event Action<Card> onClickHandler;
     public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(card);
+    public event Action<Card> onClickHandler;
 
     public void Setup(Card card)
     {
@@ -53,7 +54,7 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
 
     Vector3 beginDragPosition;
     Transform parent; 
-    public async void OnBeginDrag(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
         eventData.selectedObject = gameObject; 
         beginDragPosition = transform.position;
@@ -65,41 +66,48 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
             transform.SetParent(parent.parent); 
             canvas.blocksRaycasts = false; 
             canvas.alpha = 0.5f;
-            transform.position += Vector3.forward; 
         }
 
+        cardDragEvent?.Invoke(UI_PlayerBoard.currentPlayer, card);
+
+        /*
+        // Move this out - doesn't really belong in the CARD UI -> This has to do a "Display Action Choice Event Trigger" and we link the show of the ActionChoiceUI 
         if(Game.ActionChoice != null)
         {
             foreach (PlayerAction action in availableActions)
             {
+                action.SetPlayer(UI_PlayerBoard.currentPlayer); // The player is whichever player's hand we're showing NO MATTER WHERE THE DRAG STARTS
                 action.SetCard(card);
-                action.SetPlayer(FindObjectOfType<UI_Hand>().currentPlayer);
             }
 
-            selectionManager = new(availableActions);
-            PlayerAction nextAction = await selectionManager.Selection;
-            selectionManager.Close();
+            // Do this on every drag start, or simple make the thing visible? For now we create it fresh. 
+            if(availableActions.Count(action => action.Can(action.Player, action.Card)) > 0)
+            {
+                selectionManager = new(availableActions.Where(action => action.Can(action.Player, action.Card)));
 
-            nextAction.SetPlayer(Game.Players.First(player => player.hand.Contains(card))); // whichever/whomeverhad the card is the player.
-            await nextAction.Event();
-
-            Game.SetActionResult(nextAction);
+                //PlayerAction nextAction;
+                await selectionManager.Selection;
+                selectionManager.Close();
+                
+                //await nextAction.Event();
+                //Game.SetActionResult(nextAction); // This finally ends a StartActionRound I think.
+            } 
         }
+        */
     }
 
     public void OnDrag(PointerEventData eventData) => transform.position += (Vector3)eventData.delta; 
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        selectionManager?.Close();
-
         if (TryGetComponent(out CanvasGroup canvas))
         {
             canvas.blocksRaycasts = true;
             canvas.alpha = 1f;
             transform.SetParent(parent, false);
-            transform.position += Vector3.back; 
         }
+
+        cardEndDragEvent?.Invoke(); 
     }
 
     public void SetHighlight(Color color)

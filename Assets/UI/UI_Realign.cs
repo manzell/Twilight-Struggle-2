@@ -12,6 +12,8 @@ public class UI_Realign : MonoBehaviour
     [SerializeField] TextMeshProUGUI friendlyHeader, enemyHeader; 
     [SerializeField] Button confirmButton;
 
+    Realign.RealignAttempt attempt; 
+
     TaskCompletionSource<Realign.RealignAttempt> task;
 
     private void Awake()
@@ -21,23 +23,24 @@ public class UI_Realign : MonoBehaviour
 
     public void Setup(Realign.RealignAttempt attempt)
     {
+        this.attempt = attempt; 
         header.text = $"{attempt.player.name} Realign in {attempt.country.name}";
 
         friendlyHeader.text = $"{attempt.player.name} Roll"; 
         friendlyRoll.text = attempt.friendlyRoll.Value.ToString();
-        friendlyRoll.color = attempt.player.faction.controlColor;
+        friendlyRoll.color = attempt.player.Faction.controlColor;
         friendlyMod.text = attempt.friendlyMod.ToString();
 
         enemyHeader.text = $"{attempt.player.Enemy.name} Roll"; 
         enemyRoll.text = attempt.enemyRoll.Value.ToString();
-        enemyRoll.color = attempt.player.Enemy.faction.controlColor; 
+        enemyRoll.color = attempt.player.Enemy.Faction.controlColor; 
         enemyModifier.text = attempt.enemyMod.ToString();
 
         finalInfluenceChange.text = "-" + attempt.influenceToRemove.ToString(); 
         if (attempt.influenceToRemove > 0)
-            finalInfluenceChange.color = attempt.player.Enemy.faction.controlColor;
+            finalInfluenceChange.color = attempt.player.Enemy.Faction.controlColor;
         if (attempt.influenceToRemove < 0)
-            finalInfluenceChange.color = attempt.player.faction.controlColor;
+            finalInfluenceChange.color = attempt.player.Faction.controlColor;
 
         task = attempt.realignCompletion;
         realignPanel.SetActive(true);
@@ -45,7 +48,7 @@ public class UI_Realign : MonoBehaviour
 
     public void Close()
     {
-        task.SetResult(null);
+        task.SetResult(attempt);
         realignPanel.SetActive(false);
     }
 }

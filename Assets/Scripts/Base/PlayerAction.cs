@@ -5,27 +5,44 @@ using System;
 using System.Linq;
 using Sirenix.OdinInspector;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 public abstract class PlayerAction : ISelectable
 {
+    public static UI_SelectionManager ui => GameObject.FindObjectOfType<UI_SelectionManager>();
+
     Card card;
     Player player;
-    UI_ActionSelection ui;
     protected PlayerAction previousAction;
 
-    public List<Effect> requiredEffects = new();
-    public List<Effect> prohibitedEffects = new();
-
+    public string name;
+    public int modifiedOpsValue => card.ops + Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
+   
     public Card Card => card;
     public Player Player => player;
-    public int modifiedOpsValue => card.ops + Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
+    public List<Effect> requiredEffects = new();
+    public List<Effect> prohibitedEffects = new();
+    public TaskCompletionSource<Card> cardSubmit;
+    public event Action<ISelectable> selectionEvent;
 
-    protected abstract Task Action();
+    public void Select()
+    {
+        selectionEvent?.Invoke(this);
+        cardSubmit.SetResult(card);
+    }
+    public abstract Task Action();
 
-    public virtual bool Can(Player player, Card card = null) => requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect)) &&
-            !prohibitedEffects.Any(prohibitedEffects => Game.activeEffects.Contains(prohibitedEffects));
+    public PlayerAction()
+    {
+        name = GetType().ToString(); 
+        cardSubmit = new();
+    }
 
-    public virtual Task Event() => Event(player, card);
+    public virtual bool Can(Player player, Card card) => Can();
+    public virtual bool Can() => requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect)) &&
+        !prohibitedEffects.Any(prohibitedEffects => Game.activeEffects.Contains(prohibitedEffects));
+
+    public Task Event() => Action();
     public virtual Task Event(PlayerAction previousAction)
     {
         this.previousAction = previousAction; 
@@ -33,28 +50,42 @@ public abstract class PlayerAction : ISelectable
     }
     public virtual Task Event(Player player) => Event(player, card);
     public virtual Task Event(Card card) => Event(player, card);
-    public virtual Task Event(Player player, Card card)
+    public async virtual Task Event(Player player, Card card)
     {
         this.player = player;
         this.card = card;
+        /*
+         * Cards that Impact Ops Values dynamically: 
+
+        // Subjective Cumulative Turn Modifier
+        * Containment [+1 all ops max: 4]
+        * Red Scare/Purge [-1 All Ops min: 1]
+        * Brezhnev [+1 all ops max: 4]
+
+        // Conditional Card Modifier
+        * The China Card [+1 all ops whill all asia]
+
+        // Conditional TUrn Modifier
+        * Vietnam Revolts [+1 all ops while all se asia]
+        */
 
         // Right here we check for ALL OPS Modifiers (Brezhnev, Containment, RedScare Purge)
         // We do this once and forget it. 
 
-        return Action();
+        // Coup Roll Adjustments
+        //*Latin American Death Squads[+1 Coup Roll friendly, -1 Coup Roll Unfriendly rest of Turn in CA / SA]
+        //* SALT[-1 all Coup Rolls rest of Turn]
+
+        // Realignment Roll Adjustments:
+        //* Iran - Contra Scandal[US - 1 Realignment Rolls]
+
+        //>> DONT FORGET: Shuttle Diplomacy and Formossan Resolution
+
+        await Action();
     }
 
     public virtual PlayerAction Clone() => (PlayerAction)this.MemberwiseClone();
 
-    public void SetCard(Card card) => this.card = card;
-    public void SetPlayer(Player player) => this.player = player;
-
-    public event Action<ISelectable> onClick
-    {
-        add { ui.activationHandler += value; }
-        remove { ui.activationHandler -= value; }
-    }
-
-    public void OnSelectable() => (ui = GameObject.FindObjectOfType<UI_ActionSelection>()).Summon(this);
-    public void RemoveSelectable() => ui.Dismiss(this); 
+    public virtual void SetCard(Card card) => this.card = card;
+    public virtual void SetPlayer(Player player) => this.player = player;
 }

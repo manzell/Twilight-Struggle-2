@@ -139,6 +139,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -205,11 +221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -39.5
+      value: -48.6
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 218.2
+      value: 223.2
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -372,6 +388,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -687,6 +719,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -878,6 +926,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -889,7 +1196,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -902,7 +1209,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -932,6 +1239,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1112,6 +1435,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1123,7 +1705,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1136,7 +1718,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1904,8 +2486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_SizeDelta: {x: 0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &290143649
 MonoBehaviour:
@@ -2136,6 +2718,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2611,6 +3209,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2922,6 +3536,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2933,7 +3806,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2946,7 +3819,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3094,6 +3967,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355702091}
+  m_CullTransparentMesh: 1
+--- !u!1 &367490944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367490945}
+  - component: {fileID: 367490947}
+  - component: {fileID: 367490946}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &367490945
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367490944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 425959985}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &367490946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367490944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 5
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278225407
+  m_fontColor: {r: 1, g: 0.5360303, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 80
+  m_fontSizeBase: 80
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &367490947
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367490944}
   m_CullTransparentMesh: 1
 --- !u!1001 &370062511
 PrefabInstance:
@@ -3331,116 +4339,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 374154025}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &394515235
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 394515236}
-  - component: {fileID: 394515240}
-  - component: {fileID: 394515239}
-  - component: {fileID: 394515238}
-  - component: {fileID: 394515237}
-  m_Layer: 5
-  m_Name: US Headline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &394515236
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394515235}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 442482317}
-  - {fileID: 1987793181}
-  m_Father: {fileID: 888837130}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 870, y: -540}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &394515237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394515235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &394515238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394515235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5270c43bdeceace4ab24b1004a5a3c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faction: {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
-  cardName: {fileID: 442482318}
-  header: {fileID: 1987793182}
---- !u!114 &394515239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394515235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.27735847, g: 0.3490764, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &394515240
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394515235}
-  m_CullTransparentMesh: 1
 --- !u!1001 &420508821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3457,6 +4355,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3561,6 +4475,99 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 420508821}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &425959984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425959985}
+  - component: {fileID: 425959987}
+  - component: {fileID: 425959989}
+  - component: {fileID: 425959988}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &425959985
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425959984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 367490945}
+  m_Father: {fileID: 1906205982}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &425959987
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425959984}
+  m_CullTransparentMesh: 1
+--- !u!114 &425959988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425959984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &425959989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425959984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.01
 --- !u!1001 &426112651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3797,141 +4804,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 436773430}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &442482316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 442482317}
-  - component: {fileID: 442482319}
-  - component: {fileID: 442482318}
-  m_Layer: 5
-  m_Name: Card Name
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &442482317
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442482316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 394515236}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45.415}
-  m_SizeDelta: {x: 0, y: -90.83}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &442482318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442482316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278239743
-  m_fontColor: {r: 1, g: 0.75853676, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &442482319
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442482316}
-  m_CullTransparentMesh: 1
 --- !u!114 &454639713 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3779938404839355, guid: 6424021cef3485440b5fb6898d447504, type: 3}
@@ -4273,6 +5145,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -4284,7 +5415,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4297,7 +5428,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4648,6 +5779,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4764,6 +5911,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4950,11 +6113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 201
+      value: 198.5
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 22.5
+      value: 33.3
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5477,6 +6640,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -5488,7 +6910,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5501,7 +6923,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6266,6 +7688,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6277,7 +7958,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6290,7 +7971,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6304,141 +7985,6 @@ MonoBehaviour:
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 2
   opponentEventTriggered: 0
---- !u!1 &792805703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 792805704}
-  - component: {fileID: 792805706}
-  - component: {fileID: 792805705}
-  m_Layer: 5
-  m_Name: Card Name
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &792805704
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792805703}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1019323668}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: 0, y: -90}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &792805705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792805703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278239743
-  m_fontColor: {r: 1, g: 0.75853676, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &792805706
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792805703}
-  m_CullTransparentMesh: 1
 --- !u!1001 &804231664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6719,6 +8265,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd526b6d4a3099d4d926ebfbb33f7f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: hand
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   faction: {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
   victoryPoints: 0
   milOps: 0
@@ -6798,6 +8365,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6809,7 +8635,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6822,7 +8648,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6852,6 +8678,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6967,71 +8809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &888837129
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 888837130}
-  - component: {fileID: 888837131}
-  m_Layer: 5
-  m_Name: Headline Area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &888837130
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888837129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 394515236}
-  - {fileID: 1019323668}
-  m_Father: {fileID: 1671522044}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &888837131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888837129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &895070594 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1065241876399909011, guid: cf1bc3701f32e8e499c53dc137ad0b1f, type: 3}
@@ -7163,143 +8940,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 915975154}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &932754838
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 932754839}
-  - component: {fileID: 932754841}
-  - component: {fileID: 932754840}
-  m_Layer: 5
-  m_Name: Header (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &932754839
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932754838}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1019323668}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 35, y: 0}
-  m_SizeDelta: {x: 70, y: -180}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &932754840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932754838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'USSR
-
-    HEADLINE'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &932754841
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932754838}
-  m_CullTransparentMesh: 1
 --- !u!1001 &936480037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7608,6 +9248,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -7619,7 +9518,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7632,7 +9531,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7893,116 +9792,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1017314669}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1019323667
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1019323668}
-  - component: {fileID: 1019323672}
-  - component: {fileID: 1019323671}
-  - component: {fileID: 1019323670}
-  - component: {fileID: 1019323669}
-  m_Layer: 5
-  m_Name: USSR Headline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1019323668
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019323667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 932754839}
-  - {fileID: 792805704}
-  m_Father: {fileID: 888837130}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -540}
-  m_SizeDelta: {x: 180, y: 260}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1019323669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019323667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
---- !u!114 &1019323670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019323667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5270c43bdeceace4ab24b1004a5a3c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faction: {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
-  cardName: {fileID: 792805705}
-  header: {fileID: 932754840}
---- !u!114 &1019323671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019323667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.14752577, b: 0.15852334, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16d53b446f76b434fa3f561b8432cd62, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1019323672
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019323667}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1033310937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8119,6 +9908,96 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1033310937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1052770991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052770992}
+  - component: {fileID: 1052770994}
+  - component: {fileID: 1052770993}
+  - component: {fileID: 1052770995}
+  m_Layer: 5
+  m_Name: Turn/AR Tracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1052770992
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052770991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1547807450}
+  - {fileID: 1945796827}
+  m_Father: {fileID: 1671522044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -20, y: -75}
+  m_SizeDelta: {x: 180, y: 60}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &1052770993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052770991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1052770994
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052770991}
+  m_CullTransparentMesh: 1
+--- !u!114 &1052770995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052770991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41c85d7e391ac548967a7eac55ce995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnNumber: {fileID: 1144668476}
+  arMarker: {fileID: 1944203328}
 --- !u!114 &1053470750 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1555504102090781272, guid: 733a99484034c134390bef4173dc1bc6, type: 3}
@@ -8499,6 +10378,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8619,6 +10514,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8843,6 +10754,141 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1139810196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1144668474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144668475}
+  - component: {fileID: 1144668477}
+  - component: {fileID: 1144668476}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1144668475
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144668474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1547807450}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1144668476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144668474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '-'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1144668477
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144668474}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1155210956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8859,6 +10905,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9393,6 +11455,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9760,6 +11838,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9996,6 +12090,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10288,7 +12398,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 2|CheckHeldCards, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|AwardMilOps, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|UpgradeDefcon, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -10297,7 +12425,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 2|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 5|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -10310,7 +12438,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -10337,6 +12465,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10403,11 +12547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.9
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10453,6 +12597,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10569,6 +12729,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10883,7 +13059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1474137978
 Transform:
   m_ObjectHideFlags: 0
@@ -10914,10 +13090,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1671522045}
-    - {fileID: 11400000, guid: 03a9f55129c82a04d90ffbe7b4ed6263, type: 2}
-    - {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -10945,16 +13118,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 2|PromptHeadline, Assembly-CSharp
-    - Name: ui_headline
-      Entry: 10
-      Data: 0
-    - Name: USA
-      Entry: 10
-      Data: 1
-    - Name: USSR
-      Entry: 10
-      Data: 2
+      Data: 2|StartHeadlinePhase, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11150,6 +13314,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1500713960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1512089915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3926231841926607035, guid: b339106297930234abc232031f39c086, type: 3}
+  m_PrefabInstance: {fileID: 1175888638691097517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1529650102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11345,6 +13520,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11445,6 +13636,96 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1544267849}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547807449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547807450}
+  - component: {fileID: 1547807452}
+  - component: {fileID: 1547807451}
+  - component: {fileID: 1547807453}
+  m_Layer: 5
+  m_Name: Turn Number
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1547807450
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547807449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1144668475}
+  m_Father: {fileID: 1052770992}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1547807451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547807449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1547807452
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547807449}
+  m_CullTransparentMesh: 1
+--- !u!114 &1547807453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547807449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1549814492
 GameObject:
   m_ObjectHideFlags: 0
@@ -11461,7 +13742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1549814493
 Transform:
   m_ObjectHideFlags: 0
@@ -11612,6 +13893,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11803,6 +14100,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -11814,7 +14370,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11827,7 +14383,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -11917,6 +14473,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -11928,7 +14743,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11941,7 +14756,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -12135,6 +14950,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd526b6d4a3099d4d926ebfbb33f7f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: hand
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   faction: {fileID: 11400000, guid: 6212f50e26f7dc943abdd65235fdf9ff, type: 2}
   victoryPoints: 0
   milOps: 0
@@ -12256,7 +15092,6 @@ GameObject:
   - component: {fileID: 1671522042}
   - component: {fileID: 1671522041}
   - component: {fileID: 1671522047}
-  - component: {fileID: 1671522045}
   - component: {fileID: 1671522048}
   - component: {fileID: 1671522049}
   - component: {fileID: 1671522050}
@@ -12346,17 +15181,18 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 314628649}
-  - {fileID: 47155622}
   - {fileID: 594899456}
   - {fileID: 772622888}
   - {fileID: 1543159379}
-  - {fileID: 888837130}
   - {fileID: 1260524750}
   - {fileID: 2537475126973731715}
   - {fileID: 1026828834310735990}
   - {fileID: 4411328097510455706}
   - {fileID: 4411328098243712690}
   - {fileID: 4411328096542730203}
+  - {fileID: 47155622}
+  - {fileID: 1906205982}
+  - {fileID: 1052770992}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12365,19 +15201,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1671522045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671522040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c26babab43355443b7d8992c2c25969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headlineArea: {fileID: 888837129}
 --- !u!114 &1671522047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12390,7 +15213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9bbaa0edd4744c92fba9aa88d640e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayer: {fileID: 1622063410}
   playerBoard: {fileID: 47155623}
   factionIcon: {fileID: 2030418708}
   factionName: {fileID: 328110253}
@@ -12424,6 +15246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSelectionPrefab: {fileID: 4866216237027037015, guid: d1ab217f529f33545bf48136d1b44ae8, type: 3}
+  cardPrefab: {fileID: 132722333249723475, guid: 39b406710abea554da962f85184669ec, type: 3}
   actionArea: {fileID: 772622887}
 --- !u!114 &1671522050
 MonoBehaviour:
@@ -12503,6 +15326,7 @@ MonoBehaviour:
   modifier: {fileID: 1175888638691097519}
   required: {fileID: 1175888638691097518}
   outcome: {fileID: 3708759280336486214}
+  vpAward: {fileID: 1512089915}
   confirmButton: {fileID: 4411328097067470119}
 --- !u!114 &1671522054
 MonoBehaviour:
@@ -13053,8 +15877,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -240, y: 50}
-  m_SizeDelta: {x: -520, y: 75}
+  m_AnchoredPosition: {x: -240, y: 0}
+  m_SizeDelta: {x: -520, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1746952651
 MonoBehaviour:
@@ -13218,6 +16042,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13510,6 +16350,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -13521,7 +16620,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13534,7 +16633,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13849,6 +16948,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14196,6 +17311,311 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1899864679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1906205981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906205982}
+  - component: {fileID: 1906205985}
+  - component: {fileID: 1906205983}
+  m_Layer: 5
+  m_Name: DEFCON
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1906205982
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906205981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 425959985}
+  m_Father: {fileID: 1671522044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -20, y: 20}
+  m_SizeDelta: {x: 90, y: 90}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &1906205983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906205981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf605ab580dd964796019a6b094430f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  border: {fileID: 0}
+  defcon: {fileID: 367490946}
+  degradeSound: {fileID: 0}
+  upgradeSound: {fileID: 0}
+--- !u!222 &1906205985
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906205981}
+  m_CullTransparentMesh: 1
+--- !u!1 &1944203326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1944203327}
+  - component: {fileID: 1944203329}
+  - component: {fileID: 1944203328}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1944203327
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944203326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1945796827}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1944203328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944203326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '-'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278913946
+  m_fontColor: {r: 0.6037736, g: 0.04215021, b: 0.04215021, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 40
+  m_fontSizeBase: 40
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 20, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1944203329
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944203326}
+  m_CullTransparentMesh: 1
+--- !u!1 &1945796826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945796827}
+  - component: {fileID: 1945796829}
+  - component: {fileID: 1945796828}
+  - component: {fileID: 1945796831}
+  - component: {fileID: 1945796830}
+  m_Layer: 5
+  m_Name: Action Round #
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1945796827
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945796826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1944203327}
+  m_Father: {fileID: 1052770992}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 60, y: 0}
+  m_SizeDelta: {x: -60, y: 58}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1945796828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945796826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1945796829
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945796826}
+  m_CullTransparentMesh: 1
+--- !u!114 &1945796830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945796826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1945796831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945796826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: 1}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1949828919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14462,143 +17882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1987793180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1987793181}
-  - component: {fileID: 1987793183}
-  - component: {fileID: 1987793182}
-  m_Layer: 5
-  m_Name: Header
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1987793181
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987793180}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 394515236}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 35, y: 0}
-  m_SizeDelta: {x: 70, y: -180}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1987793182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987793180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'USA
-
-    HEADLINE'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1987793183
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987793180}
-  m_CullTransparentMesh: 1
 --- !u!114 &1990316032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1065241877451082001, guid: cf1bc3701f32e8e499c53dc137ad0b1f, type: 3}
@@ -14804,6 +18087,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14984,6 +18283,265 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
+    - Name: playAction
+      Entry: 7
+      Data: 3|PlayCard, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: PlayCard
+    - Name: requiredEffects
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: availableActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
+    - Name: requiredEffects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: TriggerEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place
+    - Name: requiredEffects
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: requiredCard
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -14995,7 +18553,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15008,7 +18566,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15241,6 +18799,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067945220987067990, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16000,7 +19574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3272348866738760991, guid: b339106297930234abc232031f39c086, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 175
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3272348866738760991, guid: b339106297930234abc232031f39c086, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16036,7 +19610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3272348866738760991, guid: b339106297930234abc232031f39c086, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 80
+      value: 67.5
       objectReference: {fileID: 0}
     - target: {fileID: 3272348866738760991, guid: b339106297930234abc232031f39c086, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16582,11 +20156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -215.9
+      value: -209.3
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 261.3
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

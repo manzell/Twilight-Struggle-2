@@ -16,7 +16,8 @@ public class Card : ISelectable
     public CardData Data => data;
     public Faction Faction => data.faction;
 
-    public event Action<ISelectable> onClick
+    public void Select() { }
+    public event Action<ISelectable> selectionEvent
     {
         add { ui.onClickHandler += value; }
         remove { ui.onClickHandler -= value; }
@@ -46,5 +47,6 @@ public class Card : ISelectable
     public bool CanEvent(Player player) => data.playActions.Count == 0 || data.playActions.All(effect => effect.Can(player, this));
 
     public void OnSelectable() => ui.SetHighlight(Color.yellow);
-    public void RemoveSelectable() => ui.ClearHighlight(); 
+    public void RemoveSelectable() => ui.ClearHighlight();
+
 }

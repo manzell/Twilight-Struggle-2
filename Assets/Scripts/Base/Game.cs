@@ -9,19 +9,16 @@ public class Game : MonoBehaviour
 {
     [SerializeField] Phase rootPhase;
 
-    static TaskCompletionSource<PlayerAction> actionChoice;
-
     public static int DEFCON = 5;
     public static Phase currentPhase;
     public static List<Effect> activeEffects = new();
     public static List<Modifier> modifiers = new();
     public static List<Player> Players { get; private set; }
     public static List<Country> Countries { get; private set; }
-    public static Task<PlayerAction> ActionChoice => actionChoice.Task; 
-    public static event Action<int> DEFCONAdjust;
+    public static event Action<int> OnDefconAdjust;
     public static event Action<Player, int> adjustMilOpsEvent, adjustVPevent;
-    public static event Action<Player, Card> cardDrawEvent;
-    public static event Action<Player, Card> cardPlayEvent;
+    public static event Action<Player, Card> CardDrawEvent;
+    public static event Action<Player, Card> CardPlayEvent;
 
     public static void AdjustVPEvent(Player player, int i) => adjustVPevent(player, i);
     public static void AdjustMilOpEvent(Player player, int i) => adjustMilOpsEvent(player, i);
@@ -50,10 +47,6 @@ public class Game : MonoBehaviour
         Application.Quit(); 
     }
 
-    public static void ResetActionChoice(TaskCompletionSource<PlayerAction> aC) => actionChoice = aC;
-    public static void NewActionChoice() => actionChoice = new();
-    public static void SetActionResult(PlayerAction action) { actionChoice.SetResult(action); }
-
     #region DEFCON
     public static void AdjustDEFCON(int d)
     {
@@ -64,7 +57,7 @@ public class Game : MonoBehaviour
         {
             Debug.Log($"{(newDefcon > oldDefcon ? "Upgrading" : "Degrading")} DEFCON by {Mathf.Abs(newDefcon - oldDefcon)}");
             DEFCON = newDefcon;
-            DEFCONAdjust?.Invoke(newDefcon - oldDefcon); 
+            OnDefconAdjust?.Invoke(newDefcon - oldDefcon); 
         }
     }
 
@@ -89,7 +82,7 @@ public class Game : MonoBehaviour
             player.hand.Add(card);
 
             Debug.Log($"{player} draws {card.name}");
-            cardDrawEvent?.Invoke(player, card);
+            CardDrawEvent?.Invoke(player, card);
         }
 
         return Task.CompletedTask; 
@@ -103,9 +96,7 @@ public class Game : MonoBehaviour
         drawDeck = drawDeck.OrderBy(c => UnityEngine.Random.value).ToList(); 
     }
 
-    public static void InvokePlayEvent(Player player, Card card) 
-    {
-        cardPlayEvent.Invoke(player, card); 
-    }
+    public static void InvokePlayEvent(Player player, Card card) => CardPlayEvent?.Invoke(player, card); 
+
     #endregion
 }

@@ -14,7 +14,7 @@ public class NORADEffect : Effect
 
     public override void Apply()
     {
-        Game.DEFCONAdjust += OnDEFCONAdjust;
+        Game.OnDefconAdjust += OnDEFCONAdjust;
         ActionRound.PhaseStartEvent += phase => trip = false; 
     }
 

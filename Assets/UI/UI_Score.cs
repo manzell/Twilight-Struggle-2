@@ -8,59 +8,55 @@ using System.Linq;
 
 public class UI_Score : MonoBehaviour
 {
+    ScoreCard.ScoringAttempt attempt;
+
     [SerializeField] GameObject scorePanel;
     [SerializeField] TextMeshProUGUI header; 
     [SerializeField] TextMeshProUGUI friendlyFaction, friendlyBGs, friendlyCountries, friendlyAdjacent;
     [SerializeField] TextMeshProUGUI enemyFaction, enemyBGs, enemyCountries, enemyAdjacent;
     [SerializeField] TextMeshProUGUI outcome;
 
-    TaskCompletionSource<ScoreCard> task;
-    ScoreCard scoring; 
-
     private void Awake()
     {
         ScoreCard.scoringEvent += Setup;
     }
 
-    public void Setup(ScoreCard scoring)
+    public void Setup(ScoreCard.ScoringAttempt attempt)
     {
-        this.scoring = scoring; 
-        header.text = $"{scoring.Player.name} scores {scoring.Continent}";
+        Player enemyPlayer = attempt.Player.Enemy;
+        int VP = attempt.VP(attempt.Player) - attempt.VP(enemyPlayer);
 
-        Player enemyPlayer = scoring.Player.Enemy; 
+        this.attempt = attempt;
 
-        friendlyFaction.text = scoring.Player.name;
-        friendlyFaction.color = scoring.Player.Faction.controlColor;
-        friendlyBGs.text = scoring.Battlegrounds[scoring.Player].ToString();
-        friendlyCountries.text = scoring.Continent.countries.Count(country => country.Control == scoring.Player.Faction).ToString();
-
+        header.text = $"{attempt.Player.name} scores {attempt.Continent.name}";
+        friendlyFaction.text = attempt.Player.name;
+        friendlyFaction.color = attempt.Player.Faction.controlColor;
+        friendlyBGs.text = attempt.Battlegrounds[attempt.Player].ToString();
+        friendlyCountries.text = attempt.CountryCount[attempt.Player].ToString();
+        friendlyAdjacent.text = attempt.AdjacentSuperpowers[attempt.Player].ToString(); 
         enemyFaction.text = enemyPlayer.name;
         enemyFaction.color = enemyPlayer.Faction.controlColor;
-        enemyBGs.text = scoring.Battlegrounds[enemyPlayer].ToString();
-        enemyCountries.text = scoring.Continent.countries.Count(country => country.Control == enemyPlayer.Faction).ToString();
+        enemyBGs.text = attempt.Battlegrounds[enemyPlayer].ToString();
+        enemyCountries.text = attempt.CountryCount[enemyPlayer].ToString();
+        enemyAdjacent.text = attempt.AdjacentSuperpowers[enemyPlayer].ToString();
 
-        int VP = scoring.VP(scoring.Player) - scoring.VP(enemyPlayer);
-
-        if (scoring.VP(scoring.Player) > scoring.VP(enemyPlayer))
+        if (VP > 0)
         {
-            outcome.text = $"{scoring.Player.name} {scoring.Continent.GetControlStatus(scoring.Player)} " +
-                $"(+{VP})";
-            outcome.color = scoring.Player.Faction.controlColor; 
+            outcome.text = $"{attempt.Player.name} {attempt.ControlStatus(attempt.Player)} (+{VP})";
+            outcome.color = attempt.Player.Faction.controlColor; 
         }
-        else if(scoring.VP(scoring.Player) < scoring.VP(enemyPlayer))
+        else if(VP < 0)
         {
-            outcome.text = $"{enemyPlayer.name} {scoring.Continent.GetControlStatus(enemyPlayer)} " +
-                $"(+{Mathf.Abs(VP)})";
+            outcome.text = $"{enemyPlayer.name} {attempt.ControlStatus(enemyPlayer)} (+{Mathf.Abs(VP)})";
             outcome.color = enemyPlayer.Faction.controlColor;
         }
 
-        task = scoring.scoringTask; 
         scorePanel.SetActive(true);
     }
 
     public void Close()
     {
-        task.SetResult(scoring);
+        attempt.Close(); 
         scorePanel.SetActive(false);
     }
 }

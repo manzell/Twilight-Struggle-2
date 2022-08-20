@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq; 
+using System.Linq;
+using Sirenix.OdinInspector; 
 
-public class Player : MonoBehaviour
+public class Player : SerializedMonoBehaviour
 {
     public Faction Faction => faction; 
     [SerializeField] Faction faction;

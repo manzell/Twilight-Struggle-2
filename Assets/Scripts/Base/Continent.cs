@@ -11,25 +11,16 @@ public class Continent : ScriptableObject
     public Color color;
     public List<Country> countries => Game.Countries.Where(country => country.Continents.Contains(this)).ToList();
 
-    [SerializeField]
-    public ControlStatus GetControlStatus(Player player)
+    public ControlStatus GetControlStatus(Player player, ScoreCard.ScoringAttempt attempt)
     {
-        int factionControlledCountries = countries.Count(country => country.Control == player.Faction);
-        int enemyControlledCountries = countries.Count(country => country.Control != null && country.Control == player.Faction); 
-        int factionBattlegrounds = countries.Count(country => country.Battleground && country.Control == player.Faction);
-        int enemyBattlegrounds = countries.Count(country => country.Battleground && country.Control != null && country.Control != player.Faction);
+        bool playerMoreBGs = attempt.Battlegrounds[player] > attempt.Battlegrounds[player.Enemy];
+        bool playerMoreCountries = attempt.CountryCount[player] > attempt.CountryCount[player.Enemy];
+        bool playerAnyNonBGs = attempt.countryCount[player].Any(country => country.Battleground == false); 
+        bool playerALLBgs = countries.Where(c => c.Battleground == true).All(c => c.Control == player.Faction);
 
-        Debug.Log($"{name} Control Status: {player.name}; Friendly {factionBattlegrounds}/{factionControlledCountries} Enemy {enemyBattlegrounds}/{enemyControlledCountries}");
-
-        if (factionBattlegrounds == countries.Count(country => country.Battleground) && factionControlledCountries > enemyControlledCountries)
-            return ControlStatus.Control;
-
-        if (factionControlledCountries > enemyControlledCountries && factionBattlegrounds > enemyBattlegrounds)
-            return ControlStatus.Domination;
-
-        if (factionControlledCountries > 0)
-            return ControlStatus.Presence;
-
-        return ControlStatus.None;
+        if (playerALLBgs && playerMoreCountries) return ControlStatus.Control;
+        else if (playerMoreBGs && playerMoreCountries && playerAnyNonBGs) return ControlStatus.Domination;
+        else if (attempt.CountryCount[player] > 0) return ControlStatus.Presence;
+        else return ControlStatus.None;
     }
 }

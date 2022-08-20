@@ -15,13 +15,15 @@ public class UI_Coup : MonoBehaviour
 
     private void Awake()
     {
-        Coup.prepareCoupEvent += Setup;
+        Coup.coupEvent += Setup;
     }
 
     Coup.CoupAttempt attempt; 
 
     public void Setup(Coup.CoupAttempt attempt)
     {
+        Debug.Log(attempt.player);
+        Debug.Log(attempt.country);
         this.attempt = attempt; 
         header.text = $"{attempt.player.name} Coup in {attempt.country}";
         opsValue.text = $"{attempt.ops}";
@@ -30,8 +32,8 @@ public class UI_Coup : MonoBehaviour
         enemyInfluenceRemoved.text = "-" + (attempt.enemyInfluenceRemoved > 0 ? attempt.enemyInfluenceRemoved.ToString() : string.Empty);
         friendlyInfluenceAdded.text = attempt.influenceToAdd > 0 ? attempt.influenceToAdd.ToString() : "-";
 
-        friendlyInfluenceAdded.color = attempt.player.faction.controlColor;
-        enemyInfluenceRemoved.color = attempt.player.Enemy.faction.controlColor; 
+        friendlyInfluenceAdded.color = attempt.player.Faction.controlColor;
+        enemyInfluenceRemoved.color = attempt.player.Enemy.Faction.controlColor; 
 
         task = attempt.coupCompletion; 
         coupPanel.SetActive(true);

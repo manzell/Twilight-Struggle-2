@@ -663,6 +663,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 1|Coup, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Coup
     - Name: requiredEffects
       Entry: 7
       Data: 2|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -687,25 +690,23 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 4|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|Realign, Assembly-CSharp
+      Data: 5|Realign, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Realign
     - Name: requiredEffects
-      Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
       Entry: 7
       Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -717,15 +718,37 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 8|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|Space, Assembly-CSharp
+      Data: 9|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space Race
     - Name: requiredEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -736,27 +759,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
-      Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: spaceRace
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|TriggerEvent, Assembly-CSharp
-    - Name: requiredEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -768,19 +770,14 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: cardSubmit
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
+      Data: 12|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 
-    - Name: triggerAfterEvent
+    - Name: spaceRace
       Entry: 6
       Data: 
     - Name: 
@@ -788,7 +785,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|Place, Assembly-CSharp
+      Data: 13|TriggerEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
     - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -810,6 +810,56 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 16|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: triggerAfterEvent
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|Place, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Place Ops
+    - Name: requiredEffects
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardSubmit
+      Entry: 7
+      Data: 20|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 8
       Data: 

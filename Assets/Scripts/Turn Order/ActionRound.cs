@@ -13,7 +13,7 @@ public class ActionRound : Phase
 
     public async override Task DoPhase(Phase parent)
     {
-        FindObjectOfType<UI_Hand>().SetPlayer(phasingPlayer);
+        UI_PlayerBoard.SetPlayer(phasingPlayer);
         await base.DoPhase(parent); 
     }
 
