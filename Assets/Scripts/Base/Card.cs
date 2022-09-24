@@ -39,7 +39,7 @@ public class Card : ISelectable
             if (i > 0)
                 await contextEvents[i].Event(contextEvents[i - 1]);
             else
-                await contextEvents[i].Event(player, this); 
+                await contextEvents[i].Event(player); 
         }
     }
 

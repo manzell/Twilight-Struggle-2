@@ -11,6 +11,7 @@ public class PlayCard : PlayerAction
     [SerializeField] Card requiredCard;
     bool opponentEventTriggered;
     SelectionManager<PlayerAction> selectionManager;
+    Card card;
 
     public PlayCard() { }
     public PlayCard(IEnumerable<PlayerAction> availableActions, Card requiredCard = null)
@@ -19,7 +20,18 @@ public class PlayCard : PlayerAction
         this.requiredCard = requiredCard; 
     }
 
-    public void Cancel() => selectionManager?.Close(); 
+    public void Cancel() => selectionManager?.Close();
+    public virtual void SetCard(Card card)
+    {
+        this.card = card;
+
+        foreach (PlayerAction playerAction in availableActions)
+        {
+            if(playerAction is IUseOps opsAction)
+                opsAction.OpsValue = card.ops;
+        }
+    }
+
     public override void SetPlayer(Player player)
     {
         foreach (var action in availableActions)
@@ -29,12 +41,12 @@ public class PlayCard : PlayerAction
 
     public override async Task Action()
     {
-        selectionManager = new(availableActions.Where(action => action.Can(Player, Card))); // RIGHT NOW: PLAYCARD drop is not receiving the card drop action. Because card drop is not setting the result of the selectionManager.Selection
+        selectionManager = new(availableActions.Where(action => action.Can(Player, card))); // RIGHT NOW: PLAYCARD drop is not receiving the card drop action. Because card drop is not setting the result of the selectionManager.Selection
         PlayerAction selectedAction = await selectionManager.Selection;
         selectionManager.Close();
 
-        selectedAction.Select();
         await selectedAction.Event();
+
         /* PLAY LOGIC:
          * 
          * If it's a friendly card, we're finish the Action, nothing to worry about. 
@@ -42,11 +54,11 @@ public class PlayCard : PlayerAction
          * If we triggered an Opponent Event, let's mark opponenetEventTriggered = True and then present them a new PlayCard action with everything but action we just triggered
          * If we didn't trigger the opponent event, trigger it now, then end the Action.
          */
-        if (selectedAction.Card.Faction == Player.Faction.enemyFaction && opponentEventTriggered == false)
+        if (card.Faction == Player.Faction.enemyFaction && opponentEventTriggered == false)
         {
-            if (selectedAction is TriggerEvent && opponentEventTriggered == false)
+            if (selectedAction is TriggerCardEvent && opponentEventTriggered == false)
             {
-                Debug.Log($"Just triggered Opponents event. Play the {selectedAction.Card} for it's Ops Value ({selectedAction.Card.ops})");
+                Debug.Log($"Just triggered Opponents event. Play the {card} for it's Ops Value ({card.ops})");
                 opponentEventTriggered = true;
 
                 PlayCard newPlayCard = new(availableActions.Where(action => action != selectedAction));
@@ -58,20 +70,20 @@ public class PlayCard : PlayerAction
             }
             else if (!(selectedAction is Space) && opponentEventTriggered == false)
             {
-                Debug.Log($"Opponent Card Played. Triggering {selectedAction.Card}");
-                await Card.Event(Player);
+                Debug.Log($"Opponent Card Played. Triggering {card}");
+                await card.Event(Player);
             }
         }
 
-        if (selectedAction.Card.Data.removeOnEvent)
+        if (card.Data.removeOnEvent == true )
         {
-            Debug.Log($"{selectedAction.Card.name} removed from the Game.");
-            Game.removed.Add(selectedAction.Card);
+            Debug.Log($"{card.name} removed from the Game.");
+            Game.removed.Add(card);
         }
         else
         {
-            Debug.Log($"{selectedAction.Card.name} discarded.");
-            Game.discards.Add(selectedAction.Card);
+            Debug.Log($"{card.name} discarded.");
+            Game.discards.Add(card);
         }
     }
 

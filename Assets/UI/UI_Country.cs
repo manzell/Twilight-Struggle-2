@@ -83,12 +83,6 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
     public void OnPointerExit(PointerEventData eventData) => ResetHighlight();
 }
 
-public interface ISelectable
-{
-    public event Action<ISelectable> selectionEvent;
-    public abstract void Select(); 
-}
-
 public interface IHighlightable
 {
     public void SetHighlight(Color color);

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using System.Linq; 
 
 public class UI_SelectionManager : MonoBehaviour
 {
     [SerializeField] GameObject actionSelectionPrefab, cardPrefab, actionArea;
+    SelectionManager<PlayerAction> actionSelectionManager; 
 
     public void Start()
     {
@@ -19,23 +21,25 @@ public class UI_SelectionManager : MonoBehaviour
 
     public void OpenActionChoice(SelectionManager<PlayerAction> selectionManager)
     {
-        foreach (Transform t in actionArea.transform)
-            Destroy(t.gameObject); 
+        actionSelectionManager = selectionManager;
+        selectionManager.addSelectableEvent += ShowPlayerAction;
+        selectionManager.removeSelectableEvent += RemovePlayerAction;
 
         actionArea.SetActive(true);
-        selectionManager.addSelectableEvent += CreatePlayerAction;
-        selectionManager.removeSelectableEvent += DestroyPlayerAction;
     }
 
     public void CloseActionChoice(SelectionManager<PlayerAction> selectionManager)
     {
         actionArea.SetActive(false);
-        selectionManager.addSelectableEvent -= CreatePlayerAction;
-        selectionManager.removeSelectableEvent -= DestroyPlayerAction;
+
+        foreach (Transform t in actionArea.transform)
+            Destroy(t.gameObject);
     }
 
     public void StartCountrySelection(SelectionManager<Country> selectionManager)
     {
+        Debug.Log("Start Country Selection"); 
+
         selectionManager.addSelectableEvent += SetHighlight;
         selectionManager.removeSelectableEvent += ClearHighlight;
     }
@@ -46,21 +50,19 @@ public class UI_SelectionManager : MonoBehaviour
         selectionManager.removeSelectableEvent -= ClearHighlight;
     }
 
+    void ShowPlayerAction(PlayerAction playerAction)
+    {
+        UI_PlayerAction uiPlayerAction = Instantiate(actionSelectionPrefab, actionArea.transform).GetComponent<UI_PlayerAction>();
+        uiPlayerAction.Setup(playerAction, actionSelectionManager);
+    }
+
+    void RemovePlayerAction(PlayerAction playerAction)
+    {
+        Debug.Log("Does this ever happen?"); 
+    }
+
     void SetHighlight(ISelectable country) => ((Country)country).UI.SetHighlight(Color.red);
-    void ClearHighlight(ISelectable country) => ((Country)country).UI.ClearHighlight(); 
-
-    public void UISelect(PlayerAction playerAction)
-    {
-        // TODO: Let's use this card in a better way
-        UI_Card uiCard = Instantiate(cardPrefab, actionArea.transform).GetComponent<UI_Card>();
-        uiCard.Setup(playerAction.Card); 
-    }
-
-    public void CreatePlayerAction(ISelectable action)
-    {
-        if(action is PlayerAction)
-            Instantiate(actionSelectionPrefab, actionArea.transform).GetComponent<UI_PlayerAction>().Setup(this, (PlayerAction)action);
-    }
+    void ClearHighlight(ISelectable country) => ((Country)country).UI.ClearHighlight();
 
     public void DestroyPlayerAction(ISelectable playerAction)
     {

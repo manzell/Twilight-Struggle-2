@@ -5,10 +5,13 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class Space : PlayerAction
+public class Space : PlayerAction, IUseOps
 {
     public static event Action<SpaceAttempt> prepareSpaceAttempt, spaceAttempt;
-    SpaceRace spaceRace => GameObject.FindObjectOfType<SpaceRace>(); 
+    SpaceRace spaceRace => GameObject.FindObjectOfType<SpaceRace>();
+
+    public int OpsValue { get => ops; set => ops = value; }
+    int ops; 
 
     public async override Task Action()
     {
@@ -24,16 +27,8 @@ public class Space : PlayerAction
 
     public override bool Can(Player player, Card card)
     {
-        if (card == null || card.Data is ScoringCard) return false;
-
-        Card oldCard = Card;
-        SetCard(card);
-
-        bool retval = modifiedOpsValue >= spaceRace.NextStage(player).RequiredOps &&
+        return !(card == null || card.Data is ScoringCard) && OpsValue >= spaceRace.NextStage(player).RequiredOps &&
             spaceRace.spaceRaceAttemptsMade.Count(attempt => attempt.player == player && attempt.turn == Phase.GetCurrent<Turn>()) < spaceRace.spaceRaceTurnAttemptLimit[player];
-
-        SetCard(oldCard);
-        return retval; 
     }
 
     public class SpaceAttempt

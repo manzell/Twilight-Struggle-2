@@ -5,11 +5,15 @@ using System;
 using System.Linq;
 using System.Threading.Tasks; 
 
-public class Coup : PlayerAction
+public class Coup : PlayerAction, IUseOps
 {
     public static event Action<CoupAttempt> prepareCoupEvent, coupEvent;
 
-    public List<CoupAttempt> Attempts => new() { attempt }; 
+    public List<CoupAttempt> Attempts => new() { attempt };
+
+    public int OpsValue { get => ops; set => ops = value; }
+    int ops;
+
     CoupAttempt attempt;
 
     IEnumerable<Country> EligibleCountries(Player player) => Game.Countries.Where(c => c.Continents.Max(c => c.defconRestriction) <= Game.DEFCON && c.Influence(player.Enemy) > 0 && c.Can(this));
@@ -19,16 +23,15 @@ public class Coup : PlayerAction
         twilightStruggle.UI.UI_Message.SetMessage($"{Player.name} Select Coup Target");
         SelectionManager<Country> selectionManager = new(EligibleCountries(Player));
         Country country = await selectionManager.Selection;
-        attempt = new(country, Player, modifiedOpsValue);
+        attempt = new(country, Player, OpsValue);
 
         selectionManager.Close();
 
-        Debug.Log($"{Card.ops}-Op ({(modifiedOpsValue - Card.ops >= 0 ? "+" : string.Empty)}{modifiedOpsValue - Card.ops}) + " +
-            $"Roll: {attempt.roll.Value} Coup vs {attempt.country.name} [{attempt.country.Stability * 2}]");
+        Debug.Log($"{OpsValue}-Op Coup vs. {attempt.country.name}. Roll: {attempt.roll.Value} [{attempt.country.Stability * 2}]");
 
         await attempt.coupCompletion.Task; 
             
-        Player.milOps += modifiedOpsValue; 
+        Player.milOps += OpsValue; 
 
         if (attempt.enemyInfluenceRemoved > 0)
             attempt.country.AdjustInfluence(Player.Enemy.Faction, -attempt.enemyInfluenceRemoved);

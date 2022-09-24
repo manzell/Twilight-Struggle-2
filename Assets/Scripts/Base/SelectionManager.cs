@@ -3,40 +3,57 @@ using System;
 using System.Linq; 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine.Events;
 
-public class SelectionManager<T>
+public class SelectionManager<ISelectable>
 {
-    public static event Action<SelectionManager<T>> SelectionStartEvent, SelectionEndEvent;
+    public static event Action<SelectionManager<ISelectable>> SelectionStartEvent, SelectionEndEvent;
+
     public bool open { get; private set; } = true;
-    public Task<T> Selection => (selectionTask = new()).Task;
-    public IEnumerable<T> Selected => selected.Cast<T>();
-    public IEnumerable<T> Selectables => selectables.Cast<T>(); 
-    public IEnumerable<T> InitialSelection => initialSelection.Cast<T>(); 
+    public IEnumerable<ISelectable> Selected => selected;
+    public IEnumerable<ISelectable> Selectables => selectables; 
+    public IEnumerable<ISelectable> InitialSelection => initialSelection; 
 
     protected int selectionLimit = 0;
     protected List<ISelectable> selected = new(); 
     protected List<ISelectable> selectables = new();
     protected List<ISelectable> initialSelection = new();
-    protected TaskCompletionSource<T> selectionTask = new();
-    protected Action<T> callback;
+
+    public TaskCompletionSource<ISelectable> selectionTaskSource; 
+    public Task<ISelectable> Selection => selectionTaskSource.Task;
+
+    Action<ISelectable> callback; 
 
     public event Action<ISelectable> selectEvent, deselectEvent, addSelectableEvent, removeSelectableEvent; 
 
     public SelectionManager(IEnumerable<ISelectable> selection, int selectionLimit = 0)
     {
-        this.initialSelection = selection.ToList();
         this.selectionLimit = selectionLimit;
-
-        SelectionStartEvent?.Invoke(this); 
+        initialSelection = selection.ToList();
+        selectionTaskSource = new();
 
         foreach (ISelectable thing in selection)
-            AddSelectable(thing); 
+            AddSelectable(thing);
+
+        SelectionStartEvent?.Invoke(this);
     }
 
-    public SelectionManager(IEnumerable<ISelectable> selection, Action<T> callback)
+    public SelectionManager(IEnumerable<ISelectable> selection, Action<ISelectable> callback)
     {
-        this.initialSelection = selection.ToList();
+        initialSelection = selection.ToList();
         this.callback = callback;
+        selectionTaskSource = new();
+
+        SelectionStartEvent?.Invoke(this);
+
+        foreach (ISelectable thing in selection)
+            AddSelectable(thing);
+    }
+
+    public SelectionManager(IEnumerable<ISelectable> selection)
+    {
+        initialSelection = selection.ToList();         
+        selectionTaskSource = new();
 
         SelectionStartEvent?.Invoke(this);
 
@@ -48,6 +65,7 @@ public class SelectionManager<T>
     {
         selectables.Add(thing);
         addSelectableEvent?.Invoke(thing);
+        callback?.Invoke(thing);
         thing.selectionEvent += Select; 
     }
 
@@ -71,17 +89,16 @@ public class SelectionManager<T>
             selected.Remove(thing);
             deselectEvent?.Invoke(thing);
         }
-        else if (selectionLimit == 0 || selected.Count < selectionLimit)
+        else if (selectionLimit == 0)
         {
-            selected.Add(thing);
-            selectEvent?.Invoke(thing);
-            callback?.Invoke((T)thing);
+            if (selected.Contains(thing))
+                selected.Remove(thing); 
+            else
+            {
+                selected.Add(thing);
+                selectEvent?.Invoke(thing);
+            }
         }
-
-        // This happened last time when we were calling it twice...
-        // Because we ARE calling it twice.
-
-        selectionTask.TrySetResult((T)thing); // Maybe this shouldn't be where we set the Result. Maybe whereever we start the selection event instead?
     }
 
     public void Close()

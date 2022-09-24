@@ -6,19 +6,19 @@ using System.Linq;
 
 public class StartActionRound : PhaseAction
 {
-    [SerializeField] PlayCard playAction;
-    TaskCompletionSource<PlayerAction> actionTCS;
+    [SerializeField] PlayCard playCardAction;
+    TaskCompletionSource<PlayerAction> actionRoundTaskSource;
 
     public async override Task Do(Phase phase)
     {
-        actionTCS = new(); 
+        actionRoundTaskSource = new(); 
         (phase as ActionRound).SetActionRoundStart(this);
 
         UI_Card.cardDragEvent += onCardDrag;
         UI_Card.cardEndDragEvent += onEndCardDrag; 
         twilightStruggle.UI.UI_Message.SetMessage($"Play {(phase as ActionRound).phasingPlayer.name} Action Round");
 
-        await actionTCS.Task;
+        PlayerAction playerAction = await actionRoundTaskSource.Task;
 
         UI_Card.cardDragEvent -= onCardDrag;
         UI_Card.cardEndDragEvent -= onEndCardDrag;
@@ -26,16 +26,16 @@ public class StartActionRound : PhaseAction
 
     public async void onCardDrag(Player player, Card card)
     {
-        playAction.SetCard(card);
-        playAction.SetPlayer(player);
+        playCardAction.SetCard(card);
+        playCardAction.SetPlayer(player);
 
-        await playAction.Event();
+        await playCardAction.Event();
 
-        actionTCS.SetResult(playAction); 
+        actionRoundTaskSource.SetResult(playCardAction); 
     }
 
     public void onEndCardDrag()
     {
-        playAction.Cancel();
+        playCardAction.Cancel();
     }
 }

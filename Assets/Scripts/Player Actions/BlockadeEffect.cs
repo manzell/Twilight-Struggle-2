@@ -20,7 +20,7 @@ public class BlockadeEffect : PlayerAction
         {
             SelectionManager<Card> selectionManager = new (USA.player.hand.Where(card => card.ops >= 3), 1);
 
-            while (selectionManager.open && selectionManager.Selected.Count() == 0)
+            //while (selectionManager.open && selectionManager.Selected.Count() == 0)
                 await selectionManager.Selection;
 
             selectionManager.Close(); 

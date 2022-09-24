@@ -15,7 +15,7 @@ public class UNEffect : PlayerAction
         PlayCard playCard = new PlayCard();
         Card card = await selectionManager.Selection; 
         playCard.SetCard(card);
-        playCard.RemoveAction(typeof(TriggerEvent));
+        playCard.RemoveAction(typeof(TriggerCardEvent));
         selectionManager.Close();
 
         await playCard.Event(this); 

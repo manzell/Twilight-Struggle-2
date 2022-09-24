@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 
 public class DuckVPEffect : PlayerAction
 {
+    [SerializeField] Player USA; 
+
     public override Task Action()
     {
-        (Player.Faction == (Card.Faction ?? Player.Faction) ? Player : Player.Enemy).AdjustVP(5 - Game.DEFCON);         
+        USA.AdjustVP(5 - Game.DEFCON);
         return Task.CompletedTask; 
     }
 }

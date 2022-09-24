@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class SpecialRelationship : PlayerAction
 {
@@ -19,15 +20,20 @@ public class SpecialRelationship : PlayerAction
             {
                 US.player.AdjustVP(2);
                 twilightStruggle.UI.UI_Message.SetMessage("Special Relationship. Add 2 US influence to any country in Western Europe");
-                SelectionManager<Country> selectionManager = new(WesternEurope.countries, country => country.AdjustInfluence(US, 2));
-                await selectionManager.Selection;
+                SelectionManager<Country> selectionManager = new(WesternEurope.countries);
+                Country country = await selectionManager.Selection;
+                country.AdjustInfluence(US, 2);
+
                 selectionManager.Close(); 
             }
             else
             {
                 twilightStruggle.UI.UI_Message.SetMessage("Special Relationship. Add 1 US influence to a country neighboring the UK");
-                SelectionManager<Country> selectionManager = new(UK.neighbors.Select(n => n.country), country => country.AdjustInfluence(US, 1));
-                await selectionManager.Selection;
+                SelectionManager<Country> selectionManager = new(UK.neighbors.Select(n => n.country));
+
+                Country country = await selectionManager.Selection;
+                country.AdjustInfluence(US, 1);
+
                 selectionManager.Close(); 
             }
         }

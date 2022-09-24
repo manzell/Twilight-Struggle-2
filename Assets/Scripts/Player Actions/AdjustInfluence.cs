@@ -44,7 +44,7 @@ public class AdjustInfluence : PlayerAction
                     if (influencePool > 0)
                         eligibleCountries.AddRange(continent.countries.Select(country => country.Data)); 
                     else if(influencePool < 0)
-                        eligibleCountries.AddRange(continent.countries.Where(country => country.Influence((Card.Faction ?? Player.Faction).enemyFaction) > 0).Select(country => country.Data));
+                        eligibleCountries.AddRange(continent.countries.Where(country => country.Influence(Player.Enemy.Faction) > 0).Select(country => country.Data));
                 }
             }
 
@@ -76,7 +76,7 @@ public class AdjustInfluence : PlayerAction
                 // If we're removing influence, remove any country which no longer has enemy influence
                 if (influencePool < 0)
                     selectionManager.RemoveSelectables(selectionManager.Selectables
-                        .Where(country => country.Influence(Card.Faction.enemyFaction ?? Player.Faction.enemyFaction) == 0).ToArray()); 
+                        .Where(country => country.Influence(Player.Enemy.Faction) == 0).ToArray()); 
             }
 
             selectionManager.Close(); 

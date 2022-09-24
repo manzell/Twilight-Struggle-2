@@ -13,13 +13,12 @@ public class ClearOrControlCountry : PlayerAction
 
     public override Task Action()
     {
-        Faction faction = Card.Faction ?? Player.Faction;
         Country country = countryData.country; 
 
         if(action == CountryAction.Control || action == CountryAction.Both)
-            country.SetInfluence(faction, country.Influence(faction.enemyFaction) + country.Stability);
+            country.SetInfluence(Player.Faction, country.Influence(Player.Faction.enemyFaction) + country.Stability);
         else if (action == CountryAction.Clear || action == CountryAction.Both)
-            country.SetInfluence(faction.enemyFaction, 0);
+            country.SetInfluence(Player.Faction.enemyFaction, 0);
 
         return Task.CompletedTask; 
     }

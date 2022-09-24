@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class AddBonusInfluence : PhaseAction
 {
@@ -15,10 +16,12 @@ public class AddBonusInfluence : PhaseAction
 
         if(countries.Count() > 0)
         {
-            SelectionManager<Country> selectionManager = new (countries, country => {
-                country.AdjustInfluence(faction, 1);
-                influence--;
-            });
+            SelectionManager<Country> selectionManager = new(countries);
+
+            Country country = await selectionManager.Selection;
+            
+            country.AdjustInfluence(faction, 1);
+            influence--;
 
             while (selectionManager.open && influence > 0)
             {

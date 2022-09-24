@@ -14,12 +14,12 @@ public class UI_PlayerAction : SerializedMonoBehaviour, IDropHandler
     public static event Action<PlayerAction, Card> cardDropEvent; 
     [SerializeField] PlayerAction action;
     [SerializeField] Image backgroundImage; 
-    [SerializeField] UI_SelectionManager uiSelectionManager;
+    SelectionManager<PlayerAction> selectionManager;
     [SerializeField] TextMeshProUGUI actionName, submittedCardName;
 
-    public void Setup(UI_SelectionManager uiSelectionManager, PlayerAction action)
+    public void Setup(PlayerAction action, SelectionManager<PlayerAction> selectionManager)
     {
-        this.uiSelectionManager = uiSelectionManager;
+        this.selectionManager = selectionManager; 
         this.action = action;
 
         actionName.text = action.name;
@@ -33,8 +33,7 @@ public class UI_PlayerAction : SerializedMonoBehaviour, IDropHandler
         if (eventData.selectedObject.TryGetComponent(out UI_Card uiCard)) // Need a way to ensure the proper player is playing. Defered for now. 
         {
             cardDropEvent?.Invoke(action, uiCard.card);
-            action.Select(uiCard.card);
-            uiSelectionManager.UISelect(action);
+            selectionManager.selectionTaskSource.SetResult(action); 
         }
     }
 }

@@ -6,11 +6,15 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class Realign : PlayerAction
+public class Realign : PlayerAction, IUseOps
 {
     public static event Action<RealignAttempt> prepareRealign, realignEvent;
 
-    public List<RealignAttempt> Attempts => attempts;  
+    public List<RealignAttempt> Attempts => attempts;
+
+    public int OpsValue { get => ops; set => ops = value; }
+    int ops;
+
     List<RealignAttempt> attempts;
 
     IEnumerable<Country> EligibleCountries(Player player) => Game.Countries.Where(c => c.Can(this) && c.Continents.Max(c => c.defconRestriction) <= Game.DEFCON && c.Influence(player.Enemy) > 0);
@@ -22,9 +26,9 @@ public class Realign : PlayerAction
         attempts = new(); 
         SelectionManager<Country> selectionManager = new (EligibleCountries(Player));
 
-        while (selectionManager.open && selectionManager.Selected.Count() < modifiedOpsValue)
+        while (selectionManager.open && selectionManager.Selected.Count() < OpsValue)
         {
-            twilightStruggle.UI.UI_Message.SetMessage($"Select Realign Target ({modifiedOpsValue-attempts.Count()} remaining)");
+            twilightStruggle.UI.UI_Message.SetMessage($"Select Realign Target ({OpsValue - attempts.Count()} remaining)");
             Country country = await selectionManager.Selection;
 
             RealignAttempt attempt = new(Player, country);

@@ -7,7 +7,7 @@ public class RevealHand : PlayerAction
 {
     public override async Task Action()
     {
-        List<Card> revealedHand = (Card.Faction ?? Player.Faction).enemyFaction.player.hand; 
+        List<Card> revealedHand = Player.hand; 
 
         SelectionManager<Card> selectionManager = new(revealedHand);
         await selectionManager.Selection;

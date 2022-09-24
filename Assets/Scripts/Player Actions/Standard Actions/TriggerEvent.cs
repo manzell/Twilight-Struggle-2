@@ -5,20 +5,10 @@ using System;
 using System.Linq; 
 using System.Threading.Tasks;
 
-public class TriggerEvent : PlayerAction
+public class TriggerCardEvent : PlayerAction
 {
-    [SerializeField] PlayCard triggerAfterEvent; 
-    public static event Action<TriggerEvent> prepEvent, playEvent;
+    Card card;
+    public void SetCard(Card card) => this.card = card; 
 
-    public override async Task Action()
-    {
-        prepEvent?.Invoke(this); 
-
-        await Card.Event(Card.Faction?.player ?? Player);
-
-        playEvent?.Invoke(this); 
-
-        if(triggerAfterEvent != null)
-            await triggerAfterEvent.Event(this); 
-    }
+    public override async Task Action() => await card.Event(Player);
 }

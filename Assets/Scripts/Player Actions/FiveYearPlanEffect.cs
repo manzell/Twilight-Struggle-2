@@ -12,11 +12,11 @@ public class FiveYearPlanEffect : PlayerAction
     {
         if(USSR.player.hand.Count > 0)
         {
-            Card discard = USSR.player.hand.OrderBy(c => Random.value).First();
-            Debug.Log($"USSR Discards {discard.name} to {Card.name}");
+            Card discardedCard = USSR.player.hand.OrderBy(c => Random.value).First();
+            Debug.Log($"USSR Discards {discardedCard.name} to Five Year Plan");
 
-            if (discard.Faction == USSR.enemyFaction)
-                await Card.Event(Card.Faction.player ?? USSR.player);
+            if (discardedCard.Faction == USSR.enemyFaction)
+                await discardedCard.Event(USSR.player);
         }
     }
 }

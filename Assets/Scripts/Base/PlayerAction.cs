@@ -7,35 +7,24 @@ using Sirenix.OdinInspector;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 
-public abstract class PlayerAction : ISelectable
+public abstract class PlayerAction
 {
     public static UI_SelectionManager ui => GameObject.FindObjectOfType<UI_SelectionManager>();
 
-    Card card;
     Player player;
     protected PlayerAction previousAction;
 
     public string name;
-    public int modifiedOpsValue => card.ops + Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
    
-    public Card Card => card;
     public Player Player => player;
     public List<Effect> requiredEffects = new();
     public List<Effect> prohibitedEffects = new();
-    public TaskCompletionSource<Card> cardSubmit;
-    public event Action<ISelectable> selectionEvent;
 
-    public void Select()
-    {
-        selectionEvent?.Invoke(this);
-        cardSubmit.SetResult(card);
-    }
     public abstract Task Action();
 
     public PlayerAction()
     {
         name = GetType().ToString(); 
-        cardSubmit = new();
     }
 
     public virtual bool Can(Player player, Card card) => Can();
@@ -46,14 +35,12 @@ public abstract class PlayerAction : ISelectable
     public virtual Task Event(PlayerAction previousAction)
     {
         this.previousAction = previousAction; 
-        return Event(previousAction.Player, previousAction.card);
+        return Event(previousAction.Player);
     }
-    public virtual Task Event(Player player) => Event(player, card);
-    public virtual Task Event(Card card) => Event(player, card);
-    public async virtual Task Event(Player player, Card card)
+
+    public async virtual Task Event(Player player)
     {
         this.player = player;
-        this.card = card;
         /*
          * Cards that Impact Ops Values dynamically: 
 
@@ -86,6 +73,5 @@ public abstract class PlayerAction : ISelectable
 
     public virtual PlayerAction Clone() => (PlayerAction)this.MemberwiseClone();
 
-    public virtual void SetCard(Card card) => this.card = card;
     public virtual void SetPlayer(Player player) => this.player = player;
 }

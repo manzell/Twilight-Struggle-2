@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 public class War : PlayerAction
 {
+    public new string name; 
     public static event Action<WarAttempt> prepareWar, warAttempt;
+    [SerializeField] Faction faction;
     [SerializeField] List<CountryData> targetCountries = new();
     [SerializeField] int rollRequired, vpAward, milOpsAward;
 
@@ -21,7 +23,7 @@ public class War : PlayerAction
             await War(targetCountries.First().country);
         else
         {
-            twilightStruggle.UI.UI_Message.SetMessage($"Select Target for {Card.name}");
+            twilightStruggle.UI.UI_Message.SetMessage($"Select Target for {name}");
             SelectionManager<Country> selectionManager = new(targetCountries.Select(data => data.country));
             Country country = await selectionManager.Selection;
             await War(country); 
@@ -36,7 +38,7 @@ public class War : PlayerAction
 
             if (attempt.success)
             {
-                Faction faction = Card.Faction ?? Player.Faction;
+                faction = faction ?? Player.Faction;
                 country.AdjustInfluence(faction, country.Influence(faction.enemyFaction));
                 country.SetInfluence(faction.enemyFaction, 0);
 

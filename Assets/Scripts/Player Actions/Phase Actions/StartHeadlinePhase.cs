@@ -20,21 +20,14 @@ public class StartHeadlinePhase : PhaseAction
                 headlines.Add(headline); 
             }
 
-            // TODO TOMORROW: 
-            // CardSubmit is no longer being set. Either we trash it because it was causing the double action as before, or we transition
-            // this to work more like StartActionRound. 
-
-            SelectionManager<PlayerAction> selectionManager = new(headlines);
-
-            await Task.WhenAll(headlines.Select(headline => headline.cardSubmit.Task));
-            selectionManager.Close();
+            // Create UI Stuff
 
             // Check for any Cancel Headline Effects. Only a non-enemy card headlined should return here. 
+            /*
             List<Card> cancelHeadlineCards = headlines.Where(_HeadlineFilter).Select(action => action.Card).ToList(); 
 
             bool _HeadlineFilter(PlayerAction headline)
             {
-                Card card = headline.Card;
                 bool friendlyCard = card.Faction != headline.Player.Enemy.Faction; 
                 bool cancelsHeadlines = card.Data.headlineActions.Any(headlineAction => headlineAction is CancelHeadline);
                 return friendlyCard && cancelsHeadlines; 
@@ -56,6 +49,7 @@ public class StartHeadlinePhase : PhaseAction
                 foreach(Headline headline in headlines)
                     Game.discards.Add(headline.Card); 
             }
+            */
         }
     }
 }

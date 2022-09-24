@@ -9,10 +9,6 @@ public class BonusOpModifier : Modifier
 
     public override bool Applies(PlayerAction gameAction)
     {
-        if (amount > 0 && gameAction.Card.ops >= max) return false;
-        if (amount < 0 && gameAction.Card.ops <= min) return false; 
-        if (gameAction.Player.Faction != faction) return false;
-
         return true; 
     }
 }

@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -128,7 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -248,7 +248,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &592149 stripped
 RectTransform:
@@ -377,7 +379,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -501,7 +503,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &44305860 stripped
 RectTransform:
@@ -588,7 +592,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -696,7 +700,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &74692059 stripped
 RectTransform:
@@ -708,7 +714,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -832,7 +838,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &86164299 stripped
 RectTransform:
@@ -926,7 +934,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -956,27 +964,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -988,37 +1001,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1029,6 +1023,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1040,22 +1055,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -1080,23 +1100,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1105,68 +1130,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -1196,7 +1159,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1209,7 +1172,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1228,7 +1191,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -1352,7 +1315,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &108084326 stripped
 RectTransform:
@@ -1435,7 +1400,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -1465,27 +1430,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1497,37 +1467,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1538,6 +1489,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1549,22 +1521,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -1589,23 +1566,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1614,68 +1596,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -1705,7 +1625,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1718,7 +1638,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1737,7 +1657,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -1845,7 +1765,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &126678394 stripped
 RectTransform:
@@ -1914,7 +1836,9 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1978,7 +1902,48 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: milOps
-      Entry: 6
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 6|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 1
+    - Name: $v
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
   modifiers: []
   turnNumber: 1
@@ -1988,7 +1953,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -2092,7 +2057,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &163057353 stripped
 RectTransform:
@@ -2104,7 +2071,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -2212,7 +2179,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &183448250 stripped
 RectTransform:
@@ -2224,7 +2193,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -2328,7 +2297,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &203009951 stripped
 RectTransform:
@@ -2340,7 +2311,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -2444,7 +2415,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &205313277 stripped
 RectTransform:
@@ -2591,7 +2564,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -2695,7 +2668,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &297105463 stripped
 RectTransform:
@@ -2707,7 +2682,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -2827,7 +2802,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &305679127 stripped
 RectTransform:
@@ -2916,7 +2893,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -3024,7 +3001,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &321620828 stripped
 RectTransform:
@@ -3078,7 +3057,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -3186,7 +3165,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &324519207 stripped
 RectTransform:
@@ -3198,7 +3179,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -3318,7 +3299,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &326168786 stripped
 RectTransform:
@@ -3536,7 +3519,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -3566,27 +3549,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3598,37 +3586,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3639,6 +3608,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3650,22 +3640,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -3690,23 +3685,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3715,68 +3715,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -3806,7 +3744,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3819,7 +3757,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4108,7 +4046,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -4212,7 +4150,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &370062512 stripped
 RectTransform:
@@ -4224,7 +4164,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -4332,7 +4272,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &374154026 stripped
 RectTransform:
@@ -4344,7 +4286,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -4468,7 +4410,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &420508822 stripped
 RectTransform:
@@ -4573,7 +4517,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -4681,7 +4625,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &426112652 stripped
 RectTransform:
@@ -4693,7 +4639,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -4797,7 +4743,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &436773431 stripped
 RectTransform:
@@ -4909,9 +4857,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4958,7 +4914,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -5062,7 +5018,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &522236174 stripped
 RectTransform:
@@ -5145,7 +5103,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -5175,27 +5133,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5207,37 +5170,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5248,6 +5192,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5259,22 +5224,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -5299,23 +5269,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5324,68 +5299,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -5415,7 +5328,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5428,7 +5341,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5458,7 +5371,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -5566,7 +5479,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &580139278 stripped
 RectTransform:
@@ -5652,7 +5567,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -5756,7 +5671,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &597890504 stripped
 RectTransform:
@@ -5768,7 +5685,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -5888,7 +5805,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &602948470 stripped
 RectTransform:
@@ -5900,7 +5819,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -6024,7 +5943,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &605680510 stripped
 RectTransform:
@@ -6036,7 +5957,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -6140,7 +6061,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &606322538 stripped
 RectTransform:
@@ -6163,7 +6086,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -6271,7 +6194,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &642332470 stripped
 RectTransform:
@@ -6283,7 +6208,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -6391,7 +6316,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &661095567 stripped
 RectTransform:
@@ -6403,7 +6330,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -6511,7 +6438,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &669153733 stripped
 RectTransform:
@@ -6640,7 +6569,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -6670,27 +6599,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6702,37 +6636,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6743,6 +6658,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6754,22 +6690,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -6794,23 +6735,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6819,68 +6765,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -6910,7 +6794,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6923,7 +6807,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6942,7 +6826,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -7050,7 +6934,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &695256154 stripped
 RectTransform:
@@ -7073,7 +6959,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -7181,7 +7067,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &702729778 stripped
 RectTransform:
@@ -7239,7 +7127,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -7347,7 +7235,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &716420354 stripped
 RectTransform:
@@ -7423,7 +7313,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -7531,7 +7421,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &767560284 stripped
 RectTransform:
@@ -7688,7 +7580,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -7718,27 +7610,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7750,37 +7647,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7791,6 +7669,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7802,22 +7701,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -7842,23 +7746,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7867,68 +7776,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -7958,7 +7805,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7971,7 +7818,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7990,7 +7837,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -8094,7 +7941,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &804231665 stripped
 RectTransform:
@@ -8106,7 +7955,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -8214,7 +8063,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &855288008 stripped
 RectTransform:
@@ -8365,7 +8216,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -8395,27 +8246,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8427,37 +8283,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8468,6 +8305,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8479,22 +8337,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -8519,23 +8382,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8544,68 +8412,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -8635,7 +8441,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8648,7 +8454,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8667,7 +8473,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -8791,7 +8597,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &881672870 stripped
 RectTransform:
@@ -8825,7 +8633,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -8933,7 +8741,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &915975155 stripped
 RectTransform:
@@ -8945,7 +8755,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -9049,7 +8859,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &936480038 stripped
 RectTransform:
@@ -9061,7 +8873,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -9165,7 +8977,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &978822021 stripped
 RectTransform:
@@ -9248,7 +9062,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -9278,27 +9092,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9310,37 +9129,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9351,6 +9151,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9362,22 +9183,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -9402,23 +9228,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9427,68 +9258,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -9518,7 +9287,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9531,7 +9300,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9550,7 +9319,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -9658,7 +9427,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1009949739 stripped
 RectTransform:
@@ -9681,7 +9452,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -9785,7 +9556,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1017314670 stripped
 RectTransform:
@@ -9797,7 +9570,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -9901,7 +9674,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1033310938 stripped
 RectTransform:
@@ -10014,7 +9789,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -10118,7 +9893,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1069614266 stripped
 RectTransform:
@@ -10247,7 +10024,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -10355,7 +10132,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1121939530 stripped
 RectTransform:
@@ -10367,7 +10146,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -10491,7 +10270,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1128432795 stripped
 RectTransform:
@@ -10503,7 +10284,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -10627,7 +10408,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1136091577 stripped
 RectTransform:
@@ -10639,7 +10422,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -10747,7 +10530,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1139810197 stripped
 RectTransform:
@@ -10894,7 +10679,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11014,7 +10799,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1155210957 stripped
 RectTransform:
@@ -11026,7 +10813,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11130,7 +10917,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1174796929 stripped
 RectTransform:
@@ -11142,7 +10931,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11250,7 +11039,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1178125658 stripped
 RectTransform:
@@ -11262,7 +11053,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11370,7 +11161,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1202026365 stripped
 RectTransform:
@@ -11444,7 +11237,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11568,7 +11361,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1253224814 stripped
 RectTransform:
@@ -11580,7 +11375,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11684,7 +11479,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1256252662 stripped
 RectTransform:
@@ -11827,7 +11624,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -11951,7 +11748,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1280266030 stripped
 RectTransform:
@@ -11963,7 +11762,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12067,7 +11866,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1287636584 stripped
 RectTransform:
@@ -12079,7 +11880,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12203,7 +12004,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1289685873 stripped
 RectTransform:
@@ -12215,7 +12018,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12319,7 +12122,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1324572965 stripped
 RectTransform:
@@ -12454,7 +12259,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12574,7 +12379,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1339916513 stripped
 RectTransform:
@@ -12586,7 +12393,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12706,7 +12513,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1345947903 stripped
 RectTransform:
@@ -12718,7 +12527,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12842,7 +12651,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1352454259 stripped
 RectTransform:
@@ -12865,7 +12676,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -12969,7 +12780,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1412379431 stripped
 RectTransform:
@@ -13006,6 +12819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -13059,7 +12873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1474137978
 Transform:
   m_ObjectHideFlags: 0
@@ -13199,7 +13013,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -13307,7 +13121,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1500713961 stripped
 RectTransform:
@@ -13330,7 +13146,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -13434,7 +13250,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1529650103 stripped
 RectTransform:
@@ -13509,7 +13327,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -13629,7 +13447,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1544267850 stripped
 RectTransform:
@@ -13742,7 +13562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1549814493
 Transform:
   m_ObjectHideFlags: 0
@@ -13882,7 +13702,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -14006,7 +13826,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1564665568 stripped
 RectTransform:
@@ -14100,7 +13922,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -14130,27 +13952,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14162,37 +13989,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14203,6 +14011,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14214,22 +14043,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -14254,23 +14088,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14279,68 +14118,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -14370,7 +14147,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14383,7 +14160,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14473,7 +14250,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -14503,27 +14280,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14535,37 +14317,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14576,6 +14339,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14587,22 +14371,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -14627,23 +14416,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14652,68 +14446,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -14743,7 +14475,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14756,7 +14488,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15492,7 +15224,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -15600,7 +15332,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1699004355 stripped
 RectTransform:
@@ -15612,7 +15346,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -15720,7 +15454,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1713090142 stripped
 RectTransform:
@@ -15732,7 +15468,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -15836,7 +15572,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1726487692 stripped
 RectTransform:
@@ -15911,7 +15649,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -16019,7 +15757,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1789747280 stripped
 RectTransform:
@@ -16031,7 +15771,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -16151,7 +15891,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1790370257 stripped
 RectTransform:
@@ -16163,7 +15905,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -16267,7 +16009,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1797974287 stripped
 RectTransform:
@@ -16350,7 +16094,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -16380,27 +16124,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16412,37 +16161,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -16453,6 +16183,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16464,22 +16215,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -16504,23 +16260,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16529,68 +16290,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -16620,7 +16319,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -16633,7 +16332,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -16652,7 +16351,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -16760,7 +16459,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1841067174 stripped
 RectTransform:
@@ -16772,7 +16473,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -16876,7 +16577,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1876023679 stripped
 RectTransform:
@@ -16937,7 +16640,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 673912213}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -17057,7 +16760,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1881104990 stripped
 RectTransform:
@@ -17080,7 +16785,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -17188,7 +16893,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1888078133 stripped
 RectTransform:
@@ -17200,7 +16907,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -17304,7 +17011,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1899864680 stripped
 RectTransform:
@@ -17621,7 +17330,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -17729,7 +17438,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1949828920 stripped
 RectTransform:
@@ -17944,7 +17655,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 510648734}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -18048,7 +17759,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &1995535432 stripped
 RectTransform:
@@ -18076,7 +17789,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -18200,7 +17913,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &2022497510 stripped
 RectTransform:
@@ -18283,7 +17998,7 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playAction
+    - Name: playCardAction
       Entry: 7
       Data: 3|PlayCard, Assembly-CSharp
     - Name: name
@@ -18313,27 +18028,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 6|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: availableActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 8|Coup, Assembly-CSharp
+      Data: 7|Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18345,37 +18065,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 11|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Realign, Assembly-CSharp
+      Data: 10|Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -18386,6 +18087,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: prohibitedEffects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Space, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18397,22 +18119,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
+    - Name: prohibitedEffects
       Entry: 7
-      Data: 15|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 16|Space, Assembly-CSharp
+      Data: 16|TriggerCardEvent, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Space
+      Data: TriggerCardEvent
     - Name: requiredEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -18437,23 +18164,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 19|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|TriggerEvent, Assembly-CSharp
+      Data: 19|Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerEvent
+      Data: Place
     - Name: requiredEffects
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18462,68 +18194,6 @@ MonoBehaviour:
     - Name: 
       Entry: 13
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 23|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: triggerAfterEvent
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 24|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: cardSubmit
-      Entry: 7
-      Data: 27|System.Threading.Tasks.TaskCompletionSource`1[[Card, Assembly-CSharp]],
-        mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -18553,7 +18223,7 @@ MonoBehaviour:
       Data: 
     - Name: afterPhaseEvents
       Entry: 7
-      Data: 28|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -18566,7 +18236,7 @@ MonoBehaviour:
       Data: 
     - Name: activeEffects
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -18672,7 +18342,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -18776,7 +18446,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &2052786648 stripped
 RectTransform:
@@ -18788,7 +18460,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1230950559}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -18912,7 +18584,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &2053047602 stripped
 RectTransform:
@@ -18924,7 +18598,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1991614625}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -19032,7 +18706,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &2056383106 stripped
 RectTransform:
@@ -19055,7 +18731,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 710933294}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -19159,7 +18835,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &2108933597 stripped
 RectTransform:
@@ -19193,7 +18871,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1671522044}
     m_Modifications:
     - target: {fileID: 3779938404839355, guid: 6424021cef3485440b5fb6898d447504, type: 3}
@@ -19309,7 +18987,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6424021cef3485440b5fb6898d447504, type: 3}
 --- !u!114 &1026828832746264374 stripped
 MonoBehaviour:
@@ -19370,7 +19050,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1671522044}
     m_Modifications:
     - target: {fileID: 568012513649297969, guid: cf1bc3701f32e8e499c53dc137ad0b1f, type: 3}
@@ -19514,14 +19194,16 @@ PrefabInstance:
       value: 4284374622
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf1bc3701f32e8e499c53dc137ad0b1f, type: 3}
 --- !u!1001 &1175888638691097517
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1671522044}
     m_Modifications:
     - target: {fileID: 3272348865712469642, guid: b339106297930234abc232031f39c086, type: 3}
@@ -19625,7 +19307,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b339106297930234abc232031f39c086, type: 3}
 --- !u!114 &1175888638691097518 stripped
 MonoBehaviour:
@@ -19665,7 +19349,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1671522044}
     m_Modifications:
     - target: {fileID: 2931400482852010972, guid: 733a99484034c134390bef4173dc1bc6, type: 3}
@@ -19765,7 +19449,9 @@ PrefabInstance:
       value: UI_Score, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 733a99484034c134390bef4173dc1bc6, type: 3}
 --- !u!1 &2537475126973731712 stripped
 GameObject:
@@ -19972,7 +19658,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1671522044}
     m_Modifications:
     - target: {fileID: 4411328096540563240, guid: 89a18c5b89ca19d4dbb30e6720b6e45e, type: 3}
@@ -20072,14 +19758,16 @@ PrefabInstance:
       value: UI_Space, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89a18c5b89ca19d4dbb30e6720b6e45e, type: 3}
 --- !u!1001 &4067945221720666741
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1646340062}
     m_Modifications:
     - target: {fileID: 300863546524050694, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
@@ -20187,7 +19875,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4067945221057485699, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
 --- !u!224 &4411328096257458178
 RectTransform:

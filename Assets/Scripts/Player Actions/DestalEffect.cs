@@ -13,11 +13,11 @@ public class DestalEffect : PlayerAction
     {
         twilightStruggle.UI.UI_Message.SetMessage($"De-Stalinization: Select up to {maxRelocate} influence to relocate");
         int influenceRemoved = 0; 
-        List<Country> eligibleCountries = Game.Countries.Where(c => c.Influence(Card.Faction) > 0).ToList();
+        List<Country> eligibleCountries = Game.Countries.Where(c => c.Influence(USA.enemyFaction) > 0).ToList();
         List<Country> placedCountries = new();
 
         SelectionManager<Country> selection = new(eligibleCountries, country => {
-            country.AdjustInfluence(Card.Faction, -1);
+            country.AdjustInfluence(USA.enemyFaction, -1);
             influenceRemoved++;
         });
 
@@ -25,7 +25,7 @@ public class DestalEffect : PlayerAction
         {
             await selection.Selection;
 
-            Country[] countries = selection.Selectables.Where(c => c.Influence(Card.Faction) == 0).ToArray(); 
+            Country[] countries = selection.Selectables.Where(c => c.Influence(USA) == 0).ToArray(); 
             foreach (Country country in countries)
                 selection.RemoveSelectable(country);
         }
@@ -33,7 +33,7 @@ public class DestalEffect : PlayerAction
         if(influenceRemoved > 0)
         {
             selection = new(Game.Countries.Where(country => country.Control != USA), country => {
-                country.AdjustInfluence(Card.Faction, 1);
+                country.AdjustInfluence(USA.enemyFaction, 1);
                 influenceRemoved--;
             });
 

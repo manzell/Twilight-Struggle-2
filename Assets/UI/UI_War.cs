@@ -23,7 +23,7 @@ public class UI_War : MonoBehaviour
     public void Setup(War.WarAttempt attempt)
     {
         this.attempt = attempt;
-        header.text = attempt.war.Card.name; 
+        header.text = attempt.war.name; 
         roll.text = attempt.roll.Value.ToString();
         required.text = attempt.rollRequired.ToString(); 
         modifier.text = attempt.modifier.ToString();
