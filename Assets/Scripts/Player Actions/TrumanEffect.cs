@@ -18,7 +18,7 @@ public class TrumanEffect : PlayerAction
             twilightStruggle.UI.UI_Message.SetMessage($"Truman Doctrine in effect. Remove all USSR Influence from one uncontrolled country in Europe");
             SelectionManager<Country> selectionManger = new(eligibleCountries);
 
-            Country country = await selectionManger.Selection;
+            Country country = await selectionManger.Selection as Country;
             country.SetInfluence(Player.Enemy.Faction, 0);
 
             selectionManger.Close();

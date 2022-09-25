@@ -15,7 +15,7 @@ public class AddCountryEffectModifier : PlayerAction
         if(eligibleCountries.Count > 0)
         {
             SelectionManager<Country> selection = new(eligibleCountries.Select(data => data.country), 1);
-            Country country = await selection.Selection; 
+            Country country = await selection.Selection as Country; 
             AddModifier(country);
         }
     }

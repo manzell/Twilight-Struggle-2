@@ -21,7 +21,7 @@ public class SpecialRelationship : PlayerAction
                 US.player.AdjustVP(2);
                 twilightStruggle.UI.UI_Message.SetMessage("Special Relationship. Add 2 US influence to any country in Western Europe");
                 SelectionManager<Country> selectionManager = new(WesternEurope.countries);
-                Country country = await selectionManager.Selection;
+                Country country = await selectionManager.Selection as Country;
                 country.AdjustInfluence(US, 2);
 
                 selectionManager.Close(); 
@@ -31,7 +31,7 @@ public class SpecialRelationship : PlayerAction
                 twilightStruggle.UI.UI_Message.SetMessage("Special Relationship. Add 1 US influence to a country neighboring the UK");
                 SelectionManager<Country> selectionManager = new(UK.neighbors.Select(n => n.country));
 
-                Country country = await selectionManager.Selection;
+                Country country = await selectionManager.Selection as Country;
                 country.AdjustInfluence(US, 1);
 
                 selectionManager.Close(); 

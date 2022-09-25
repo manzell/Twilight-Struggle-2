@@ -18,7 +18,7 @@ public class MatchOpponentInfluence : PlayerAction
 
             SelectionManager<Country> selectionManager = new (eligibleCountries.Select(c => c.country));
 
-            Country country = await selectionManager.Selection; 
+            Country country = await selectionManager.Selection as Country; 
             country.SetInfluence(Player.Faction, country.Influence(Player.Enemy.Faction));
 
             selectionManager.Close(); 

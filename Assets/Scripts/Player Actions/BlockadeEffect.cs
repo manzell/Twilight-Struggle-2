@@ -26,7 +26,7 @@ public class BlockadeEffect : PlayerAction
             selectionManager.Close(); 
 
             if (selectionManager.Selected.Count() > 0)
-                USA.player.Discard(selectionManager.Selected.First());
+                USA.player.Discard(selectionManager.Selected.First() as Card);
             else
                 WestGermany.country.SetInfluence(USA, 0); 
         }

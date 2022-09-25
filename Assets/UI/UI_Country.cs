@@ -78,7 +78,7 @@ public class UI_Country : SerializedMonoBehaviour, IPointerClickHandler, IHighli
         highlight.color = Color.clear;
     }
 
-    public void OnPointerClick(PointerEventData eventData)  => onClickHandler?.Invoke(country);
+    public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(country);
     public void OnPointerEnter(PointerEventData eventData) { if (highlight.color.a > 0) SetHighlight(Color.yellow); }
     public void OnPointerExit(PointerEventData eventData) => ResetHighlight();
 }

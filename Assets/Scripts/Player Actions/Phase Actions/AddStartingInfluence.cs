@@ -23,7 +23,7 @@ public class AddStartingInfluence : PhaseAction
             while (selectionManager.open && selectionManager.Selected.Count() < influence)
             {
                 twilightStruggle.UI.UI_Message.SetMessage($"Add Starting {faction} Influence ({influence - selectionManager.Selected.Count()} remaining)");
-                Country country = await selectionManager.Selection;
+                Country country = await selectionManager.Selection as Country;
                 country.AdjustInfluence(faction, 1);
             }
 

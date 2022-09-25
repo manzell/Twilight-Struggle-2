@@ -18,7 +18,7 @@ public class AddBonusInfluence : PhaseAction
         {
             SelectionManager<Country> selectionManager = new(countries);
 
-            Country country = await selectionManager.Selection;
+            Country country = await selectionManager.Selection as Country;
             
             country.AdjustInfluence(faction, 1);
             influence--;

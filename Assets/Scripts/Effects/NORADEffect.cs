@@ -31,7 +31,7 @@ public class NORADEffect : Effect
     {
         SelectionManager<Country> selectionManager = new(Game.Countries.Where(country => country.Influence(USA) > 0));
 
-        Country country = await selectionManager.Selection;
+        Country country = await selectionManager.Selection as Country;
         country.AdjustInfluence(USA, 1);
 
         selectionManager.Close();

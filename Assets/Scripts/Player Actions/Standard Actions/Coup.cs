@@ -22,7 +22,7 @@ public class Coup : PlayerAction, IUseOps
     {
         twilightStruggle.UI.UI_Message.SetMessage($"{Player.name} Select Coup Target");
         SelectionManager<Country> selectionManager = new(EligibleCountries(Player));
-        Country country = await selectionManager.Selection;
+        Country country = await selectionManager.Selection as Country;
         attempt = new(country, Player, OpsValue);
 
         selectionManager.Close();

@@ -24,7 +24,6 @@ public class UI_SelectionManager : MonoBehaviour
         actionSelectionManager = selectionManager;
         selectionManager.addSelectableEvent += ShowPlayerAction;
         selectionManager.removeSelectableEvent += RemovePlayerAction;
-
         actionArea.SetActive(true);
     }
 
@@ -38,8 +37,6 @@ public class UI_SelectionManager : MonoBehaviour
 
     public void StartCountrySelection(SelectionManager<Country> selectionManager)
     {
-        Debug.Log("Start Country Selection"); 
-
         selectionManager.addSelectableEvent += SetHighlight;
         selectionManager.removeSelectableEvent += ClearHighlight;
     }
@@ -50,15 +47,14 @@ public class UI_SelectionManager : MonoBehaviour
         selectionManager.removeSelectableEvent -= ClearHighlight;
     }
 
-    void ShowPlayerAction(PlayerAction playerAction)
+    void ShowPlayerAction(ISelectable playerAction)
     {
         UI_PlayerAction uiPlayerAction = Instantiate(actionSelectionPrefab, actionArea.transform).GetComponent<UI_PlayerAction>();
-        uiPlayerAction.Setup(playerAction, actionSelectionManager);
+        uiPlayerAction.Setup(playerAction as PlayerAction, actionSelectionManager);
     }
 
-    void RemovePlayerAction(PlayerAction playerAction)
+    void RemovePlayerAction(ISelectable playerAction)
     {
-        Debug.Log("Does this ever happen?"); 
     }
 
     void SetHighlight(ISelectable country) => ((Country)country).UI.SetHighlight(Color.red);

@@ -29,7 +29,7 @@ public class Realign : PlayerAction, IUseOps
         while (selectionManager.open && selectionManager.Selected.Count() < OpsValue)
         {
             twilightStruggle.UI.UI_Message.SetMessage($"Select Realign Target ({OpsValue - attempts.Count()} remaining)");
-            Country country = await selectionManager.Selection;
+            Country country = await selectionManager.Selection as Country;
 
             RealignAttempt attempt = new(Player, country);
             int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);

@@ -55,10 +55,10 @@ public class AdjustInfluence : PlayerAction
                         eligibleCountries.Add(country.Data);
 
             SelectionManager<Country> selectionManager = new(eligibleCountries.Select(countryData => countryData.country), country => {
-                if (influencePool != 0 && countrySelections.Count(c => c == country) < maxPerCountry)
+                if (influencePool != 0 && countrySelections.Count(c => c == country as Country) < maxPerCountry)
                 {
-                    countrySelections.Add(country);
-                    country.AdjustInfluence(adjustAmount > 0 ? Player.Faction : Player.Enemy.Faction, adjustAmount);
+                    countrySelections.Add(country as Country);
+                    (country as Country).AdjustInfluence(adjustAmount > 0 ? Player.Faction : Player.Enemy.Faction, adjustAmount);
                     influencePool -= adjustAmount;
                 }
             });                
@@ -71,12 +71,12 @@ public class AdjustInfluence : PlayerAction
 
                 // Removes any countries where we've reached our max. Move this to the Selection Manager? 
                 selectionManager.RemoveSelectables(selectionManager.Selectables
-                    .Where(country => countrySelections.Count(country2 => country2 == country) >= maxPerCountry).ToArray());
+                    .Where(country => countrySelections.Count(country2 => country2 == country as Country) >= maxPerCountry).ToArray());
 
                 // If we're removing influence, remove any country which no longer has enemy influence
                 if (influencePool < 0)
                     selectionManager.RemoveSelectables(selectionManager.Selectables
-                        .Where(country => country.Influence(Player.Enemy.Faction) == 0).ToArray()); 
+                        .Where(country => (country as Country).Influence(Player.Enemy.Faction) == 0).ToArray()); 
             }
 
             selectionManager.Close(); 

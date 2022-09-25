@@ -25,7 +25,7 @@ public class War : PlayerAction
         {
             twilightStruggle.UI.UI_Message.SetMessage($"Select Target for {name}");
             SelectionManager<Country> selectionManager = new(targetCountries.Select(data => data.country));
-            Country country = await selectionManager.Selection;
+            Country country = await selectionManager.Selection as Country;
             await War(country); 
             selectionManager.Close();
         }

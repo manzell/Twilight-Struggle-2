@@ -42,7 +42,7 @@ public class PlayCard : PlayerAction
     public override async Task Action()
     {
         selectionManager = new(availableActions.Where(action => action.Can(Player, card))); // RIGHT NOW: PLAYCARD drop is not receiving the card drop action. Because card drop is not setting the result of the selectionManager.Selection
-        PlayerAction selectedAction = await selectionManager.Selection;
+        PlayerAction selectedAction = await selectionManager.Selection as PlayerAction;
         selectionManager.Close();
 
         await selectedAction.Event();

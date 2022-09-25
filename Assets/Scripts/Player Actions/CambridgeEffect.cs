@@ -24,7 +24,7 @@ public class CambridgeEffect : PlayerAction
             twilightStruggle.UI.UI_Message.SetMessage($"Cambridge Five. Add 1 USSR Influence in {eligibleContinents.Implode("or")}");
 
             SelectionManager<Country> selectionManager = new(Game.Countries.Where(country => country.Continents.Any(continent => eligibleContinents.Contains(continent))));
-            Country country = await selectionManager.Selection;
+            Country country = await selectionManager.Selection as Country;
             selectionManager.Close(); 
 
             country.AdjustInfluence(USSR, 1);

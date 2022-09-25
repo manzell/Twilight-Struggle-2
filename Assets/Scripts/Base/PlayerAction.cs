@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 
-public abstract class PlayerAction
+public abstract class PlayerAction : ISelectable
 {
     public static UI_SelectionManager ui => GameObject.FindObjectOfType<UI_SelectionManager>();
 
@@ -19,6 +19,12 @@ public abstract class PlayerAction
     public Player Player => player;
     public List<Effect> requiredEffects = new();
     public List<Effect> prohibitedEffects = new();
+
+    public event Action<ISelectable> selectionEvent
+    {
+        add { }
+        remove { }
+    }
 
     public abstract Task Action();
 
@@ -74,4 +80,9 @@ public abstract class PlayerAction
     public virtual PlayerAction Clone() => (PlayerAction)this.MemberwiseClone();
 
     public virtual void SetPlayer(Player player) => this.player = player;
+
+    public void Select()
+    {
+        throw new NotImplementedException();
+    }
 }

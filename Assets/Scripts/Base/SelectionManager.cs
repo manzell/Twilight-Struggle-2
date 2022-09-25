@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine.Events;
 
-public class SelectionManager<ISelectable>
+public class SelectionManager<T> where T: ISelectable
 {
-    public static event Action<SelectionManager<ISelectable>> SelectionStartEvent, SelectionEndEvent;
+    public static event Action<SelectionManager<T>> SelectionStartEvent, SelectionEndEvent;
 
     public bool open { get; private set; } = true;
     public IEnumerable<ISelectable> Selected => selected;
@@ -25,6 +25,8 @@ public class SelectionManager<ISelectable>
     Action<ISelectable> callback; 
 
     public event Action<ISelectable> selectEvent, deselectEvent, addSelectableEvent, removeSelectableEvent; 
+
+    public Action<ISelectable> AddSelectableEvent() => addSelectableEvent;
 
     public SelectionManager(IEnumerable<ISelectable> selection, int selectionLimit = 0)
     {
@@ -66,14 +68,15 @@ public class SelectionManager<ISelectable>
         selectables.Add(thing);
         addSelectableEvent?.Invoke(thing);
         callback?.Invoke(thing);
-        thing.selectionEvent += Select; 
+
+        thing.selectionEvent += OnSelect; 
     }
 
     public void RemoveSelectable(ISelectable thing)
     {
         selectables.Remove(thing);
         removeSelectableEvent?.Invoke(thing);
-        thing.selectionEvent -= Select;
+        thing.selectionEvent -= OnSelect;
     }
 
     public void RemoveSelectables(IEnumerable<ISelectable> things)
@@ -82,7 +85,7 @@ public class SelectionManager<ISelectable>
             RemoveSelectable(thing); 
     }
 
-    void Select(ISelectable thing)
+    void OnSelect(ISelectable thing)
     {
         if (selectionLimit > 0 && selected.Contains(thing))
         {
@@ -96,6 +99,7 @@ public class SelectionManager<ISelectable>
             else
             {
                 selected.Add(thing);
+                Debug.Log("Select Event Triggering"); 
                 selectEvent?.Invoke(thing);
             }
         }

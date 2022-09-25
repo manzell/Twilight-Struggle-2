@@ -13,7 +13,7 @@ public class UNEffect : PlayerAction
         SelectionManager<Card> selectionManager = new(Player.hand.Where(card => card.Faction == Player.Faction.enemyFaction));
 
         PlayCard playCard = new PlayCard();
-        Card card = await selectionManager.Selection; 
+        Card card = await selectionManager.Selection as Card; 
         playCard.SetCard(card);
         playCard.RemoveAction(typeof(TriggerCardEvent));
         selectionManager.Close();

@@ -18,18 +18,24 @@ public class Place : PlayerAction, IUseOps
         Game.Countries.Where(country => country.Influence(player) > 0 || country.Neighbors.Any(neighbor => neighbor.country.Influence(player) > 0) || country.AdjacentSuperpower == player.Faction);
 
     public async override Task Action() 
-    {
-        Debug.Log("Place Action()"); 
+    { 
         int placedOps = 0; 
         placements = new();
 
-        SelectionManager<Country> selectionManager = new(EligibleCountries(Player));
+        SelectionManager<Country> selectionManager = new(EligibleCountries(Player), OnPlace);
+
+        void OnPlace(ISelectable country)
+        {
+            Debug.Log("OnPlace called!"); 
+        }
 
         while (selectionManager.open && OpsValue > placedOps)
         {
             twilightStruggle.UI.UI_Message.SetMessage($"Place {Player.name} Influence ({OpsValue - placedOps} {(OpsValue - placedOps == 1 ? "Op" : "Ops")} remaining)");
 
-            Country country = await selectionManager.Selection;
+            Country country = await selectionManager.Selection as Country;
+
+            Debug.Log($"Place returned {country.name}"); 
 
             int placementCost = country.Control == Player.Enemy.Faction ? 2 : 1;
             int modifier = Phase.GetCurrent<Turn>().modifiers.Sum(mod => mod.Applies(this) ? mod.amount : 0);
@@ -43,7 +49,7 @@ public class Place : PlayerAction, IUseOps
             }
 
             if (OpsValue - placedOps < 2)
-                foreach (Country c in selectionManager.Selected.Where(c1 => c1.Control == Player.Enemy))
+                foreach (Country c in selectionManager.Selected.Where(c1 => (c1 as Country).Control == Player.Enemy))
                     selectionManager.RemoveSelectable(c);
         }
 
