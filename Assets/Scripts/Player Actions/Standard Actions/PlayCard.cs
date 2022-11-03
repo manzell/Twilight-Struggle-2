@@ -8,19 +8,9 @@ public class PlayCard : PlayerAction
 {
     public IEnumerable<PlayerAction> Actions => availableActions; 
     [SerializeField] List<PlayerAction> availableActions;
-    [SerializeField] Card requiredCard;
-    bool opponentEventTriggered;
     SelectionManager<PlayerAction> selectionManager;
     Card card;
 
-    public PlayCard() { }
-    public PlayCard(IEnumerable<PlayerAction> availableActions, Card requiredCard = null)
-    {
-        this.availableActions = availableActions.ToList();
-        this.requiredCard = requiredCard; 
-    }
-
-    public void Cancel() => selectionManager?.Close();
     public virtual void SetCard(Card card)
     {
         this.card = card;
@@ -32,21 +22,9 @@ public class PlayCard : PlayerAction
         }
     }
 
-    public override void SetPlayer(Player player)
-    {
-        foreach (var action in availableActions)
-            action.SetPlayer(player);
-        base.SetPlayer(player);
-    }
-
     public override async Task Action()
     {
-        selectionManager = new(availableActions.Where(action => action.Can(Player, card))); // RIGHT NOW: PLAYCARD drop is not receiving the card drop action. Because card drop is not setting the result of the selectionManager.Selection
-        PlayerAction selectedAction = await selectionManager.Selection as PlayerAction;
-        selectionManager.Close();
-
-        await selectedAction.Event();
-
+        await Task.CompletedTask; 
         /* PLAY LOGIC:
          * 
          * If it's a friendly card, we're finish the Action, nothing to worry about. 
@@ -54,6 +32,15 @@ public class PlayCard : PlayerAction
          * If we triggered an Opponent Event, let's mark opponenetEventTriggered = True and then present them a new PlayCard action with everything but action we just triggered
          * If we didn't trigger the opponent event, trigger it now, then end the Action.
          */
+
+        /*
+        selectionManager = new(availableActions.Where(action => action.Can(Player, card))); // RIGHT NOW: PLAYCARD drop is not receiving the card drop action. Because card drop is not setting the result of the selectionManager.Selection
+        PlayerAction selectedAction = await selectionManager.Selection as PlayerAction;
+        selectionManager.Close();
+
+        await selectedAction.Event();
+
+
         if (card.Faction == Player.Faction.enemyFaction && opponentEventTriggered == false)
         {
             if (selectedAction is TriggerCardEvent && opponentEventTriggered == false)
@@ -74,7 +61,7 @@ public class PlayCard : PlayerAction
                 await card.Event(Player);
             }
         }
-
+        
         if (card.Data.removeOnEvent == true )
         {
             Debug.Log($"{card.name} removed from the Game.");
@@ -85,6 +72,7 @@ public class PlayCard : PlayerAction
             Debug.Log($"{card.name} discarded.");
             Game.discards.Add(card);
         }
+        */
     }
 
     public void RemoveAction(System.Type actionToRemove)

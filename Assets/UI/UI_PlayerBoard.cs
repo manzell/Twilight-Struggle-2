@@ -22,7 +22,7 @@ public class UI_PlayerBoard : MonoBehaviour
         Game.CardDrawEvent += AddCard;
         Game.adjustMilOpsEvent += SetPlayerMilOps;
         Game.adjustVPevent += SetPlayerVP;
-        UI_PlayerAction.cardDropEvent += (action, card) => RemoveCardFromHand(card); 
+        UI_PlayerAction.CardDropEvent += (action, card) => RemoveCardFromHand(card); 
 
         SetPlayer(currentPlayer ?? Game.Players.First());
     }

@@ -36,9 +36,12 @@ public class Game : MonoBehaviour
 
     public async void StartGame()
     {
-        currentPhase = rootPhase;
+        if(currentPhase == null)
+            currentPhase = rootPhase;
+
         await Task.Delay(1000); // Just wait 1 second for whatever reason
-        await currentPhase.DoPhase(null);
+        
+        currentPhase.StartPhase(null);
     }
 
     public static void EndGame()

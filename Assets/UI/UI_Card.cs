@@ -16,7 +16,7 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
     public Card card;
     [SerializeField] TextMeshProUGUI cardTitle, cardText, cardOps;
     [SerializeField] Image backgroundImage, cardImage, factionIcon;
-    [SerializeField] GameObject highlight;
+    [SerializeField] GameObject highlight, playerActionPrefab, actionSelectionPanel;
 
     public void OnPointerClick(PointerEventData eventData) => onClickHandler?.Invoke(card);
     public event Action<Card> onClickHandler;
@@ -70,6 +70,24 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
 
         cardDragEvent?.Invoke(UI_PlayerBoard.currentPlayer, card);
 
+        Phase phase = Game.currentPhase;
+
+        IEnumerable<PlayerAction> availableActions = phase.availableActions.Where(action => action.Can(UI_PlayerBoard.currentPlayer, card)); 
+
+        foreach(PlayerAction action in availableActions)
+        {
+            if(action.Can(UI_PlayerBoard.currentPlayer, card))
+            {
+                Debug.Log($"Instantiating {action}/{action.name}");
+                Instantiate(playerActionPrefab, actionSelectionPanel.transform).GetComponent<UI_PlayerAction>().Setup(action);
+            }
+            else
+            {
+                Debug.Log($"Skipping {action.name}"); 
+            }
+        }
+
+        actionSelectionPanel.SetActive(availableActions.Count() > 0);
         /*
         // Move this out - doesn't really belong in the CARD UI -> This has to do a "Display Action Choice Event Trigger" and we link the show of the ActionChoiceUI 
         if(Game.ActionChoice != null)
@@ -100,6 +118,9 @@ public class UI_Card : SerializedMonoBehaviour, IBeginDragHandler, IDragHandler,
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        foreach (UI_PlayerAction action in actionSelectionPanel.GetComponentsInChildren<UI_PlayerAction>())
+            Destroy(action.gameObject); 
+
         if (TryGetComponent(out CanvasGroup canvas))
         {
             canvas.blocksRaycasts = true;

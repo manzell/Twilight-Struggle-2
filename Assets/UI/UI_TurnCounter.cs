@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
-public class UI_TurnCounter : MonoBehaviour
+namespace twilightStruggle.UI
 {
-    [SerializeField] TextMeshProUGUI turnNumber, arMarker;
-
-    private void Start() => Phase.PhaseStartEvent += Setup; 
-
-    public void Setup(Phase phase)
+    public class UI_TurnCounter : MonoBehaviour
     {
-        if(phase.Get<Turn>() != null)
-            turnNumber.text = phase.Get<Turn>().turnNumber.ToString();
-        if(phase.Get<ActionRound>() != null)
+        [SerializeField] TextMeshProUGUI turnNumber, arMarker;
+
+        private void Start() => Phase.PhaseStartEvent += Setup;
+
+        public void Setup(Phase phase)
         {
-            arMarker.text = $"AR{phase.Get<ActionRound>().actionRoundNumber}";
-            arMarker.color = phase.Get<ActionRound>().phasingPlayer.Faction.controlColor; 
+            if (phase.Get<Turn>() != null)
+                turnNumber.text = phase.Get<Turn>().turnNumber.ToString();
+            if (phase.Get<ActionRound>() != null)
+            {
+                arMarker.text = $"AR{phase.Get<ActionRound>().actionRoundNumber}";
+                arMarker.color = phase.Get<ActionRound>().phasingPlayer.Faction.controlColor;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using System.Linq;
-
+/*
 public class StartActionRound : PhaseAction
 {
     [SerializeField] PlayCard playCardAction;
@@ -12,7 +12,6 @@ public class StartActionRound : PhaseAction
     public async override Task Do(Phase phase)
     {
         actionRoundTaskSource = new(); 
-        (phase as ActionRound).SetActionRoundStart(this);
 
         UI_Card.cardDragEvent += onCardDrag;
         UI_Card.cardEndDragEvent += onEndCardDrag; 
@@ -39,3 +38,4 @@ public class StartActionRound : PhaseAction
         playCardAction.Cancel();
     }
 }
+*/

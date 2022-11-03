@@ -3,46 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using System; 
 using System.Linq;
-using Sirenix.OdinInspector;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 
+[Serializable]
 public abstract class PlayerAction : ISelectable
 {
-    public static UI_SelectionManager ui => GameObject.FindObjectOfType<UI_SelectionManager>();
-
-    Player player;
-    protected PlayerAction previousAction;
-
-    public string name;
-   
+    public string name;   
     public Player Player => player;
     public List<Effect> requiredEffects = new();
     public List<Effect> prohibitedEffects = new();
 
-    public event Action<ISelectable> selectionEvent
-    {
-        add { }
-        remove { }
-    }
-
-    public abstract Task Action();
-
-    public PlayerAction()
-    {
-        name = GetType().ToString(); 
-    }
+    protected PlayerAction previousAction;
+    private Player player;
 
     public virtual bool Can(Player player, Card card) => Can();
-    public virtual bool Can() => requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect)) &&
+    public virtual bool Can() => 
+        UI_PlayerBoard.currentPlayer == player &&
+        requiredEffects.All(requiredEffect => Game.activeEffects.Contains(requiredEffect)) &&
         !prohibitedEffects.Any(prohibitedEffects => Game.activeEffects.Contains(prohibitedEffects));
 
-    public Task Event() => Action();
     public virtual Task Event(PlayerAction previousAction)
     {
         this.previousAction = previousAction; 
         return Event(previousAction.Player);
     }
+
+    public abstract Task Action();
 
     public async virtual Task Event(Player player)
     {
@@ -79,7 +65,11 @@ public abstract class PlayerAction : ISelectable
 
     public virtual PlayerAction Clone() => (PlayerAction)this.MemberwiseClone();
 
-    public virtual void SetPlayer(Player player) => this.player = player;
+    public event Action<ISelectable> selectionEvent
+    {
+        add { }
+        remove { }
+    }
 
     public void Select()
     {

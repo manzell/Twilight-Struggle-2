@@ -9,40 +9,49 @@ using System.Threading.Tasks;
 
 public class Phase : SerializedMonoBehaviour
 {
-    Phase parent;
-    public event Action phaseStartEvent, phaseEndEvent;
+    Phase previousPhase;
     public static event Action<Phase> PhaseStartEvent, PhaseEndEvent;
-    
-    public Stack<PlayerAction> cardActions = new(); // These aren't card actions, these are really "Phase actions" 
-    public Queue<PhaseAction> onPhaseEvents = new(),
-        afterPhaseEvents = new();
 
-    public void Push(PlayerAction cardAction) => cardActions.Push(cardAction); 
+    public event Action phaseStartEvent, phaseEndEvent;
 
-    public List<Modifier> modifiers = new();
-    public List<Effect> activeEffects = new();
+    //public Stack<PlayerAction> cardActions = new(); // These aren't card actions, these are really "Phase actions" 
+    [field: SerializeField] public Queue<PhaseAction> onPhaseEvents { get; private set; } = new();
+    [field: SerializeField] public Queue<PhaseAction> afterPhaseEvents { get; private set; } = new();
 
-    public async virtual Task DoPhase(Phase parent)
+    //public void Push(PlayerAction cardAction) => cardActions.Push(cardAction); 
+
+    public List<Modifier> modifiers { get; private set; } = new();
+    public List<Effect> activeEffects { get; private set; } = new();
+    [field:SerializeField] public List<PlayerAction> availableActions { get; private set; } 
+
+    public async virtual void StartPhase(Phase previous)
     {
-        this.parent = parent;
+        previousPhase = previous;
         Game.currentPhase = this;
 
         Debug.Log($"Start Phase {name}");
 
-        PhaseStartEvent?.Invoke(this); 
         phaseStartEvent?.Invoke();
+        PhaseStartEvent?.Invoke(this); 
 
         while (onPhaseEvents.Count > 0)
             await onPhaseEvents.Dequeue().Do(this);
 
+        OnPhase(); 
+    }
+
+    public virtual void OnPhase() => EndPhase();
+
+    public async virtual void EndPhase()
+    {
         while (afterPhaseEvents.Count > 0)
             await afterPhaseEvents.Dequeue().Do(this);
 
-        PhaseEndEvent?.Invoke(this);
         phaseEndEvent?.Invoke();
+        PhaseEndEvent?.Invoke(this);
 
         if (Next() != null)
-            await Next().DoPhase(this);
+            Next().StartPhase(this);
         else
             Game.EndGame();
     }

@@ -310,9 +310,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -323,37 +323,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 2|AwardMilOps, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|CheckHeldCards, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 4|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
       Data: 0
     - Name: 
       Entry: 13
@@ -361,19 +336,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
+    - Name: <availableActions>k__BackingField
+      Entry: 6
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
 --- !u!1001 &44305859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -905,15 +870,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -924,22 +890,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -964,20 +943,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -989,9 +979,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1001,16 +1003,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1022,9 +1015,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1034,16 +1039,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1055,9 +1051,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1067,16 +1075,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1088,51 +1087,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1142,47 +1096,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 1
   opponentEventTriggered: 0
@@ -1371,15 +1284,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1390,22 +1304,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -1430,20 +1357,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1455,9 +1393,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1467,16 +1417,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1488,9 +1429,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1500,16 +1453,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1521,9 +1465,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1533,16 +1489,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -1554,51 +1501,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1608,47 +1510,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 2
   opponentEventTriggered: 0
@@ -1837,6 +1698,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 1967b3ec891e7e8468a4d5bdeedae587, type: 2}
     - {fileID: 859347640}
     - {fileID: 1622063410}
     SerializedBytesString: 
@@ -1844,26 +1706,22 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 2
     - Name: 
-      Entry: 13
-      Data: 
+      Entry: 7
+      Data: 1|AddDeck, Assembly-CSharp
+    - Name: deck
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
-      Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
     - Name: 
       Entry: 7
       Data: 2|DealUp, Assembly-CSharp
@@ -1876,7 +1734,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: afterPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
@@ -1889,25 +1747,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
+    - Name: <availableActions>k__BackingField
+      Entry: 6
       Data: 
     - Name: milOps
       Entry: 7
-      Data: 5|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Int32,
+      Data: 4|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Int32,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 6|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
+      Data: 5|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -1915,18 +1764,6 @@ MonoBehaviour:
     - Name: 
       Entry: 12
       Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 0
-    - Name: $v
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
       Data: 
@@ -1940,12 +1777,23 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  modifiers: []
   turnNumber: 1
   warPhase: {fileID: 11400000, guid: 8bf49ed87ba15a748ae9809cef82e65c, type: 2}
 --- !u!1001 &163057352
@@ -3490,15 +3338,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3509,22 +3358,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -3549,20 +3411,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3574,9 +3447,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3586,16 +3471,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3607,9 +3483,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3619,16 +3507,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3640,9 +3519,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3652,16 +3543,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -3673,51 +3555,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -3727,47 +3564,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 4
   opponentEventTriggered: 0
@@ -5074,15 +4870,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5093,22 +4890,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -5133,20 +4943,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5158,9 +4979,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5170,16 +5003,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5191,9 +5015,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5203,16 +5039,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5224,9 +5051,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5236,16 +5075,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -5257,51 +5087,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -5311,47 +5096,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 3
   opponentEventTriggered: 0
@@ -6540,15 +6284,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6559,22 +6304,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -6599,20 +6357,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6624,9 +6393,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6636,16 +6417,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6657,9 +6429,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6669,16 +6453,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6690,9 +6465,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6702,16 +6489,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -6723,51 +6501,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6777,47 +6510,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 6
   opponentEventTriggered: 0
@@ -7551,15 +7243,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7570,22 +7263,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -7610,20 +7316,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7635,9 +7352,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7647,16 +7376,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7668,9 +7388,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7680,16 +7412,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7701,9 +7424,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7713,16 +7448,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -7734,51 +7460,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -7788,47 +7469,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 2
   opponentEventTriggered: 0
@@ -8187,15 +7827,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8206,22 +7847,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -8246,20 +7900,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8271,9 +7936,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8283,16 +7960,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8304,9 +7972,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8316,16 +7996,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8337,9 +8008,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8349,16 +8032,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -8370,51 +8044,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -8424,47 +8053,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 1
   opponentEventTriggered: 0
@@ -9033,15 +8621,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9052,22 +8641,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -9092,20 +8694,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9117,9 +8730,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9129,16 +8754,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9150,9 +8766,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9162,16 +8790,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9183,9 +8802,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9195,16 +8826,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -9216,51 +8838,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -9270,47 +8847,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 4
   opponentEventTriggered: 0
@@ -9951,16 +9487,15 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 1967b3ec891e7e8468a4d5bdeedae587, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9971,34 +9506,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 2|AddDeck, Assembly-CSharp
-    - Name: deck
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
       Data: 0
     - Name: 
       Entry: 13
@@ -10006,19 +9519,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
+    - Name: <availableActions>k__BackingField
+      Entry: 6
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
 --- !u!1001 &1121939529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12184,9 +11687,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12197,43 +11700,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 2|CheckHeldCards, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|AwardMilOps, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|UpgradeDefcon, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 5|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
       Data: 0
     - Name: 
       Entry: 13
@@ -12241,19 +11713,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
+    - Name: <availableActions>k__BackingField
+      Entry: 6
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
 --- !u!1001 &1339916512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12910,9 +12372,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12923,31 +12385,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 2|StartHeadlinePhase, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
       Data: 0
     - Name: 
       Entry: 13
@@ -12955,25 +12398,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
+    - Name: <availableActions>k__BackingField
+      Entry: 6
       Data: 
     - Name: headlineTasks
       Entry: 7
-      Data: 5|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Threading.Tasks.TaskCompletionSource`1[[Card,
+      Data: 2|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Threading.Tasks.TaskCompletionSource`1[[Card,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 6|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -12989,11 +12423,11 @@ MonoBehaviour:
       Data: 
     - Name: headlines
       Entry: 7
-      Data: 7|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[Card,
+      Data: 4|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[Card,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 8|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
+      Data: 5|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -13007,7 +12441,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  modifiers: []
 --- !u!1001 &1500713960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13603,29 +13036,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: onPhaseEvents
-      Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 2|AddStartingInfluence, Assembly-CSharp
+      Data: 1|AddStartingInfluence, Assembly-CSharp
     - Name: continent
       Entry: 10
       Data: 0
@@ -13634,13 +13054,13 @@ MonoBehaviour:
       Data: 1
     - Name: influence
       Entry: 3
-      Data: 6
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|AddStartingInfluence, Assembly-CSharp
+      Data: 2|AddStartingInfluence, Assembly-CSharp
     - Name: continent
       Entry: 10
       Data: 2
@@ -13655,7 +13075,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|AddBonusInfluence, Assembly-CSharp
+      Data: 3|AddBonusInfluence, Assembly-CSharp
     - Name: faction
       Entry: 10
       Data: 3
@@ -13671,9 +13091,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: afterPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 5|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 4|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13684,19 +13104,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
+    - Name: <availableActions>k__BackingField
+      Entry: 6
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
 --- !u!1001 &1564665567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13893,15 +13303,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13912,22 +13323,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -13952,20 +13376,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -13977,9 +13412,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13989,16 +13436,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14010,9 +13448,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14022,16 +13472,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14043,9 +13484,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14055,16 +13508,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14076,51 +13520,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -14130,47 +13529,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 6
   opponentEventTriggered: 0
@@ -14221,15 +13579,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14240,22 +13599,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -14280,20 +13652,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14305,9 +13688,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14317,16 +13712,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14338,9 +13724,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14350,16 +13748,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14371,9 +13760,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14383,16 +13784,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -14404,51 +13796,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -14458,47 +13805,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 5
   opponentEventTriggered: 0
@@ -16065,15 +15371,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1622063410}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -16084,22 +15391,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -16124,20 +15444,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16149,9 +15480,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -16161,16 +15504,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16182,9 +15516,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -16194,16 +15540,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16215,9 +15552,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -16227,16 +15576,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -16248,51 +15588,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -16302,47 +15597,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 1622063410}
   actionRoundNumber: 3
   opponentEventTriggered: 0
@@ -17969,15 +17223,16 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 859347640}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: cardActions
+    - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Stack`1[[PlayerAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -17988,22 +17243,35 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: onPhaseEvents
+    - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
       Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: <availableActions>k__BackingField
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 2|StartActionRound, Assembly-CSharp
-    - Name: playCardAction
-      Entry: 7
-      Data: 3|PlayCard, Assembly-CSharp
+      Data: 3|Place, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
-      Data: PlayCard
+      Data: Place Influence
     - Name: requiredEffects
       Entry: 7
       Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
@@ -18028,20 +17296,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: availableActions
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 5
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 7|Coup, Assembly-CSharp
+      Data: 6|Coup, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
       Entry: 7
       Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18053,9 +17332,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 9|Space, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Space
+    - Name: requiredEffects
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -18065,16 +17356,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|Realign, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Realign
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18086,9 +17368,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 12|Realign, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: Realign
+    - Name: requiredEffects
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -18098,16 +17392,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|Space, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18119,9 +17404,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 15|TriggerCardEvent, Assembly-CSharp
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: name
+      Entry: 1
+      Data: TriggerCardEvent
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -18131,16 +17428,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 16|TriggerCardEvent, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: TriggerCardEvent
-    - Name: requiredEffects
+    - Name: prohibitedEffects
       Entry: 7
       Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
     - Name: 
@@ -18152,51 +17440,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Place, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Place
-    - Name: requiredEffects
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -18206,47 +17449,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: requiredCard
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: afterPhaseEvents
-      Entry: 7
-      Data: 22|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: activeEffects
-      Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  modifiers: []
   phasingPlayer: {fileID: 859347640}
   actionRoundNumber: 5
   opponentEventTriggered: 0
