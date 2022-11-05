@@ -3,45 +3,48 @@ using System.Collections.Generic;
 using System.Threading.Tasks; 
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 
-public class UI_Coup : MonoBehaviour
+namespace TwilightStruggle.UI
 {
-    [SerializeField] GameObject coupPanel; 
-    [SerializeField] TextMeshProUGUI header, opsValue, roll, coupDefense, enemyInfluenceRemoved, friendlyInfluenceAdded;
-    [SerializeField] Button confirmButton;
-
-    TaskCompletionSource<Coup.CoupAttempt> task; 
-
-    private void Awake()
+    public class UI_Coup : MonoBehaviour
     {
-        Coup.coupEvent += Setup;
-    }
+        [SerializeField] GameObject coupPanel;
+        [SerializeField] TextMeshProUGUI header, opsValue, roll, coupDefense, enemyInfluenceRemoved, friendlyInfluenceAdded;
+        [SerializeField] Button confirmButton;
 
-    Coup.CoupAttempt attempt; 
+        TaskCompletionSource<Coup.CoupAttempt> task;
 
-    public void Setup(Coup.CoupAttempt attempt)
-    {
-        Debug.Log(attempt.player);
-        Debug.Log(attempt.country);
-        this.attempt = attempt; 
-        header.text = $"{attempt.player.name} Coup in {attempt.country}";
-        opsValue.text = $"{attempt.ops}";
-        roll.text = $"{attempt.roll.Value}";
-        coupDefense.text = $"{attempt.coupDefense}";
-        enemyInfluenceRemoved.text = "-" + (attempt.enemyInfluenceRemoved > 0 ? attempt.enemyInfluenceRemoved.ToString() : string.Empty);
-        friendlyInfluenceAdded.text = attempt.influenceToAdd > 0 ? attempt.influenceToAdd.ToString() : "-";
+        private void Awake()
+        {
+            Coup.coupEvent += Setup;
+        }
 
-        friendlyInfluenceAdded.color = attempt.player.Faction.controlColor;
-        enemyInfluenceRemoved.color = attempt.player.Enemy.Faction.controlColor; 
+        Coup.CoupAttempt attempt;
 
-        task = attempt.coupCompletion; 
-        coupPanel.SetActive(true);
-    }
+        public void Setup(Coup.CoupAttempt attempt)
+        {
+            Debug.Log(attempt.player);
+            Debug.Log(attempt.country);
+            this.attempt = attempt;
+            header.text = $"{attempt.player.name} Coup in {attempt.country}";
+            opsValue.text = $"{attempt.ops}";
+            roll.text = $"{attempt.roll.Value}";
+            coupDefense.text = $"{attempt.coupDefense}";
+            enemyInfluenceRemoved.text = "-" + (attempt.enemyInfluenceRemoved > 0 ? attempt.enemyInfluenceRemoved.ToString() : string.Empty);
+            friendlyInfluenceAdded.text = attempt.influenceToAdd > 0 ? attempt.influenceToAdd.ToString() : "-";
 
-    public void Close()
-    {
-        task?.SetResult(attempt); 
-        coupPanel.SetActive(false); 
+            friendlyInfluenceAdded.color = attempt.player.Faction.controlColor;
+            enemyInfluenceRemoved.color = attempt.player.Enemy.Faction.controlColor;
+
+            task = attempt.coupCompletion;
+            coupPanel.SetActive(true);
+        }
+
+        public void Close()
+        {
+            task?.SetResult(attempt);
+            coupPanel.SetActive(false);
+        }
     }
 }

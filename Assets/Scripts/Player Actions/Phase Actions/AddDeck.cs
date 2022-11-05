@@ -4,17 +4,20 @@ using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class AddDeck : PhaseAction
+namespace TwilightStruggle
 {
-    public Deck deck;
-
-    public override Task Do(Phase phase)
+    public class AddDeck : PhaseAction
     {
-        foreach (CardData card in deck.cards)
-            Game.drawDeck.Add(new Card(card));             
-        
-        Game.drawDeck = Game.drawDeck.OrderBy(card => Random.value).ToList();
+        public Deck deck;
 
-        return Task.CompletedTask; 
+        public override Task Do(Phase phase)
+        {
+            foreach (CardData card in deck.cards)
+                Game.drawDeck.Add(new Card(card));
+
+            Game.drawDeck = Game.drawDeck.OrderBy(card => Random.value).ToList();
+
+            return Task.CompletedTask;
+        }
     }
 }

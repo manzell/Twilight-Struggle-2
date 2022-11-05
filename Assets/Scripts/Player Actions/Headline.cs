@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Headline : TriggerCardEvent
+namespace TwilightStruggle
 {
+    public class Headline : TriggerCardEvent
+    {
 
+    }
 }

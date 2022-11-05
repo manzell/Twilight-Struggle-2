@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 
-public class Prompt : MonoBehaviour
+namespace TwilightStruggle
 {
-    bool wait = true;
-
-    public async Task Wait()
+    public class Prompt : MonoBehaviour
     {
-        while (wait == true)
-            await Task.Yield(); 
-    }
+        bool wait = true;
 
-    public void Confirm() => wait = false; 
+        public async Task Wait()
+        {
+            while (wait == true)
+                await Task.Yield();
+        }
+
+        public void Confirm() => wait = false;
+    }
 }

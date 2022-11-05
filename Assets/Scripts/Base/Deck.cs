@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck : ScriptableObject
+namespace TwilightStruggle
 {
-    public List<CardData> cards; 
+    public class Deck : ScriptableObject
+    {
+        public List<CardData> cards;
+    }
 }

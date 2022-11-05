@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class BonusOpModifier : Modifier
+namespace TwilightStruggle
 {
-    [SerializeField] Faction faction;
-
-    public override bool Applies(PlayerAction gameAction)
+    [System.Serializable]
+    public class BonusOpModifier : Modifier
     {
-        return true; 
+        [SerializeField] Faction faction;
+
+        public override bool Applies(PlayerAction gameAction)
+        {
+            return true;
+        }
     }
 }

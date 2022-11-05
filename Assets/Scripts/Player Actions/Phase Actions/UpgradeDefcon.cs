@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class UpgradeDefcon : PhaseAction
+namespace TwilightStruggle
 {
-    public override Task Do(Phase phase)
+    public class UpgradeDefcon : PhaseAction
     {
-        Game.AdjustDEFCON(1);
-        return Task.CompletedTask; 
+        public override Task Do(Phase phase)
+        {
+            Game.AdjustDEFCON(1);
+            return Task.CompletedTask;
+        }
     }
 }

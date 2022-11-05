@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Roll 
+namespace TwilightStruggle
 {
-    public int Value => roll + modifier;
-    int roll, modifier; 
-
-    public Roll (int mod)
+    public class Roll
     {
-        roll = Random.Range(0, 6) + 1;
-        modifier = mod; 
+        public int Value => roll + modifier;
+        int roll, modifier;
+
+        public Roll(int mod)
+        {
+            roll = Random.Range(0, 6) + 1;
+            modifier = mod;
+        }
     }
 }

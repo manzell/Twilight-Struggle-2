@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace twilightStruggle.UI
+namespace TwilightStruggle.UI
 {
     public class UI_TurnCounter : MonoBehaviour
     {

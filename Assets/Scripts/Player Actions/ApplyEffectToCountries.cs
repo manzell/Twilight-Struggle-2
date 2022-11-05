@@ -4,18 +4,21 @@ using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
 
-//[CreateAssetMenu(menuName = "CardEffect/Apply Effect")]
-public class ApplyEffectToCountries : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Effect effect;
-    [SerializeField] Continent continent;
-    [SerializeField] List<CountryData> countries;
-
-    public override Task Action()
+    //[CreateAssetMenu(menuName = "CardEffect/Apply Effect")]
+    public class ApplyEffectToCountries : PlayerAction
     {
-        foreach (CountryData countryData in continent.countries.Select(c => c.Data).Union(countries).Distinct())
-            countryData.country.ongoingEffects.Add(effect);
+        [SerializeField] Effect effect;
+        [SerializeField] Continent continent;
+        [SerializeField] List<CountryData> countries;
 
-        return Task.CompletedTask; 
+        public override Task Action()
+        {
+            foreach (CountryData countryData in continent.countries.Select(c => c.Data).Union(countries).Distinct())
+                countryData.country.ongoingEffects.Add(effect);
+
+            return Task.CompletedTask;
+        }
     }
 }

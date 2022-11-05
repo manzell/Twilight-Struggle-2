@@ -4,38 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
-using System.Linq; 
+using System.Linq;
 
-public class UI_SelectionManager : MonoBehaviour
+namespace TwilightStruggle.UI
 {
-    [SerializeField] GameObject actionSelectionPrefab, cardPrefab, actionArea;
-
-    public void Start()
+    public class UI_SelectionManager : MonoBehaviour
     {
-        SelectionManager<Country>.SelectionStartEvent += StartCountrySelection;
-        SelectionManager<Country>.SelectionEndEvent += CloseCountrySelector; 
+        [SerializeField] GameObject actionSelectionPrefab, cardPrefab, actionArea;
+
+        public void Start()
+        {
+            SelectionManager<Country>.SelectionStartEvent += StartCountrySelection;
+            SelectionManager<Country>.SelectionEndEvent += CloseCountrySelector;
+        }
+
+        public void StartCountrySelection(SelectionManager<Country> selectionManager)
+        {
+            selectionManager.addSelectableEvent += SetHighlight;
+            selectionManager.removeSelectableEvent += ClearHighlight;
+        }
+
+        public void CloseCountrySelector(SelectionManager<Country> selectionManager)
+        {
+            selectionManager.addSelectableEvent -= SetHighlight;
+            selectionManager.removeSelectableEvent -= ClearHighlight;
+        }
+
+        void SetHighlight(ISelectable country) => FindObjectsOfType<UI_Country>().Where(ui => ui.country == (Country)country).First().SetHighlight(Color.red); 
+        void ClearHighlight(ISelectable country) => FindObjectsOfType<UI_Country>().Where(ui => ui.country == (Country)country).First().ClearHighlight();
     }
-
-    public void CloseActionChoice(SelectionManager<PlayerAction> selectionManager)
-    {
-        actionArea.SetActive(false);
-
-        foreach (Transform t in actionArea.transform)
-            Destroy(t.gameObject);
-    }
-
-    public void StartCountrySelection(SelectionManager<Country> selectionManager)
-    {
-        selectionManager.addSelectableEvent += SetHighlight;
-        selectionManager.removeSelectableEvent += ClearHighlight;
-    }
-
-    public void CloseCountrySelector(SelectionManager<Country> selectionManager)
-    {
-        selectionManager.addSelectableEvent -= SetHighlight;
-        selectionManager.removeSelectableEvent -= ClearHighlight;
-    }
-
-    void SetHighlight(ISelectable country) => ((Country)country).UI.SetHighlight(Color.red);
-    void ClearHighlight(ISelectable country) => ((Country)country).UI.ClearHighlight();
 }

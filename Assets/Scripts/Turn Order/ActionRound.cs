@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-namespace twilightStruggle
+namespace TwilightStruggle
 {
     public class ActionRound : Phase
     {
@@ -13,13 +13,16 @@ namespace twilightStruggle
 
         public override void StartPhase(Phase parent)
         {
-            UI_PlayerBoard.SetPlayer(phasingPlayer);
+            foreach (PlayerAction playerAction in availableActions)
+                playerAction.SetPlayer(phasingPlayer);
+
+            UI.PlayerBoard.SetPlayer(phasingPlayer);
             base.StartPhase(parent); 
         }
 
         public override void OnPhase()
         {
-            UI.UI_Message.SetMessage($"Play {phasingPlayer.name} Action Round (Turn {GetComponentInParent<Turn>().turnNumber} AR {actionRoundNumber})");
+            UI.Message.SetMessage($"Play {phasingPlayer.name} Action Round (Turn {GetComponentInParent<Turn>().turnNumber} AR {actionRoundNumber})");
         }
     }
 }

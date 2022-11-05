@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 
-[System.Serializable]
-public abstract class PhaseAction
+namespace TwilightStruggle
 {
-    public abstract Task Do(Phase phase); 
+    [System.Serializable]
+    public abstract class PhaseAction
+    {
+        public abstract Task Do(Phase phase);
+    }
 }

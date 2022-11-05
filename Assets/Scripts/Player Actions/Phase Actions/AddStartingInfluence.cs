@@ -5,29 +5,33 @@ using UnityEngine.Events;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class AddStartingInfluence : PhaseAction 
+namespace TwilightStruggle
 {
-    [SerializeField] Continent continent;
-    [SerializeField] Faction faction;
-    [SerializeField] int influence;
-
-    public override async Task Do(Phase phase)
+    public class AddStartingInfluence : PhaseAction
     {
-        IEnumerable<Country> selectableCountries = Game.Countries.Where(country => country.Continents.Contains(continent)); 
+        [SerializeField] Continent continent;
+        [SerializeField] Faction faction;
+        [SerializeField] int influence;
 
-        if (selectableCountries.Count() > 0)
+        public override async Task Do(Phase phase)
         {
-            UI_PlayerBoard.SetPlayer(faction.player); 
-            SelectionManager<Country> selectionManager = new(selectableCountries);
+            IEnumerable<Country> selectableCountries = Game.Countries.Where(country => country.Continents.Contains(continent));
 
-            while (selectionManager.open && selectionManager.Selected.Count() < influence)
+            if (selectableCountries.Count() > 0)
             {
-                twilightStruggle.UI.UI_Message.SetMessage($"Add Starting {faction} Influence ({influence - selectionManager.Selected.Count()} remaining)");
-                Country country = await selectionManager.Selection as Country;
-                country.AdjustInfluence(faction, 1);
-            }
+                UI.PlayerBoard.SetPlayer(faction.player);
+                SelectionManager<Country> selectionManager = new(selectableCountries);
 
-            selectionManager.Close(); 
+                while (selectionManager.open && selectionManager.Selected.Count() < influence)
+                {
+                    UI.Message.SetMessage($"Add Starting {faction} Influence ({influence - selectionManager.Selected.Count()} remaining)");
+                    selectionManager.selectionTaskSource = new();
+                    Country country = await selectionManager.selectionTaskSource.Task as Country;
+                    country.AdjustInfluence(faction, 1);
+                }
+
+                selectionManager.Close();
+            }
         }
     }
 }

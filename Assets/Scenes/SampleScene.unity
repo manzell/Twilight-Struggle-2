@@ -312,7 +312,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -325,7 +325,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -870,8 +870,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1622063410}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -879,7 +878,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -892,7 +891,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -905,23 +904,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -933,7 +930,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -948,16 +946,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -969,7 +965,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -984,52 +981,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1041,7 +1000,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1056,16 +1016,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1077,7 +1035,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1284,8 +1278,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 859347640}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1293,7 +1286,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1306,7 +1299,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1319,23 +1312,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1347,7 +1338,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1362,16 +1354,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1383,7 +1373,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1398,52 +1389,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1455,7 +1408,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1470,16 +1424,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1491,7 +1443,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1708,14 +1696,14 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 1|AddDeck, Assembly-CSharp
+      Data: 1|TwilightStruggle.AddDeck, Assembly-CSharp
     - Name: deck
       Entry: 10
       Data: 0
@@ -1724,7 +1712,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|DealUp, Assembly-CSharp
+      Data: 2|TwilightStruggle.DealUp, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1736,7 +1724,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 3|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1752,12 +1740,12 @@ MonoBehaviour:
       Data: 
     - Name: milOps
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Int32,
+      Data: 4|System.Collections.Generic.Dictionary`2[[TwilightStruggle.Player, Assembly-CSharp],[System.Int32,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 5|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
-        mscorlib
+      Data: 5|System.Collections.Generic.ObjectEqualityComparer`1[[TwilightStruggle.Player,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -3338,8 +3326,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1622063410}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3347,7 +3334,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3360,7 +3347,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3373,23 +3360,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3401,7 +3386,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3416,16 +3402,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3437,7 +3421,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3452,52 +3437,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3509,7 +3456,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3524,16 +3472,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3545,7 +3491,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4870,8 +4852,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 859347640}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4879,7 +4860,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4892,7 +4873,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4905,23 +4886,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4933,7 +4912,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4948,16 +4928,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4969,7 +4947,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4984,52 +4963,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5041,7 +4982,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5056,16 +4998,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5077,7 +5017,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6284,8 +6260,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 859347640}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -6293,7 +6268,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6306,7 +6281,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6319,23 +6294,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6347,7 +6320,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6362,16 +6336,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6383,7 +6355,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6398,52 +6371,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6455,7 +6390,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6470,16 +6406,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6491,7 +6425,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7243,8 +7213,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1622063410}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7252,7 +7221,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7265,7 +7234,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7278,23 +7247,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7306,7 +7273,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7321,16 +7289,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7342,7 +7308,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7357,52 +7324,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7414,7 +7343,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7429,16 +7359,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7450,7 +7378,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7767,7 +7731,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: hand
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TwilightStruggle.Card, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7827,8 +7792,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 859347640}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7836,7 +7800,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7849,7 +7813,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7862,23 +7826,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7890,7 +7852,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7905,16 +7868,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7926,7 +7887,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7941,52 +7903,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7998,7 +7922,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8013,16 +7938,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8034,7 +7957,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8621,8 +8580,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 859347640}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -8630,7 +8588,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8643,7 +8601,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8656,23 +8614,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8684,7 +8640,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8699,16 +8656,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8720,7 +8675,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8735,52 +8691,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8792,7 +8710,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8807,16 +8726,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8828,7 +8745,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9438,6 +9391,42 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4067945221057485696, guid: 8b5b5c28986e30244ab44a1a510a14b5, type: 3}
   m_PrefabInstance: {fileID: 1069614265}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1071216468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071216469}
+  m_Layer: 5
+  m_Name: Current Action Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1071216469
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071216468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1671522044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 850, y: 265}
+  m_SizeDelta: {x: 180, y: 240}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1111924941
 GameObject:
   m_ObjectHideFlags: 0
@@ -9495,7 +9484,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9508,7 +9497,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11058,12 +11047,12 @@ MonoBehaviour:
     SerializationNodes:
     - Name: spaceRaceTurnAttemptLimit
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Int32,
+      Data: 0|System.Collections.Generic.Dictionary`2[[TwilightStruggle.Player, Assembly-CSharp],[System.Int32,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[TwilightStruggle.Player,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -11102,8 +11091,8 @@ MonoBehaviour:
       Data: 
     - Name: spaceRaceAttemptsMade
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[Space+SpaceAttempt, Assembly-CSharp]],
-        mscorlib
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.Space+SpaceAttempt,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -11689,7 +11678,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11702,7 +11691,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12374,7 +12363,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12387,7 +12376,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12403,12 +12392,12 @@ MonoBehaviour:
       Data: 
     - Name: headlineTasks
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[System.Threading.Tasks.TaskCompletionSource`1[[Card,
+      Data: 2|System.Collections.Generic.Dictionary`2[[TwilightStruggle.Player, Assembly-CSharp],[System.Threading.Tasks.TaskCompletionSource`1[[TwilightStruggle.Card,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
-        mscorlib
+      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[TwilightStruggle.Player,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -12423,15 +12412,11 @@ MonoBehaviour:
       Data: 
     - Name: headlines
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[Player, Assembly-CSharp],[Card,
+      Data: 4|System.Collections.Generic.Dictionary`2[[TwilightStruggle.Player, Assembly-CSharp],[TwilightStruggle.Card,
         Assembly-CSharp]], mscorlib
     - Name: comparer
-      Entry: 7
-      Data: 5|System.Collections.Generic.ObjectEqualityComparer`1[[Player, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 3
     - Name: 
       Entry: 12
       Data: 0
@@ -12995,7 +12980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1549814493
 Transform:
   m_ObjectHideFlags: 0
@@ -13038,14 +13023,14 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 1|AddStartingInfluence, Assembly-CSharp
+      Data: 1|TwilightStruggle.AddStartingInfluence, Assembly-CSharp
     - Name: continent
       Entry: 10
       Data: 0
@@ -13054,13 +13039,13 @@ MonoBehaviour:
       Data: 1
     - Name: influence
       Entry: 3
-      Data: 7
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|AddStartingInfluence, Assembly-CSharp
+      Data: 2|TwilightStruggle.AddStartingInfluence, Assembly-CSharp
     - Name: continent
       Entry: 10
       Data: 2
@@ -13075,7 +13060,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|AddBonusInfluence, Assembly-CSharp
+      Data: 3|TwilightStruggle.AddBonusInfluence, Assembly-CSharp
     - Name: faction
       Entry: 10
       Data: 3
@@ -13093,7 +13078,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 4|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 4|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13303,8 +13288,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1622063410}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -13312,7 +13296,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13325,7 +13309,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13338,23 +13322,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13366,7 +13348,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13381,16 +13364,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13402,7 +13383,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13417,52 +13399,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13474,7 +13418,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13489,16 +13434,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13510,7 +13453,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13579,8 +13558,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1622063410}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -13588,7 +13566,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13601,7 +13579,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -13614,23 +13592,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13642,7 +13618,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13657,16 +13634,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13678,7 +13653,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13693,52 +13669,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13750,7 +13688,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13765,16 +13704,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13786,7 +13723,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -13999,7 +13972,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: hand
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TwilightStruggle.Card, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -14221,6 +14195,7 @@ RectTransform:
   - {fileID: 314628649}
   - {fileID: 594899456}
   - {fileID: 772622888}
+  - {fileID: 1071216469}
   - {fileID: 1543159379}
   - {fileID: 1260524750}
   - {fileID: 2537475126973731715}
@@ -15371,8 +15346,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1622063410}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -15380,7 +15354,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15393,7 +15367,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15406,23 +15380,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15434,7 +15406,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15449,16 +15422,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15470,7 +15441,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15485,52 +15457,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15542,7 +15476,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15557,16 +15492,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -15578,7 +15511,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17223,8 +17192,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 859347640}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -17232,7 +17200,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <onPhaseEvents>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -17245,7 +17213,7 @@ MonoBehaviour:
       Data: 
     - Name: <afterPhaseEvents>k__BackingField
       Entry: 7
-      Data: 1|System.Collections.Generic.Queue`1[[PhaseAction, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.Queue`1[[TwilightStruggle.PhaseAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -17258,23 +17226,21 @@ MonoBehaviour:
       Data: 
     - Name: <availableActions>k__BackingField
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[PlayerAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[TwilightStruggle.PlayerAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 3|Place, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 3|TwilightStruggle.Place, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Place Influence
+      Data: Place Ops
     - Name: requiredEffects
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17286,7 +17252,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17301,16 +17268,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Coup, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 6|TwilightStruggle.Coup, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Coup
     - Name: requiredEffects
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 7|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17322,7 +17287,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 8|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17337,52 +17303,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Space, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
-    - Name: name
-      Entry: 1
-      Data: Space
-    - Name: requiredEffects
-      Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: prohibitedEffects
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|Realign, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 9|TwilightStruggle.Realign, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Realign
     - Name: requiredEffects
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17394,7 +17322,8 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17409,16 +17338,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TriggerCardEvent, Assembly-CSharp
-    - Name: player
-      Entry: 10
-      Data: 0
+      Data: 12|TwilightStruggle.Space, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: TriggerCardEvent
+      Data: Space
     - Name: requiredEffects
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -17430,7 +17357,43 @@ MonoBehaviour:
       Data: 
     - Name: prohibitedEffects
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|TwilightStruggle.TriggerCardEvent, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Event
+    - Name: requiredEffects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: prohibitedEffects
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[TwilightStruggle.Effect, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0

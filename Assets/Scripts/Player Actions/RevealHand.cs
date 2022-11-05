@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class RevealHand : PlayerAction
+namespace TwilightStruggle
 {
-    public override async Task Action()
+    public class RevealHand : PlayerAction
     {
-        List<Card> revealedHand = Player.hand; 
+        public override async Task Action()
+        {
+            List<Card> revealedHand = Player.hand;
 
-        SelectionManager<Card> selectionManager = new(revealedHand);
-        await selectionManager.Selection;
-        selectionManager.Close(); 
+            SelectionManager<Card> selectionManager = new(revealedHand);
+            await selectionManager.Selection;
+            selectionManager.Close();
+        }
     }
 }

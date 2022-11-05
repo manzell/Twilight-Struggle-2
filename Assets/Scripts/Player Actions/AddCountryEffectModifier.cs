@@ -2,29 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using System.Linq; 
+using System.Linq;
 
-public class AddCountryEffectModifier : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Modifier mod;
-    [SerializeField] Effect effect;
-    [SerializeField] List<CountryData> eligibleCountries = new();
-
-    public async override Task Action()
+    public class AddCountryEffectModifier : PlayerAction
     {
-        if(eligibleCountries.Count > 0)
+        [SerializeField] Modifier mod;
+        [SerializeField] Effect effect;
+        [SerializeField] List<CountryData> eligibleCountries = new();
+
+        public async override Task Action()
         {
-            SelectionManager<Country> selection = new(eligibleCountries.Select(data => data.country), 1);
-            Country country = await selection.Selection as Country; 
-            AddModifier(country);
+            if (eligibleCountries.Count > 0)
+            {
+                SelectionManager<Country> selection = new(eligibleCountries.Select(data => data.country), 1);
+                Country country = await selection.Selection as Country;
+                AddModifier(country);
+            }
         }
-    }
 
-    void AddModifier(Country country)
-    {
-        if (mod != null)
-            country.modifiers.Add(mod);
-        if (effect != null)
-            country.ongoingEffects.Add(effect);
+        void AddModifier(Country country)
+        {
+            if (mod != null)
+                country.modifiers.Add(mod);
+            if (effect != null)
+                country.ongoingEffects.Add(effect);
+        }
     }
 }

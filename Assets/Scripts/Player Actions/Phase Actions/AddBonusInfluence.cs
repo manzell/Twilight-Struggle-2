@@ -4,32 +4,34 @@ using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using UnityEditor.EditorTools;
 
-public class AddBonusInfluence : PhaseAction
+namespace TwilightStruggle
 {
-    [SerializeField] Faction faction;
-    [SerializeField] int influence;
-
-    public async override Task Do(Phase phase)
+    public class AddBonusInfluence : PhaseAction
     {
-        IEnumerable<Country> countries = Game.Countries.Where(country => country.Influence(faction) > 0);
+        [SerializeField] Faction faction;
+        [SerializeField] int influence;
 
-        if(countries.Count() > 0)
+        public async override Task Do(Phase phase)
         {
-            SelectionManager<Country> selectionManager = new(countries);
+            IEnumerable<Country> selectableCountries = Game.Countries.Where(country => country.Influence(faction) > 0);
 
-            Country country = await selectionManager.Selection as Country;
-            
-            country.AdjustInfluence(faction, 1);
-            influence--;
-
-            while (selectionManager.open && influence > 0)
+            if (selectableCountries.Count() > 0)
             {
-                twilightStruggle.UI.UI_Message.SetMessage($"Add Bonus {faction} Influence ({influence} remaining)");
-                await selectionManager.Selection;
-            }
+                UI.PlayerBoard.SetPlayer(faction.player);
+                SelectionManager<Country> selectionManager = new(selectableCountries);
 
-            selectionManager.Close(); 
-        } 
+                while (selectionManager.open && selectionManager.Selected.Count() < influence)
+                {
+                    UI.Message.SetMessage($"Add Starting {faction} Influence ({influence - selectionManager.Selected.Count()} remaining)");
+                    selectionManager.selectionTaskSource = new();
+                    Country country = await selectionManager.selectionTaskSource.Task as Country;
+                    country.AdjustInfluence(faction, 1);
+                }
+
+                selectionManager.Close();
+            }
+        }
     }
 }

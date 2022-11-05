@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq; 
+using System.Linq;
 
-public class ScoringCard : CardData
+namespace TwilightStruggle
 {
-    public Continent continent; 
+    public class ScoringCard : CardData
+    {
+        public Continent continent;
+    }
 }

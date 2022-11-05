@@ -5,35 +5,38 @@ using UnityEngine.UI;
 using System.Threading.Tasks;
 using TMPro;
 
-public class UI_Space : MonoBehaviour
+namespace TwilightStruggle.UI
 {
-    [SerializeField] GameObject spacePanel;
-    [SerializeField] TextMeshProUGUI header, required, roll, outcome; 
-    [SerializeField] Button confirmButton;
-
-    TaskCompletionSource<Space.SpaceAttempt> task;
-
-    private void Awake()
+    public class UI_Space : MonoBehaviour
     {
-        Space.spaceAttempt += Setup; 
-    }
+        [SerializeField] GameObject spacePanel;
+        [SerializeField] TextMeshProUGUI header, required, roll, outcome;
+        [SerializeField] Button confirmButton;
 
-    public void Setup(Space.SpaceAttempt attempt)
-    {
-        header.text = $"{attempt.player.name} attempts {attempt.stage.name}";
-        required.text = attempt.stage.RequiredOps.ToString();
-        roll.text = attempt.roll.Value.ToString();
-        outcome.text = attempt.successful ? "SUCCESS" : "FAILURE";
-        if (attempt.successful)
-            outcome.color = attempt.player.Faction.controlColor;
+        TaskCompletionSource<Space.SpaceAttempt> task;
 
-        task = attempt.spaceCompletion;
-        spacePanel.SetActive(true);
-    }
+        private void Awake()
+        {
+            Space.spaceAttempt += Setup;
+        }
 
-    public void Close()
-    {
-        task.SetResult(null);
-        spacePanel.SetActive(false);
+        public void Setup(Space.SpaceAttempt attempt)
+        {
+            header.text = $"{attempt.player.name} attempts {attempt.stage.name}";
+            required.text = attempt.stage.RequiredOps.ToString();
+            roll.text = attempt.roll.Value.ToString();
+            outcome.text = attempt.successful ? "SUCCESS" : "FAILURE";
+            if (attempt.successful)
+                outcome.color = attempt.player.Faction.controlColor;
+
+            task = attempt.spaceCompletion;
+            spacePanel.SetActive(true);
+        }
+
+        public void Close()
+        {
+            task.SetResult(null);
+            spacePanel.SetActive(false);
+        }
     }
 }

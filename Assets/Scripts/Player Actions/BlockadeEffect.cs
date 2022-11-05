@@ -4,31 +4,34 @@ using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class BlockadeEffect : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Faction USA;
-    [SerializeField] CountryData WestGermany;
-
-    public override async Task Action()
+    public class BlockadeEffect : PlayerAction
     {
-        twilightStruggle.UI.UI_Message.SetMessage("Blockade. US must discard a card with 3 or more Ops, otherwise lose all influence in West Germany"); 
-        List<Card> eligibleCards = USA.player.hand.Where(card => card.ops >= 3).ToList();
+        [SerializeField] Faction USA;
+        [SerializeField] CountryData WestGermany;
 
-        if (eligibleCards.Count == 0)
-            WestGermany.country.SetInfluence(USA, 0);
-        else
+        public override async Task Action()
         {
-            SelectionManager<Card> selectionManager = new (USA.player.hand.Where(card => card.ops >= 3), 1);
+            TwilightStruggle.UI.Message.SetMessage("Blockade. US must discard a card with 3 or more Ops, otherwise lose all influence in West Germany");
+            List<Card> eligibleCards = USA.player.hand.Where(card => card.ops >= 3).ToList();
 
-            //while (selectionManager.open && selectionManager.Selected.Count() == 0)
+            if (eligibleCards.Count == 0)
+                WestGermany.country.SetInfluence(USA, 0);
+            else
+            {
+                SelectionManager<Card> selectionManager = new(USA.player.hand.Where(card => card.ops >= 3), 1);
+
+                //while (selectionManager.open && selectionManager.Selected.Count() == 0)
                 await selectionManager.Selection;
 
-            selectionManager.Close(); 
+                selectionManager.Close();
 
-            if (selectionManager.Selected.Count() > 0)
-                USA.player.Discard(selectionManager.Selected.First() as Card);
-            else
-                WestGermany.country.SetInfluence(USA, 0); 
+                if (selectionManager.Selected.Count() > 0)
+                    USA.player.Discard(selectionManager.Selected.First() as Card);
+                else
+                    WestGermany.country.SetInfluence(USA, 0);
+            }
         }
     }
 }

@@ -4,72 +4,73 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro; 
 using System.Linq;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
-
-public class UI_PlayerBoard : MonoBehaviour
+namespace TwilightStruggle.UI
 {
-    public static Player currentPlayer;
-    static UI_PlayerBoard _this => FindObjectOfType<UI_PlayerBoard>();
-
-    [SerializeField] RawImage playerBoard;
-    [SerializeField] Image factionIcon;
-    [SerializeField] TextMeshProUGUI factionName, VP, MilOps;
-    [SerializeField] GameObject cardPrefab, cardArea;
-
-    private void Start()
+    public class PlayerBoard : MonoBehaviour
     {
-        Game.CardDrawEvent += AddCard;
-        Game.adjustMilOpsEvent += SetPlayerMilOps;
-        Game.adjustVPevent += SetPlayerVP;
-        UI_PlayerAction.CardDropEvent += (action, card) => RemoveCardFromHand(card); 
+        public static Player currentPlayer;
+        static PlayerBoard _this => FindObjectOfType<PlayerBoard>();
 
-        SetPlayer(currentPlayer ?? Game.Players.First());
-    }
+        [SerializeField] RawImage playerBoard;
+        [SerializeField] Image factionIcon;
+        [SerializeField] TextMeshProUGUI factionName, VP, MilOps;
+        [SerializeField] GameObject cardPrefab, cardArea;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-            SetPlayer(Game.Players.First(faction => faction != currentPlayer));
-    }
+        private void Start()
+        {
+            Game.CardDrawEvent += AddCard;
+            Game.adjustMilOpsEvent += SetPlayerMilOps;
+            Game.adjustVPevent += SetPlayerVP;
 
-    public static void SetPlayer(Player player)
-    {
-        currentPlayer = player;
+            SetPlayer(currentPlayer ?? Game.Players.First());
+        }
 
-        _this.factionName.text = player.Faction.name;
-        _this.factionIcon.sprite = player.Faction.factionIcon;
-        _this.playerBoard.color = player.Faction.controlColor;
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+                SetPlayer(Game.Players.First(faction => faction != currentPlayer));
+        }
 
-        if (player == currentPlayer)
-            _this.VP.text = (player.victoryPoints - player.Enemy.victoryPoints).ToString();
-        if (player == currentPlayer)
-            _this.MilOps.text = player.milOps.ToString();
-        ClearHand();
-        DrawPlayerHand(player);
-    }
-    public static void RemoveCardFromHand(Card card)
-    {
-        Debug.Log($"RemoveCardFromHand(Card {card.name})");
-        if(Game.Players.Any(player => player.hand.Remove(card)))
-            Destroy(card.ui.gameObject);
-    }
-    static public void ClearHand()
-    {
-        foreach (Transform child in _this.cardArea.transform)
-            Destroy(child.gameObject);
-    }
+        public static void SetPlayer(Player player)
+        {
+            currentPlayer = player;
 
-    static void AddCard(Player player, Card card)
-    {
-        if (player == currentPlayer)
-            Instantiate(_this.cardPrefab, _this.cardArea.transform).GetComponent<UI_Card>().Setup(card); 
+            _this.factionName.text = player.Faction.name;
+            _this.factionIcon.sprite = player.Faction.factionIcon;
+            _this.playerBoard.color = player.Faction.controlColor;
+
+            if (player == currentPlayer)
+                _this.VP.text = (player.victoryPoints - player.Enemy.victoryPoints).ToString();
+            if (player == currentPlayer)
+                _this.MilOps.text = player.milOps.ToString();
+            ClearHand();
+            DrawPlayerHand(player);
+        }
+
+        public static void RemoveCardFromHand(Card card)
+        {
+            Debug.Log($"RemoveCardFromHand(Card {card.name})");
+            if (Game.Players.Any(player => player.hand.Remove(card)))
+                Destroy(card.ui.gameObject);
+        }
+        static public void ClearHand()
+        {
+            foreach (Transform child in _this.cardArea.transform)
+                Destroy(child.gameObject);
+        }
+
+        static void AddCard(Player player, Card card)
+        {
+            if (player == currentPlayer)
+                Instantiate(_this.cardPrefab, _this.cardArea.transform).GetComponent<UI_Card>().Setup(card);
+        }
+        static void DrawPlayerHand(Player player)
+        {
+            foreach (Card card in player.hand)
+                AddCard(player, card);
+        }
+        static void SetPlayerVP(Player player, int amount) => FindObjectOfType<PlayerBoard>().VP.text = (player == currentPlayer ? player.victoryPoints - player.Enemy.victoryPoints : player.Enemy.victoryPoints - player.victoryPoints).ToString();
+        static void SetPlayerMilOps(Player player, int amount) => FindObjectOfType<PlayerBoard>().MilOps.text = (player == currentPlayer ? player.milOps : player.Enemy.milOps).ToString();
     }
-    static void DrawPlayerHand(Player player)
-    {
-        foreach (Card card in player.hand)
-            AddCard(player, card);
-    }
-    static void SetPlayerVP(Player player, int amount) => FindObjectOfType<UI_PlayerBoard>().VP.text = (player == currentPlayer ? player.victoryPoints - player.Enemy.victoryPoints : player.Enemy.victoryPoints - player.victoryPoints).ToString();
-    static void SetPlayerMilOps(Player player, int amount) => FindObjectOfType<UI_PlayerBoard>().MilOps.text = (player == currentPlayer ? player.milOps : player.Enemy.milOps).ToString(); 
 }

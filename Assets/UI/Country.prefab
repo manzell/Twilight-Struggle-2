@@ -465,9 +465,17 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: ongoingEffects
+    - Name: influence
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Effect, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[TwilightStruggle.Faction,
+        Assembly-CSharp],[System.Int32, mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[TwilightStruggle.Faction,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 12
       Data: 0
@@ -478,8 +486,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   data: {fileID: 0}
-  ui: {fileID: 4067945221057485699}
-  modifiers: []
 --- !u!222 &8306633251133470784
 CanvasRenderer:
   m_ObjectHideFlags: 0

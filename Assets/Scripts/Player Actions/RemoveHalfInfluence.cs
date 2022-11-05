@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class RemoveHalfInfluence : PlayerAction
+namespace TwilightStruggle
 {
-    enum RoundDirection { Up, Down }
-
-    [SerializeField] CountryData countryData;
-    [SerializeField] RoundDirection roundDirection = RoundDirection.Down;
-
-    public override Task Action()
+    public class RemoveHalfInfluence : PlayerAction
     {
-        Country country = countryData.country; 
+        enum RoundDirection { Up, Down }
 
-        int amtToRemove = roundDirection == RoundDirection.Up ? -Mathf.CeilToInt(country.Influence(Player.Faction) / 2f) : -Mathf.FloorToInt(country.Influence(Player.Faction) / 2f);
+        [SerializeField] CountryData countryData;
+        [SerializeField] RoundDirection roundDirection = RoundDirection.Down;
 
-        if (amtToRemove != 0)
+        public override Task Action()
         {
-            twilightStruggle.UI.UI_Message.SetMessage($"Removing half (Rounded {roundDirection}) {Player.Faction.name} Influence in {countryData.name}");
-            country.AdjustInfluence(Player.Faction, -amtToRemove);
-        }
+            Country country = countryData.country;
 
-        return Task.CompletedTask; 
+            int amtToRemove = roundDirection == RoundDirection.Up ? -Mathf.CeilToInt(country.Influence(Player.Faction) / 2f) : -Mathf.FloorToInt(country.Influence(Player.Faction) / 2f);
+
+            if (amtToRemove != 0)
+            {
+                TwilightStruggle.UI.Message.SetMessage($"Removing half (Rounded {roundDirection}) {Player.Faction.name} Influence in {countryData.name}");
+                country.AdjustInfluence(Player.Faction, -amtToRemove);
+            }
+
+            return Task.CompletedTask;
+        }
     }
 }

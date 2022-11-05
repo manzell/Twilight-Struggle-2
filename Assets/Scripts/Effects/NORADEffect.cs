@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-namespace twilightStruggle
+namespace TwilightStruggle
 {
     public class NORADEffect : Effect
     {

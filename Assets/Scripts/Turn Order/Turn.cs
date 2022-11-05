@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq; 
+using System.Linq;
 
-public class Turn : Phase
+namespace TwilightStruggle
 {
-    public int turnNumber;
-    public WarPhase warPhase;
+    public class Turn : Phase
+    {
+        public int turnNumber;
+        public WarPhase warPhase;
 
-    public HeadlinePhase headlinePhase => GetComponentInChildren<HeadlinePhase>();
-    public Dictionary<Player, int> milOps; 
+        public HeadlinePhase headlinePhase => GetComponentInChildren<HeadlinePhase>();
+        public Dictionary<Player, int> milOps;
+    }
 }

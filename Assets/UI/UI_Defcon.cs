@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
-using TMPro; 
+using TMPro;
 
-public class UI_Defcon : MonoBehaviour
+namespace TwilightStruggle.UI
 {
-    [SerializeField] RawImage background;
-    [SerializeField] Outline border;
-    [SerializeField] TextMeshProUGUI defcon;
-    [SerializeField] AudioClip degradeSound, upgradeSound; 
-
-    private void Awake()
+    public class UI_Defcon : MonoBehaviour
     {
-        Game.OnDefconAdjust += OnDefconAdjust; 
-    }
+        [SerializeField] RawImage background;
+        [SerializeField] Outline border;
+        [SerializeField] TextMeshProUGUI defcon;
+        [SerializeField] AudioClip degradeSound, upgradeSound;
 
-    public void OnDefconAdjust(int x)
-    {
-        defcon.text = Game.DEFCON.ToString(); 
+        private void Awake()
+        {
+            Game.OnDefconAdjust += OnDefconAdjust;
+        }
+
+        public void OnDefconAdjust(int x)
+        {
+            defcon.text = Game.DEFCON.ToString();
+        }
     }
 }

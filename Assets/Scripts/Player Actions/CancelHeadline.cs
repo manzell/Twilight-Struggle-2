@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class CancelHeadline : PlayerAction
+namespace TwilightStruggle
 {
-    public override Task Action() => Task.CompletedTask; 
+    public class CancelHeadline : PlayerAction
+    {
+        public override Task Action() => Task.CompletedTask;
+    }
 }

@@ -4,19 +4,22 @@ using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class FiveYearPlanEffect : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Faction USSR;
-
-    public override async Task Action()
+    public class FiveYearPlanEffect : PlayerAction
     {
-        if(USSR.player.hand.Count > 0)
-        {
-            Card discardedCard = USSR.player.hand.OrderBy(c => Random.value).First();
-            Debug.Log($"USSR Discards {discardedCard.name} to Five Year Plan");
+        [SerializeField] Faction USSR;
 
-            if (discardedCard.Faction == USSR.enemyFaction)
-                await discardedCard.Event(USSR.player);
+        public override async Task Action()
+        {
+            if (USSR.player.hand.Count > 0)
+            {
+                Card discardedCard = USSR.player.hand.OrderBy(c => Random.value).First();
+                Debug.Log($"USSR Discards {discardedCard.name} to Five Year Plan");
+
+                if (discardedCard.Faction == USSR.enemyFaction)
+                    await discardedCard.Event(USSR.player);
+            }
         }
     }
 }

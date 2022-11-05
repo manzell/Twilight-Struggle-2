@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-
-public class PreventHeadline : PlayerAction
+namespace TwilightStruggle
 {
-    public override bool Can(Player player, Card card) => false;
-
-    public override Task Action()
+    public class PreventHeadline : PlayerAction
     {
-        return Task.CompletedTask; 
+        public override bool Can(Player player, Card card) => false;
+
+        public override Task Action()
+        {
+            return Task.CompletedTask;
+        }
     }
 }

@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class DuckVPEffect : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Player USA; 
-
-    public override Task Action()
+    public class DuckVPEffect : PlayerAction
     {
-        USA.AdjustVP(5 - Game.DEFCON);
-        return Task.CompletedTask; 
+        [SerializeField] Player USA;
+
+        public override Task Action()
+        {
+            USA.AdjustVP(5 - Game.DEFCON);
+            return Task.CompletedTask;
+        }
     }
 }

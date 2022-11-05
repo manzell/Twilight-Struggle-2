@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; 
 
-namespace twilightStruggle.UI
+namespace TwilightStruggle.UI
 {
-    public class UI_Message : MonoBehaviour
+    public class Message : MonoBehaviour
     {
         [SerializeField] TextMeshProUGUI message;
-        private static UI_Message reference;
+        private static Message reference;
 
         private void Start() => reference = this;
 

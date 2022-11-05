@@ -4,21 +4,24 @@ using UnityEngine;
 using Unity;
 using System; 
 using System.Linq;
-using Sirenix.OdinInspector; 
+using Sirenix.OdinInspector;
 
-[CreateAssetMenu]
-public class CountryData : SerializedScriptableObject
+namespace TwilightStruggle
 {
-    public int stability;
-    public bool battleground; 
-    public List<Continent> continents;
-    public Faction adjacentSuperower;
-    public List<CountryData> neighbors;
-    public Dictionary<Faction, int> startingInfluence = new Dictionary<Faction, int>();
-    public Country country; 
-
-    private void OnDisable()
+    [CreateAssetMenu]
+    public class CountryData : SerializedScriptableObject
     {
-        country = null; 
+        public int stability;
+        public bool isBattleground;
+        public List<Continent> continents;
+        public Faction adjacentSuperower;
+        public List<CountryData> neighbors;
+        public Dictionary<Faction, int> startingInfluence = new Dictionary<Faction, int>();
+        public Country country;
+
+        private void OnDisable()
+        {
+            country = null;
+        }
     }
 }

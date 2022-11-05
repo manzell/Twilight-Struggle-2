@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WarCard : CardData
+namespace TwilightStruggle
 {
+    public class WarCard : CardData
+    {
+    }
 }

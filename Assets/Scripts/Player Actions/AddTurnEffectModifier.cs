@@ -3,30 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class AddTurnEffectModifier : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Modifier _modifier;
-    [SerializeField] Effect effect;
-    Turn turn;
-
-    public override Task Action()
+    public class AddTurnEffectModifier : PlayerAction
     {
-        turn = Phase.GetCurrent<Turn>();
+        [SerializeField] Modifier _modifier;
+        [SerializeField] Effect effect;
+        Turn turn;
 
-        if (turn != null)
+        public override Task Action()
         {
-            if(_modifier != null)
-            {
-                turn.modifiers.Add(_modifier);
-                turn.phaseEndEvent += () => turn.modifiers.Remove(_modifier);
-            }
-            if(effect != null)
-            {
-                turn.activeEffects.Add(effect);
-                turn.phaseEndEvent += () => Game.activeEffects.Remove(effect); 
-            }
-        }
+            turn = Phase.GetCurrent<Turn>();
 
-        return Task.CompletedTask; 
+            if (turn != null)
+            {
+                if (_modifier != null)
+                {
+                    turn.modifiers.Add(_modifier);
+                    turn.phaseEndEvent += () => turn.modifiers.Remove(_modifier);
+                }
+                if (effect != null)
+                {
+                    turn.activeEffects.Add(effect);
+                    turn.phaseEndEvent += () => Game.activeEffects.Remove(effect);
+                }
+            }
+
+            return Task.CompletedTask;
+        }
     }
 }

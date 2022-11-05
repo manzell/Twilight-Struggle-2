@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class AdjustDEFCON : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] int DEFCONAdjustment;
-
-    public override Task Action()
+    public class AdjustDEFCON : PlayerAction
     {
-        Game.AdjustDEFCON(DEFCONAdjustment);
-        return Task.CompletedTask; 
+        [SerializeField] int DEFCONAdjustment;
+
+        public override Task Action()
+        {
+            Game.AdjustDEFCON(DEFCONAdjustment);
+            return Task.CompletedTask;
+        }
     }
 }

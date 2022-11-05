@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class CancelEffect : PlayerAction
+namespace TwilightStruggle
 {
-    [SerializeField] Effect effect;
-    public override Task Action()
+    public class CancelEffect : PlayerAction
     {
-        //  Game.RemoveEffect(effect); 
+        [SerializeField] Effect effect;
+        public override Task Action()
+        {
+            //  Game.RemoveEffect(effect); 
 
-        return Task.CompletedTask; 
+            return Task.CompletedTask;
+        }
     }
 }

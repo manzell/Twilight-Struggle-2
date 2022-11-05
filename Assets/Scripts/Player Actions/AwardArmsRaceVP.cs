@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class AwardArmsRaceVP : PlayerAction
+namespace TwilightStruggle
 {
-    public override Task Action()
+    public class AwardArmsRaceVP : PlayerAction
     {
-        if (Player.milOps > Player.Enemy.milOps && Player.milOps >= Game.DEFCON)
-            Player.AdjustVP(3);
-        else if (Player.milOps > Player.Enemy.milOps)
-            Player.AdjustVP(1);
+        public override Task Action()
+        {
+            if (Player.milOps > Player.Enemy.milOps && Player.milOps >= Game.DEFCON)
+                Player.AdjustVP(3);
+            else if (Player.milOps > Player.Enemy.milOps)
+                Player.AdjustVP(1);
 
-        return Task.CompletedTask; 
+            return Task.CompletedTask;
+        }
     }
 }
